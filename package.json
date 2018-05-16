@@ -7,7 +7,7 @@
     "build": "et",
     "watch": "et --watch",
     "clean": "rm -rf lib",
-    "postinstall": "npm i && npm run build"
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
