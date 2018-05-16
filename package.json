@@ -19,7 +19,7 @@
     "url": "https://github.com/MrLyfing/heartflow-theme/issues"
   },
   "homepage": "https://github.com/MrLyfing/heartflow-theme#readme",
-  "devDependencies": {
+  "dependencies": {
     "element-theme": "github:syn-zeta/element-theme"
   },
   "element-theme": {
