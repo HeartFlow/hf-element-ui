@@ -1,0 +1,101 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(popper) {
+  .popper__arrow,
+  .popper__arrow::after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  .popper__arrow {
+    border-width: $--popover-arrow-size;
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03))
+  }
+
+  .popper__arrow::after {
+    content: " ";
+    border-width: $--popover-arrow-size;
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: #{$--popover-arrow-size + 6};
+  }
+
+  &[x-placement^="top"] .popper__arrow {
+    bottom: -$--popover-arrow-size;
+    left: 50%;
+    margin-right: #{$--tooltip-arrow-size / 2};
+    border-bottom-width: 0;
+    @include themify { border-top-color: themed('color_primary'); }
+
+    &::after {
+      bottom: 1px;
+      margin-left: -$--popover-arrow-size;
+      border-bottom-width: 0;
+      @include themify { border-top-color: themed('color_primary'); }
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: #{$--popover-arrow-size + 6};
+  }
+
+  &[x-placement^="bottom"] .popper__arrow {
+    top: -$--popover-arrow-size;
+    left: 50%;
+    margin-right: #{$--tooltip-arrow-size / 2};
+    border-top-width: 0;
+    @include themify { border-bottom-color: themed('color_primary'); }
+
+    &::after {
+      top: 1px;
+      margin-left: -$--popover-arrow-size;
+      border-top-width: 0;
+      @include themify { border-bottom-color: themed('color_primary'); }
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: #{$--popover-arrow-size + 6};
+  }
+
+  &[x-placement^="right"] .popper__arrow {
+    top: 50%;
+    left: -$--popover-arrow-size;
+    margin-bottom: #{$--tooltip-arrow-size / 2};
+    border-left-width: 0;
+    @include themify { border-right-color: themed('color_primary'); }
+
+    &::after {
+      bottom: -$--popover-arrow-size;
+      left: 1px;
+      border-left-width: 0;
+      @include themify { border-right-color: themed('color_primary'); }
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: #{$--popover-arrow-size + 6};
+  }
+
+  &[x-placement^="left"] .popper__arrow {
+    top: 50%;
+    right: -$--popover-arrow-size;
+    margin-bottom: #{$--tooltip-arrow-size / 2};
+    border-right-width: 0;
+    @include themify { border-left-color: themed('color_primary'); }
+
+    &::after {
+      right: 1px;
+      bottom: -$--popover-arrow-size;
+      margin-left: -$--popover-arrow-size;
+      border-right-width: 0;
+      @include themify { border-left-color: themed('color_primary'); }
+    }
+  }
+}

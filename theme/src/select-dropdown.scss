@@ -1,0 +1,89 @@
+@import "mixins/mixins";
+@import "common/var";
+@import "./popper";
+
+@include b(select-dropdown) {
+  position: absolute;
+  z-index: #{$--index-top + 1};
+  border: $--select-dropdown-border;
+  background-color: $--select-dropdown-background;
+  box-shadow: $--select-dropdown-shadow;
+  box-sizing: border-box;
+  margin: 5px 0;
+  transform: translate(0, -1px) !important;
+
+  &.el-popper[x-placement^="bottom"] {
+    margin-top: 1px;
+  }
+
+  &[x-placement^="bottom"] {
+    border-radius: 0 0 $--border-radius-base $--border-radius-base;
+  }
+
+  &[x-placement^="top"] {
+    border-radius: $--border-radius-base $--border-radius-base 0 0;
+  }
+
+  @include themify() {
+    color: themed('color_hero_60');
+  }
+
+  @include when(multiple) {
+    & .el-select-dropdown__item.selected {
+      /*
+      color: $--select-option-selected;
+      background-color: $--select-dropdown-background;
+
+      &.hover {
+        background-color: $--select-option-hover-background;
+      }
+      */
+
+      @include themify() {
+        color: themed('color_hero');
+      }
+
+      &::after {
+        position: absolute;
+        right: 20px;
+        font-family: 'heartflow-iconography';
+        content: '\E849';
+        font-size: 12px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  }
+
+  .el-scrollbar.is-empty .el-select-dropdown__list{
+    padding: 0;
+  }
+}
+
+@include b(select-dropdown__empty) {
+  padding: $--select-dropdown-empty-padding;
+  margin: 0;
+  text-align: center;
+  color: $--select-dropdown-empty-color;
+  font-size: $--select-font-size;
+}
+
+@include b(select-dropdown__wrap) {
+  max-height: $--select-dropdown-max-height;
+}
+
+@include b(select-dropdown__list) {
+  list-style: none;
+  padding: $--select-dropdown-padding;
+  margin: 0;
+  box-sizing: border-box;
+
+  &.el-popper[x-placement^="bottom"] {
+    border-radius: 0 0 $--border-radius-base $--border-radius-base;
+  }
+
+  &.el-popper[x-placement^="top"] {
+    border-radius: $--border-radius-base $--border-radius-base 0 0;
+  }
+}
+

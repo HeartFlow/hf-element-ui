@@ -1,0 +1,48 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(select-dropdown) {
+  @include e(item) {
+    font-size: $--select-font-size;
+    padding: 0 20px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // color: $--select-option-color;
+    height: $--select-option-height;
+    line-height: $--select-option-height;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    @include themify() {
+      color: themed('color_hero_60');
+    }
+
+    @include when(disabled) {
+      cursor: not-allowed;
+      opacity: .4;
+      /*
+      &:hover {
+        background-color: $--color-white;
+      }
+      */
+    }
+
+    &.hover, &:focus {
+      @include themify() {
+        color: themed('color_hero');
+      }
+    }
+
+    &.selected {
+      @include themify() {
+        color: themed('color_hero');
+      }
+    }
+
+    & span {
+      line-height: 34px !important;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "mixins/mixins";
+@import "common/var";
+
+/*
+@include b(collapse) {
+  border-top: 1px solid $--collapse-border-color;
+  border-bottom: 1px solid $--collapse-border-color;
+}
+*/
+@include b(collapse-item) {
+  @include e(header) {
+    height: $--collapse-header-height;
+    line-height: $--collapse-header-height;
+    cursor: pointer;
+    font-size: $--collapse-header-size;
+    font-weight: 500;
+    outline: none;
+    @include themify {
+      color: themed('color_primary_80');
+      background-color: themed('color_primary_10');
+    }
+    @include e(arrow) {
+      margin-right: 8px;
+      transition: transform .3s;
+      float: right;
+      line-height: 48px;
+      font-weight: 300;
+      @include when(active) {
+        transform: rotate(90deg);
+      }
+    }
+    &.focusing:focus:not(:hover){
+      @include themify {
+        color: themed('color_primary');
+      }
+    }
+  }
+
+  @include e(wrap) {
+    will-change: height;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  @include e(content) {
+    padding-bottom: 25px;
+    font-size: $--collapse-content-size;
+    line-height: 1.769230769230769;
+  }
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}

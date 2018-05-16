@@ -1,0 +1,9 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(checkbox-group) {
+  & .el-checkbox {  /* break individual elements on new lines */
+    display: block;
+    margin-top: 15px;
+  }
+}

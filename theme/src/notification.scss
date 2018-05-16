@@ -1,0 +1,101 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(notification) {
+  display: flex;
+  width: $--notification-width;
+  padding: $--notification-padding;
+  border-radius: $--notification-radius;
+  box-sizing: border-box;
+  position: fixed;
+  box-shadow: $--notification-shadow;
+  transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
+  overflow: hidden;
+  @include themify {
+    background-color: themed('color_primary');
+    color: themed('color_hero');
+  }
+
+  &.right {
+    right: 0px;
+  }
+
+  &.left {
+    left: 16px;
+  }
+
+  @include e(group) {
+    margin-left: $--notification-group-margin;
+  }
+
+  @include e(title) {
+    line-height: normal;
+    font-weight: normal;
+    font-size: $--notification-title-font-size;
+    margin: 0;
+  }
+
+  @include e(content) {
+    font-size: $--notification-font-size;
+    line-height: 22px;
+    margin: 6px 0 0 0;
+    text-align: justify;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include e(icon) {
+    height: $--notification-icon-size;
+    width: $--notification-icon-size;
+    font-size: $--notification-icon-size;
+  }
+
+  @include e(closeBtn) {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    opacity: .6;
+    font-size: $--notification-close-font-size;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /*
+  .el-icon-success {
+    color: $--notification-success-color;
+  }
+
+  .el-icon-error {
+    color: $--notification-danger-color;
+  }
+
+  .el-icon-info {
+    color: $--notification-info-color;
+  }
+
+  .el-icon-warning {
+    color: $--notification-warning-color;
+  }
+  */
+}
+
+.el-notification-fade-enter {
+  &.right {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.el-notification-fade-leave-active {
+  opacity: 0;
+}

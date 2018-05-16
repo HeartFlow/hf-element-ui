@@ -1,0 +1,195 @@
+@import "../common/var";
+
+@include b(picker-panel) {
+  border: 1px solid $--datepicker-border-color;
+  box-shadow: $--box-shadow-light;
+  background: $--color-white;
+  line-height: 30px;
+  margin: 5px 0;
+
+  &.el-popper[x-placement^="bottom"] {
+    margin-top: 0;
+  }
+
+  &[x-placement^="bottom"] {
+    border-radius: 0 0 $--border-radius-base $--border-radius-base;
+  }
+
+  &[x-placement^="top"] {
+    border-radius: $--border-radius-base $--border-radius-base 0 0;
+  }
+
+  @include themify {
+    color: themed('color_hero');
+  }
+
+  @include e((body, body-wrapper)) {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  @include e(content) {
+    position: relative;
+    margin: 12px;
+    margin-top: 0;
+    @include themify {
+      background: themed('color_hero_10');
+    }
+  }
+
+  @include e(footer) {
+    padding: 4px;
+    text-align: right;
+    background-color: $--color-white;
+    position: relative;
+    font-size: 0;
+  }
+
+  @include e(shortcut) {
+    display: block;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    line-height: 28px;
+    font-size: 14px;
+    padding-left: 12px;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+    @include themify {
+      color: themed('color_hero_60');
+    }
+
+    &:hover {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+
+    &.active {
+      background-color: #e6f1fe;
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+  }
+
+  @include e(btn) {
+    border: 1px solid #dcdcdc;
+    color: #333;
+    line-height: 24px;
+    border-radius: 2px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    font-size: 12px;
+
+    &[disabled] {
+      color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+
+  @include e(icon-btn) {
+    font-size: 12px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    margin-top: 8px;
+    @include themify {
+      color: themed('color_hero_60');
+    }
+
+    &:hover {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+
+    @include when(disabled) {
+      color: $--font-color-disabled-base;
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @include e(link-btn) {
+    vertical-align: middle;
+  }
+}
+
+.el-picker-panel *[slot=sidebar],
+.el-picker-panel__sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  //border-right: 1px solid $--datepicker-inner-border-color;
+  box-sizing: border-box;
+  padding-top: 17px;
+  background-color: $--color-white;
+  overflow: auto;
+}
+
+.el-picker-panel *[slot=sidebar] + .el-picker-panel__body,
+.el-picker-panel__sidebar + .el-picker-panel__body {
+  margin-left: 110px;
+}
+
+.el-date-picker .el-picker-panel__sidebar {
+  overflow: visible;
+}
+
+.el-date-picker .el-picker-panel__shortcut:last-child {
+  position: absolute;
+  bottom: -3em;
+  z-index: 1;
+}
+
+.el-picker-panel__sidebar::before {
+  content: 'Shortcuts';
+  padding-left: 12px;
+  @include themify {
+    color: themed('color_hero');
+  }
+}
+
+.el-date-picker .el-picker-panel__footer {
+  button:first-child {
+    display: none;
+  }
+  button:last-child {
+    @include themify {
+      background: themed('color_hero_10');
+    }
+
+    margin: 0 16px;
+    width: calc(100% - 110px - 24px); // - side panel - margin X 2
+
+    span {
+      color: transparent;
+      font-size: 1px;
+    }
+
+    span:after {
+      content: 'Accept changes';
+      font-size: 14px;
+      @include themify {
+        color: themed('color_hero_60');
+      }
+    }
+  }
+
+  button:last-child:hover span:after {
+    @include themify {
+      color: themed('color_hero');
+    }
+  }
+}

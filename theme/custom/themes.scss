@@ -1,0 +1,112 @@
+$themes: (
+  theme-default: (
+    color_primary: rgb(255, 255, 255),          // #FFFFFF
+    color_primary_10: rgba(255, 255, 255, .1),
+    color_primary_20: rgba(255, 255, 255, .2),
+    color_primary_25: rgba(255, 255, 255, .25),
+    color_primary_30: rgba(255, 255, 255, .3),
+    color_primary_40: rgba(255, 255, 255, .4),
+    color_primary_50: rgba(255, 255, 255, .5),
+    color_primary_60: rgba(255, 255, 255, .6),
+    color_primary_80: rgba(255, 255, 255, .8),
+    color_hero: rgb(4, 105, 150),               // #046996
+    color_hero_10: rgba(4, 105, 150, .1),
+    color_hero_20: rgba(4, 105, 150, .2),
+    color_hero_30: rgba(4, 105, 150, .3),
+    color_hero_60: rgba(4, 105, 150, .6),
+    color_upper: rgb(0, 146, 176),              // #0092B0
+    color_upper_40: rgba(0, 146, 176, .4)
+  ),
+  theme-black: (
+    color_primary: rgb(255, 255, 255),          // #FFFFFF
+    color_primary_10: rgba(255, 255, 255, .1),
+    color_primary_20: rgba(255, 255, 255, .2),
+    color_primary_25: rgba(255, 255, 255, .25),
+    color_primary_30: rgba(255, 255, 255, .3),
+    color_primary_40: rgba(255, 255, 255, .4),
+    color_primary_50: rgba(255, 255, 255, .5),
+    color_primary_60: rgba(255, 255, 255, .6),
+    color_primary_80: rgba(255, 255, 255, .8),
+    color_hero: rgb(39, 43, 47),              // #272B2F
+    color_hero_10: rgba(85, 102, 118, .1),
+    color_hero_20: rgba(85, 102, 118, .2),
+    color_hero_30: rgba(4, 105, 150, .3),
+    color_hero_60: rgba(85, 102, 118, .6),
+    color_upper: rgb(39, 43, 47),            // #272B2F
+    color_upper_40: rgba(104, 124, 143, .4)
+  ),
+  theme-gray: (
+    color_primary: rgb(255, 255, 255),          // #FFFFFF
+    color_primary_10: rgba(255, 255, 255, .1),
+    color_primary_20: rgba(255, 255, 255, .2),
+    color_primary_25: rgba(255, 255, 255, .25),
+    color_primary_30: rgba(255, 255, 255, .3),
+    color_primary_40: rgba(255, 255, 255, .4),
+    color_primary_50: rgba(255, 255, 255, .5),
+    color_primary_60: rgba(255, 255, 255, .6),
+    color_primary_80: rgba(255, 255, 255, .8),
+    color_hero: rgb(85, 102, 118),              // #556676
+    color_hero_10: rgba(85, 102, 118, .1),
+    color_hero_20: rgba(85, 102, 118, .2),
+    color_hero_30: rgba(4, 105, 150, .3),
+    color_hero_60: rgba(85, 102, 118, .6),
+    color_upper: rgb(104, 124, 143),            // #687C8F
+    color_upper_40: rgba(104, 124, 143, .4)
+  ),
+  theme-white: (
+    color_primary: rgb(0, 146, 176),            // #0092B0
+    color_primary_10: rgba(0, 146, 176, .1),
+    color_primary_20: rgba(0, 146, 176, .2),
+    color_primary_25: rgba(0, 146, 176, .25),
+    color_primary_30: rgba(0, 146, 176, .3),
+    color_primary_40: rgba(0, 146, 176, .4),
+    color_primary_50: rgba(0, 146, 176, .5),
+    color_primary_60: rgba(0, 146, 176, .6),
+    color_primary_80: rgba(0, 146, 176, .8),
+    color_hero: rgb(255, 255, 255),             // #FFFFFF
+    color_hero_10: rgba(255, 255, 255, .1),
+    color_hero_20: rgba(255, 255, 255, .2),
+    color_hero_30: rgba(4, 105, 150, .3),
+    color_hero_60: rgba(255, 255, 255, .6),
+    color_upper: rgb(255, 255, 255),
+    color_upper_40: rgba(255, 255, 255, .4)
+  )
+);
+
+
+/* Mixin
+-------------------------- */
+
+@mixin themify() {
+  @each $theme, $map in $themes {
+
+    .#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+/* Generate themes background.
+-------------------------- */
+
+@mixin themes_bg() {
+  @each $theme, $map in $themes {
+    $hero: map-get($map, 'color_hero');
+    $upper: map-get($map, 'color_upper');
+    body.#{$theme} {
+      background-color: $hero;
+      background-image: linear-gradient(165deg, $upper, $hero);
+    }
+  }
+}

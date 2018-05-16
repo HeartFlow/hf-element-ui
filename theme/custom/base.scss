@@ -1,0 +1,59 @@
+@import "heartflow-iconography.css";
+@import "themes";
+
+/* MIXINS
+**/
+@include themes_bg;
+
+/* SCROLLBAR
+**/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  @include themify {
+    background-color: themed('color_primary_40');
+  }
+}
+::-webkit-scrollbar-track {
+  @include themify { background-color: themed('color_primary_10'); }
+}
+
+
+body {
+  &::-webkit-scrollbar-track {  // reset track's rounded corners
+    border-radius: 0;
+  }
+}
+
+
+/* LINK
+**/
+a {
+  cursor: pointer;
+  text-decoration: none;
+  @include themify {
+    color: themed('color_primary_80');
+  }
+}
+
+a:hover {
+  @include themify {
+    color: themed('color_primary');
+  }
+}
+
+/* SVGs
+**/
+svg {
+  @include themify {
+    stroke: themed('color_primary');
+  }
+}
