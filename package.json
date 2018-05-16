@@ -4,9 +4,9 @@
   "description": "Heartflow Element-UI theme",
   "main": "index.js",
   "scripts": {
-    "build": "et",
-    "watch": "et --watch",
     "clean": "rm -rf lib",
+    "build": "npm run clean && et",
+    "watch": "et --watch",
     "postinstall": "npm run build"
   },
   "repository": {
