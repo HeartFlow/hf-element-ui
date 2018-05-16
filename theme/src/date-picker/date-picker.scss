@@ -1,0 +1,119 @@
+@import "../common/var";
+@import "../mixins/mixins";
+@import "./picker-panel.scss";
+
+@include b(date-picker) {
+  width: 322px;
+
+  &.has-sidebar.has-time {
+    width: 434px;
+  }
+
+  &.has-sidebar {
+    width: 438px;
+  }
+
+  &.has-time .el-picker-panel__body-wrapper {
+    position: relative;
+  }
+
+  .el-picker-panel__content {
+    width: 292px;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  @include e(editor-wrap) {
+    position: relative;
+    display: table-cell;
+    padding: 0 5px;
+    line-height: 1em;
+
+    .el-input--small input {
+      height: 1.5em;
+    }
+
+    &:first-child:before {
+      content: 'Date';
+    }
+
+    &:last-child:before {
+      content: 'Time';
+    }
+  }
+
+  @include e(time-header) {
+    position: relative;
+    font-size: 12px;
+    padding: 8px 5px 0 8px;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @include e(header) {
+    margin: 8px 20px 0 12px;
+    border-radius: 3px 3px 0 0;
+
+    text-align: center;
+    @include themify {
+      background: themed('color_hero_10');
+    }
+
+    @include m(bordered) {
+      margin-bottom: 0;
+      padding-bottom: 12px;
+
+      & + .el-picker-panel__content {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include e(header-label) {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 5px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    @include themify {
+      color: themed('color_hero_60');
+    }
+
+    &:hover {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+
+    &.active {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+  }
+
+  @include e(prev-btn) {
+    float: left;
+  }
+
+  @include e(next-btn) {
+    float: right;
+  }
+
+  @include e(time-wrap) {
+    padding: 10px;
+    text-align: center;
+  }
+
+  @include e(time-label) {
+    float: left;
+    cursor: pointer;
+    line-height: 30px;
+    margin-left: 10px;
+  }
+}

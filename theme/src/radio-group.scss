@@ -1,0 +1,14 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(radio-group) {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0;
+
+  & .el-radio {  /* break elements on new lines */
+    display: block;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "heartflow-theme",
+  "version": "1.0.0",
+  "description": "Heartflow Element-UI theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "et",
+    "watch": "et --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrLyfing/heartflow-theme.git"
+  },
+  "author": "Philippe Eng <peng@heartflow.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrLyfing/heartflow-theme/issues"
+  },
+  "homepage": "https://github.com/MrLyfing/heartflow-theme#readme",
+  "devDependencies": {
+    "element-theme": "github:syn-zeta/element-theme"
+  },
+  "element-theme": {
+    "config": "./element-variables.css",
+    "theme": "../theme",
+    "out": "./lib",
+    "watchGlobs": [
+      "./element-variables.css",
+      "./theme/**/*.scss"
+    ],
+    "components": [
+      "autocomplete",
+      "breadcrumb",
+      "breadcrumb-item",
+      "button",
+      "checkbox",
+      "checkbox-group",
+      "col",
+      "collapse",
+      "collapse-item",
+      "date-picker",
+      "dialog",
+      "dropdown",
+      "dropdown-item",
+      "dropdown-menu",
+      "form",
+      "form-item",
+      "input",
+      "input-number",
+      "message",
+      "notification",
+      "option",
+      "option-group",
+      "popover",
+      "radio",
+      "radio-button",
+      "radio-group",
+      "row",
+      "select",
+      "spinner",
+      "switch",
+      "table",
+      "table-column",
+      "tooltip",
+      "transfer"
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+@import "../common/var";
+
+@include b(date-range-picker) {
+  width: 646px;
+
+  &.has-sidebar {
+    width: 756px;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .el-picker-panel__body {
+    min-width: 513px;
+  }
+
+  @include e(header) {
+    position: relative;
+    text-align: center;
+    height: 28px;
+
+    [class*=arrow-left] {
+      float: left;
+    }
+
+    [class*=arrow-right] {
+      float: right;
+    }
+
+    div {
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 50px;
+    }
+  }
+
+  @include e(content) {
+    float: left;
+    width: calc(50% - 1em);
+    box-sizing: border-box;
+    margin: 0;
+    margin-right: 1em;
+    padding: 16px;
+
+    @include when(right) {
+      .el-date-range-picker__header {
+
+        div {
+          margin-left: 50px;
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+
+  @include e(editors-wrap) {
+    box-sizing: border-box;
+    display: table-cell;
+
+    @include when(right) {
+      .el-date-range-picker__time-picker-wrap:first-child:before {
+        content: 'End date';
+      }
+
+      .el-date-range-picker__time-picker-wrap:last-child:before {
+        content: 'End time';
+      }
+    }
+
+    .el-date-range-picker__time-picker-wrap:first-child:before {
+      content: 'Start date';
+    }
+
+    .el-date-range-picker__time-picker-wrap:last-child:before {
+      content: 'Start time';
+    }
+  }
+
+  @include e(time-header) {
+    position: relative;
+    font-size: 12px;
+    padding: 8px 5px 5px 0;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+
+    > .el-icon-arrow-right {
+      font-size: 20px;
+      vertical-align: middle;
+      display: none;
+      color: $--datepicker-icon-color;
+    }
+  }
+
+  @include e(time-picker-wrap) {
+    position: relative;
+    display: table-cell;
+    padding: 0 5px 0 0;
+
+    .el-picker-panel {
+      position: absolute;
+      top: 13px;
+      right: 0;
+      z-index: 1;
+      background: $--color-white;
+    }
+
+    line-height: 1em;
+
+    .el-input--small input {
+      height: 1.5em;
+    }
+  }
+
+  .el-picker-panel__sidebar::before {
+    content: 'Within...';
+  }
+
+  .el-picker-panel__footer {
+    padding: 12px 0 12px 12px;
+    button:first-child {
+      float: left;
+      span {
+        color: transparent;
+        font-size: 1px;
+      }
+      span:after {
+        content: 'Reset filter';
+        font-size: 14px;
+        @include themify {
+          color: themed('color_hero_60');
+        }
+      }
+    }
+    button:first-child:hover span:after {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+
+    button:last-child {
+      @include themify {
+        background: themed('color_hero_10');
+      }
+
+      margin: 0 16px;
+      width: calc(50% - 4em); // - half - margins
+
+      span {
+        color: transparent;
+        font-size: 1px;
+      }
+
+      span:after {
+        content: 'Apply filter';
+        font-size: 14px;
+        @include themify {
+          color: themed('color_hero_60');
+        }
+      }
+    }
+
+    button:last-child:hover span:after {
+      @include themify {
+        color: themed('color_hero');
+      }
+    }
+  }
+}

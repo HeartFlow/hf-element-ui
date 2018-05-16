@@ -1,0 +1,170 @@
+@import "../common/var";
+@import "../mixins/mixins";
+
+@include b(date-table) {
+  font-size: 12px;
+  user-select: none;
+
+  @include when(week-mode) {
+    .el-date-table__row {
+      &:hover {
+        div {
+          background-color: $--datepicker-inrange-color;
+        }
+        td.available:hover {
+          @include themify {
+            background-color: themed('color_hero_60');
+          }
+          color: $--color-white;
+        }
+        td:first-child div {
+          margin-left: 5px;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+        }
+        td:last-child div {
+          margin-right: 5px;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+      }
+
+      &.current div {
+        background-color: $--datepicker-inrange-color;
+      }
+    }
+  }
+
+  td {
+    width: 32px;
+    height: 30px;
+    padding: 4px 0;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    & div {
+      height: 30px;
+      padding: 3px 0;
+      box-sizing: border-box;
+    }
+
+    & span {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin: 0 auto;
+      line-height: 24px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: $--border-radius-base;
+    }
+
+    &.next-month,
+    &.prev-month {
+      color: $--datepicker-off-color;
+    }
+
+    &.today {
+      position: relative;
+      span {
+        @include themify {
+          color: themed('color_hero')
+        }
+        font-weight: bold;
+      }
+      &.start-date span,
+      &.end-date span {
+        color: $--color-white;
+        @include themify {
+          background-color: themed('color_hero');
+        }
+      }
+    }
+
+    &.available:hover span {
+      @include themify {
+        background-color: themed('color_hero_60');
+      }
+      color: $--color-white;
+    }
+
+    &.in-range div span {
+      @include themify {
+        background-color: themed('color_hero_20');
+      }
+      &:hover {
+        background-color: $--datepicker-inrange-hover-color;
+      }
+    }
+
+    &.current:not(.disabled) span {
+      color: $--color-white;
+      @include themify {
+        background-color: themed('color_hero');
+      }
+    }
+    &.start-date div,
+    &.end-date div {
+      color: $--color-white;
+    }
+
+    &.start-date div span,
+    &.end-date div span {
+      @include themify {
+        background-color: themed('color_hero')
+      }
+    }
+
+    &.start-date div {
+      margin-left: 5px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    &.end-date div {
+      margin-right: 5px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    &.disabled div {
+      background-color: $--background-color-base;
+      opacity: 1;
+      cursor: not-allowed;
+      color: $--color-text-placeholder;
+    }
+
+    &.selected div {
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: $--datepicker-inrange-color;
+      border-radius: 15px;
+      &:hover {
+        background-color: $--datepicker-inrange-hover-color;
+      }
+    }
+
+    &.selected span {
+      background-color: $--datepicker-active-color;
+      color: $--color-white;
+      border-radius: 15px;
+    }
+
+    &.week {
+      font-size: 80%;
+      @include themify {
+        color: themed('color_hero_60');
+      }
+    }
+  }
+
+  th {
+    @include themify {
+      color: themed('color_hero');
+    }
+    font-weight: 400;
+  }
+}
