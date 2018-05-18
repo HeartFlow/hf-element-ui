@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }]
+  ],
+  "plugins": [
+    [
+      "component", [{
+        "libraryName": "element-ui",
+        "styleLibraryName": "~lib"
+      }]
+    ],
+    ["transform-object-rest-spread"],
+    ["transform-runtime"]
+  ]
+}

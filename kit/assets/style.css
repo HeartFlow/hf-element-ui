@@ -1,0 +1,51 @@
+body {
+  overflow: auto;
+  margin: 1em;
+}
+
+#app, #container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body > div > h1 {
+  text-align: center;
+}
+
+.ui-kit-header {
+  text-align: center;
+}
+
+.text-styles-block > * {
+  display: block;
+  margin: 30px 0;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icons > div {
+  padding: .5em;
+  margin: .5em;
+  width: 10em;
+  text-align: center;
+  overflow: hidden;
+}
+
+.icons > div > div {
+  margin-top: 1em;
+}
+
+.small-icons i {
+  font-size: 10pt;
+}
+
+.standard-icons i {
+  font-size: 15pt;
+}
+
+.large-icons i {
+  font-size: 35pt;
+}
