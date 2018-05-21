@@ -1,4 +1,4 @@
-# Heartflow Element UI theme
+# Heartflow Element UI
 
 ## Install
 ```shell
