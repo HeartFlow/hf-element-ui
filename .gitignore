@@ -2,4 +2,7 @@
 /node_modules
 
 # Theme output
-/lib 
+/lib
+
+# Build
+/build

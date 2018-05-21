@@ -1,7 +1,18 @@
-// Export Heartflow Element-UI Vue components
+import registerElementUIComponents from '@root/components'
+import registerDirectives from '@root/directives'
+import registerPlugins from '@root/plugins'
 
-function helloWorld() {
-  console.log('hello world')
+import ColumnFilter from '@root/components/ColumnFilter'
+import TransferOption from '@root/components/TransferOption'
+
+function install() {
+  registerElementUIComponents()
+  registerDirectives()
+  registerPlugins()
 }
 
-export { helloWorld }
+export {
+  ColumnFilter,
+  TransferOption
+}
+export default { install }

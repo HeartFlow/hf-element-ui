@@ -1,13 +1,6 @@
-import { getSuccessMessageConfig } from '@/modules/utils/notification'
-import ActionButton from '@/modules/components/ActionButton'
-import ActionsDropdown from '@/src/analyst/components/ActionsDropdown'
-import ColumnFilter from '@/modules/components/ColumnFilter'
-import Collapsible from '@/modules/components/Collapsible'
-import TransferOption from '@/modules/components/TransferOption'
-import VerticalList from '@/modules/components/VerticalList'
+import { ColumnFilter, TransferOption } from '@root'
 
 export default {
-  name: 'app',
   data() {
     return {
       longText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -212,7 +205,12 @@ export default {
     },
 
     showMessage() {
-      this.$message(getSuccessMessageConfig({ message: 'Invalid email or password. Please try again.' }))
+      this.$message({
+        duration: 4000,
+        type: 'success',
+        showClose: true,
+        message: 'Invalid email or password. Please try again'
+      })
     },
 
     renderHeader(h, { column, $index }) {
@@ -279,12 +277,5 @@ export default {
         '. Try again?'
       ])
     })
-  },
-
-  components: {
-    'hf-action-button': ActionButton,
-    'hf-actions-dropdown': ActionsDropdown,
-    'hf-collapsible': Collapsible,
-    'hf-vertical-list': VerticalList,
   }
 }

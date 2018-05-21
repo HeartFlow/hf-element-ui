@@ -1,21 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import App from '@/App.vue'
-import Main from '@/pages/Main'
-import registerElementUIComponents from '@/utils/element_ui.js'
+// Include these two files for bootstraping Heartflow element ui
+import HfElementUI from '@root'
+import '@root/lib/custom/base.css' // TODO: Refactorize element-overrides.css and global.css in /lib/custom
 
+import '@/assets/style.css' // Specific stylesheet for the UI kit
+
+import App from '@/App'
+import Main from '@/pages/Main.vue'
+
+Vue.use(HfElementUI)
 Vue.use(Router)
-registerElementUIComponents()
 
-const routes = [{
-  path: '/',
-  component: Main,
-}]
+const router = new Router({
+  routes: [
+    { path: '/', component: Main }
+  ]
+})
 
 new Vue({
   el: '#app',
-  routes,
+  router,
   template: '<App/>',
   components: { App }
 })

@@ -98,39 +98,6 @@
 
       <el-col :span="12">
         <div class="panel">
-          <h3>Popover</h3>
-          <el-popover ref="popovertop" placement="top-start" width="200" trigger="click"
-                      content="This content has detailed info about button that is activating top popover"></el-popover>
-
-          <el-popover ref="popoverright" placement="right-start" width="200" trigger="hover"
-                      content="This content has detailed info about button that is activating right popover"></el-popover>
-
-          <el-popover ref="popoverbottom" placement="bottom" width="200" trigger="hover"
-                      content="This content has detailed info about button that is activating bottom popover"></el-popover>
-
-          <el-popover ref="popoverleft" placement="left" title="Title" width="200" trigger="hover"
-                      content="This content has detailed info about button that is activating left popover"></el-popover>
-
-          <el-popover ref="popoverwarn" placement="bottom-start" width="200" trigger="hover"
-                      content="This is warning information. Popover is placed bottom start."></el-popover>
-
-          <el-button v-popover:popovertop>Top (click)</el-button>
-          <el-button v-popover:popoverright>Right</el-button>
-          <el-button v-popover:popoverbottom>Bottom</el-button>
-          <el-button v-popover:popoverleft>Left</el-button>
-          <el-button type="text">Warning <i v-popover:popoverwarn class="el-icon-warning"></i></el-button>
-        </div>
-      </el-col>
-
-      <el-col :span="12">
-        <div class="panel">
-          <h3>Actions Dropdown</h3>
-          <hf-actions-dropdown :picker-options="dateTimeOptions" :assign-options="assignOptions"></hf-actions-dropdown>
-        </div>
-      </el-col>
-
-      <el-col :span="12">
-        <div class="panel">
           <h3>Form</h3>
           <el-form :model="formData" label-position="top">
             <el-row>
@@ -208,6 +175,30 @@
       </el-col>
 
       <el-col :span="12">
+        <div class="panel">
+          <h3>Popover</h3>
+          <el-popover ref="popovertop" placement="top-start" width="200" trigger="click"
+                      content="This content has detailed info about button that is activating top popover"></el-popover>
+
+          <el-popover ref="popoverright" placement="right-start" width="200" trigger="hover"
+                      content="This content has detailed info about button that is activating right popover"></el-popover>
+
+          <el-popover ref="popoverbottom" placement="bottom" width="200" trigger="hover"
+                      content="This content has detailed info about button that is activating bottom popover"></el-popover>
+
+          <el-popover ref="popoverleft" placement="left" title="Title" width="200" trigger="hover"
+                      content="This content has detailed info about button that is activating left popover"></el-popover>
+
+          <el-popover ref="popoverwarn" placement="bottom-start" width="200" trigger="hover"
+                      content="This is warning information. Popover is placed bottom start."></el-popover>
+
+          <el-button v-popover:popovertop>Top (click)</el-button>
+          <el-button v-popover:popoverright>Right</el-button>
+          <el-button v-popover:popoverbottom>Bottom</el-button>
+          <el-button v-popover:popoverleft>Left</el-button>
+          <el-button type="text">Warning <i v-popover:popoverwarn class="el-icon-warning"></i></el-button>
+        </div>
+
         <div class="panel">
           <h3>Notifications</h3>
           <el-button type="text" @click="showMessage">Info message</el-button>

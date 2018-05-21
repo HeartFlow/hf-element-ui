@@ -30,9 +30,12 @@
 </template>
 
 <script>
-import { timeoutConfig } from '@/modules/ui-config'
+const ACTION_BUTTON_TIMEOUT = 1000
 
 export default {
+  install: function(Vue) {
+    Vue.component('hf-action-button', this)
+  },
   props: {
     type: {
       type: String,
@@ -43,7 +46,7 @@ export default {
       type: String,
       default: ''
     },
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   data() {
@@ -75,7 +78,7 @@ export default {
             this.success = false
             this.loading = false
             clb && clb()
-          }, timeoutConfig.actionButton)
+          }, ACTION_BUTTON_TIMEOUT)
           break
         case 'failure':
           this.spinning = false
@@ -84,7 +87,7 @@ export default {
             this.failure = false
             this.loading = false
             clb && clb()
-          }, timeoutConfig.actionButton)
+          }, ACTION_BUTTON_TIMEOUT)
           break
         case 'spin':
           this.spinning = true
@@ -99,7 +102,7 @@ export default {
           this.success = true
           setTimeout(() => {
             clb && clb()
-          }, timeoutConfig.actionButton)
+          }, ACTION_BUTTON_TIMEOUT)
       }
     })
   },

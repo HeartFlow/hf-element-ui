@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 function resolve(dir) {
   return path.resolve(__dirname, dir)
 }
-  
+
 module.exports = {
   context: resolve('./kit'),
   entry: {
@@ -69,6 +69,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': resolve('kit'),
+      '@root': resolve('./'),
       'vue$': 'vue/dist/vue.common.js',
     }
   },
@@ -77,6 +78,6 @@ module.exports = {
     contentBase: resolve('./kit'),
     overlay: true, // show errors in the console term
     hot: true,
-    stats: "minimal"
+    stats: 'minimal'
   }
 }

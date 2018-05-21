@@ -42,13 +42,3 @@ export default {
   },
 }
 </script>
-
-<style>
-@import '/assets/style.css';
-
-/* TODO: Refactorize CSS files to into single kit.css*/
-@import '/assets/global.css';
-@import '/assets/element-overrides.css';
-
-@import '../lib/custom/base.css';
-</style>
