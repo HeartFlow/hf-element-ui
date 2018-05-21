@@ -1,9 +1,9 @@
-import registerElementUIComponents from '@root/components'
-import registerDirectives from '@root/directives'
-import registerPlugins from '@root/plugins'
+import registerElementUIComponents from './components'
+import registerDirectives from './directives'
+import registerPlugins from './plugins'
 
-import ColumnFilter from '@root/components/ColumnFilter'
-import TransferOption from '@root/components/TransferOption'
+import ColumnFilter from './components/ColumnFilter'
+import TransferOption from './components/TransferOption'
 
 function install() {
   registerElementUIComponents()
