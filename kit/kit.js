@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 // Include these two files for bootstraping Heartflow element ui
 import HfElementUI from '@root'
-import '@root/lib/custom/base.css' // TODO: Refactorize element-overrides.css and global.css in /lib/custom
+import '@root/lib/custom/base.css'
 
 import '@/assets/style.css' // Specific stylesheet for the UI kit
 

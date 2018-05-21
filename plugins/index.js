@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import RetryNotificationPlugin from './retryNotification'
 
-function init() {
-  Vue.use(RetryNotificationPlugin)
+function init(_Vue) {
+  _Vue.use(RetryNotificationPlugin)
 }
 
 export default init

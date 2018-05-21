@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import {
   Autocomplete,
   Breadcrumb,
@@ -39,47 +38,47 @@ import ActionButton from './ActionButton'
 import Collapsible from './Collapsible'
 import VerticalList from './VerticalList'
 
-function init() {
+function init(_Vue) {
   /* Inject Element UI components */
-  Vue.use(Autocomplete)
-  Vue.use(Breadcrumb)
-  Vue.use(BreadcrumbItem)
-  Vue.use(Button)
-  Vue.use(Checkbox)
-  Vue.use(CheckboxGroup)
-  Vue.use(Col)
-  Vue.use(CollapseItem)
-  Vue.use(DatePicker)
-  Vue.use(Dialog)
-  Vue.use(Dropdown)
-  Vue.use(DropdownItem)
-  Vue.use(DropdownMenu)
-  Vue.use(Form)
-  Vue.use(FormItem)
-  Vue.use(Input)
-  Vue.use(InputNumber)
-  Vue.use(Option)
-  Vue.use(OptionGroup)
-  Vue.use(Popover)
-  Vue.use(Radio)
-  Vue.use(RadioButton)
-  Vue.use(RadioGroup)
-  Vue.use(Row)
-  Vue.use(Select)
-  Vue.use(Spinner)
-  Vue.use(Switch)
-  Vue.use(Table)
-  Vue.use(TableColumn)
-  Vue.use(Tooltip)
-  Vue.use(Transfer)
+  _Vue.use(Autocomplete)
+  _Vue.use(Breadcrumb)
+  _Vue.use(BreadcrumbItem)
+  _Vue.use(Button)
+  _Vue.use(Checkbox)
+  _Vue.use(CheckboxGroup)
+  _Vue.use(Col)
+  _Vue.use(CollapseItem)
+  _Vue.use(DatePicker)
+  _Vue.use(Dialog)
+  _Vue.use(Dropdown)
+  _Vue.use(DropdownItem)
+  _Vue.use(DropdownMenu)
+  _Vue.use(Form)
+  _Vue.use(FormItem)
+  _Vue.use(Input)
+  _Vue.use(InputNumber)
+  _Vue.use(Option)
+  _Vue.use(OptionGroup)
+  _Vue.use(Popover)
+  _Vue.use(Radio)
+  _Vue.use(RadioButton)
+  _Vue.use(RadioGroup)
+  _Vue.use(Row)
+  _Vue.use(Select)
+  _Vue.use(Spinner)
+  _Vue.use(Switch)
+  _Vue.use(Table)
+  _Vue.use(TableColumn)
+  _Vue.use(Tooltip)
+  _Vue.use(Transfer)
 
-  Vue.prototype.$message = Message
-  Vue.prototype.$notify = Notification
+  _Vue.prototype.$message = Message
+  _Vue.prototype.$notify = Notification
 
   /* Inject custom Heartflow componensed based on Element UI */
-  Vue.use(ActionButton)
-  Vue.use(Collapsible)
-  Vue.use(VerticalList)
+  _Vue.use(ActionButton)
+  _Vue.use(Collapsible)
+  _Vue.use(VerticalList)
 }
 
 export default init

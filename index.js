@@ -5,10 +5,10 @@ import registerPlugins from './plugins'
 import ColumnFilter from './components/ColumnFilter'
 import TransferOption from './components/TransferOption'
 
-function install() {
-  registerElementUIComponents()
-  registerDirectives()
-  registerPlugins()
+function install(Vue) {
+  registerElementUIComponents(Vue)
+  registerDirectives(Vue)
+  registerPlugins(Vue)
 }
 
 export {
