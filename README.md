@@ -13,3 +13,5 @@ import HfElementUI from 'hf-element-ui'
 import 'hf-element-ui/lib/custom/base.css'
 Vue.use(HfElementUI)
 ```
+
+Documentation in progress..
