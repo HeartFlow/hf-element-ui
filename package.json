@@ -1,7 +1,7 @@
 {
   "name": "hf-element-ui",
   "version": "1.0.0",
-  "description": "Heartflow Element UI theme",
+  "description": "Heartflow Element UI",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf lib",
