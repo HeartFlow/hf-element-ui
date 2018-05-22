@@ -2,7 +2,7 @@
 
 ## Install
 ```shell
-npm install github:MrLyfing/hf-element-ui -S
+npm install [TBD]:hf-element-ui -S
 ```
 
 ## Prerequisites
@@ -18,9 +18,9 @@ npm install github:MrLyfing/hf-element-ui -S
 import Vue from 'vue'
 
 import { registerElementUIComponents } from 'hf-element-ui'
-import 'hf-element-ui/lib/custom/base.css'
+import 'hf-element-ui/lib/custom/base.css' // Custom css files containing styles for fonts, themes colors, etc..
 
-// Helper function allowing to register available components from Element UI
+// Helper function allows registering available components from Element UI
 registerElementUIComponents()
 
 new Vue({
@@ -35,7 +35,7 @@ Edit .babelrc (`babel-plugin-component` must be installed)
     [
       "component", [{
         "libraryName": "element-ui",
-        "styleLibraryName": "~node_modules/hf-element-ui/lib"
+        "styleLibraryName": "~node_modules/hf-element-ui/lib" // Allows Element-UI to use Heartflow custom theme
       }]
     ],
   ]
@@ -81,7 +81,7 @@ Refer to [Element UI components documentation](http://element.eleme.io/#/en-US/c
 
 Notes: Prefix by `<el-[component-name]>` to use the component in the HTML template
 
-## Custom components
+## Custom Heartflow components
 
 ### Action Button
 Usage
@@ -128,25 +128,21 @@ components: {
 
 ### TransferOption
 
-## Directives
-In progress..
 ## Plugins
-In progress..
 
 ## Developement
 
 ### Run Heartflow UI Kit
-- From the project root repository, run `npm install`. It will add all NPM dependencies in `node_modules` for the kit and will also generate the Heartflow theme css stylesheets in `./lib` folder
+- Clone the project
+- From the project root repository, run `npm install`. All NPM dependencies will be added in `node_modules` and it will also generate the Heartflow css theme under `lib` folder using `element-theme` generator.
 - Run `npm run kit`
 - Connect to `http://localhost:8080` to access the UI Kit
 
-### Add/Modify components style
+### Add / Modify Element UI components style
+- If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding <component_name>.scss file(s) in `theme/src` folder picked from `ElementUI/theme-chalk` with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too. 
+- `npm run build` runs [the forked theme generator](https://github.com/syn-zeta/element-theme). It will compile CSS files under `theme` using `element-variables.css` and output them to `lib` that will be consumed your application. It will include that particular component's CSS.
+- For generating different themes, SCSS variables and mixins defined in `theme/themes.scss` are used in style definitions.
 
+### Watch mode with UI Kit
 
-### Watch mode
-
-
-###
-
-## Links
-
+`npm run watch` will allow to run the UI kit while watching the `*.scss` files under `theme` folder. Any update to those files will trigger a new build and new changes will be reflected to the UI kit. Make sure that `lib` containing the output generated css exists (created by `npm run build`) 
