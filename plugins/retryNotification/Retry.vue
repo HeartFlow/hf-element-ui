@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import ActionButton from '../../components/ActionButton'
+
 export default {
   props: {
     retryData: {
@@ -42,6 +44,9 @@ export default {
       this.loading = true
       this.retryAction()
     }
+  },
+  components: {
+    'hf-action-button': ActionButton
   }
 }
 </script>

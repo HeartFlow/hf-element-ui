@@ -25,6 +25,7 @@
 
 <script>
 import debounce from 'lodash.debounce'
+import VueVisible from 'vue-visible'
 
 export default {
   props: {
@@ -96,6 +97,9 @@ export default {
       return this.value.some(item => (item.value === option.value))
     },
   },
+  directives: {
+    'visible': VueVisible
+  }
 }
 </script>
 

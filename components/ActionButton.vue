@@ -30,12 +30,11 @@
 </template>
 
 <script>
+import blur from '../directives/blur'
+
 const ACTION_BUTTON_TIMEOUT = 1000
 
 export default {
-  install: function(Vue) {
-    Vue.component('hf-action-button', this)
-  },
   props: {
     type: {
       type: String,
@@ -114,6 +113,10 @@ export default {
       this.throbbing = false
       this.$emit('click', evt)
     }
+  },
+
+  directives: {
+    'hf-blur': blur
   }
 }
 </script>

@@ -17,9 +17,6 @@
 import debounce from 'lodash.debounce'
 
 export default {
-  install: function(Vue) {
-    Vue.component('hf-collapsible', this)
-  },
   data() {
     return {
       open: false

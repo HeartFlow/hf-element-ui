@@ -12,9 +12,6 @@
 
 <script>
 export default {
-  install: function(Vue) {
-    Vue.component('hf-vertical-list', this)
-  },
   props: {
     loading: {
       type: Boolean,

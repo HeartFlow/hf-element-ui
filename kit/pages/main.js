@@ -1,4 +1,14 @@
-import { ColumnFilter, TransferOption } from '@root'
+import VueVisible from 'vue-visible'
+import {
+  ActionButton,
+  Collapsible,
+  VerticalList,
+
+  ColumnFilter,
+  TransferOption,
+
+  BlurDirective
+} from '@root'
 
 export default {
   data() {
@@ -277,5 +287,16 @@ export default {
         '. Try again?'
       ])
     })
+  },
+
+  components: {
+    'hf-action-button': ActionButton,
+    'hf-collapsible': Collapsible,
+    'hf-vertical-list': VerticalList
+  },
+
+  directives: {
+    'visible': VueVisible,
+    'hf-blur': BlurDirective
   }
 }

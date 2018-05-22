@@ -17,17 +17,16 @@ npm install github:MrLyfing/hf-element-ui -S
 Install `hf-element-ui` and import `base.css`
 ``` javascript
 import Vue from 'vue'
-import HfElementUI from 'hf-element-ui'
 
+import { registerElementUIComponents } from 'hf-element-ui'
 import 'hf-element-ui/lib/custom/base.css'
 
-import App from './components/App'
-
-Vue.use(HfElementUI)
+// Helper function allowing to register available components from Element UI
+registerElementUIComponents()
 
 new Vue({
   el: '#app',
-  components: { App }
+  components: ...
 })
 ```
 Edit .babelrc (`babel-plugin-component` must be installed)
@@ -45,6 +44,7 @@ Edit .babelrc (`babel-plugin-component` must be installed)
 ```
 ## Available Element UI components
 Refer to [Element UI components documentation](http://element.eleme.io/#/en-US/component/installation) for more information
+
 - autocomplete
 - breadcrumb
 - breadcrumb-item
@@ -85,31 +85,39 @@ Notes: Prefix by `<el-[component-name]>` to use the component in the HTML templa
 ## Custom components
 
 ### Action Button
-Name: `hf-action-button`
-
 Usage
 ```html
-<hf-action-button 
-  icon="icon-standard-refresh" 
-  @click="onRefreshButtonClick"
-  ref="refreshButton">
-</hf-action-button>
-```
+<template>
+  <hf-action-button 
+    icon="icon-standard-refresh" 
+    @click="onRefreshButtonClick"
+    ref="refreshButton">
+  </hf-action-button>
+</template>
 
-```javascript
-onRefreshButtonClick() {
-  setTimeout(() => {
-    /*
-       refreshButton.$emit([eventName], [actionType], [callback])
-       @param {String} eventName -> 'update'
-       @param {String} actionType -> 'success' | 'failure' | 'reset' | 'complete'
-       @param {Function} callback Function called when spinning animation is finished
-    */
-    this.$refs.refreshButton.$emit('update', 'success', () => {
-      // Do something
-    })
-  }, 200)
+<script>
+import { ActionButton } from 'hf-element-ui'
+
+methods: {
+  onRefreshButtonClick() {
+    setTimeout(() => {
+      /*
+        refreshButton.$emit([eventName], [actionType], [callback])
+        @param {String} eventName -> 'update'
+        @param {String} actionType -> 'success' | 'failure' | 'reset' | 'complete'
+        @param {Function} callback Function called when spinning animation is finished
+      */
+      this.$refs.refreshButton.$emit('update', 'success', () => {
+        // Do something
+      })
+    }, 200)
+  }
+},
+components: {
+  'hf-action-button': ActionButton
 }
+
+</script>
 ```
 
 
