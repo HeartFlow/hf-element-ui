@@ -14,7 +14,6 @@ npm install github:MrLyfing/hf-element-ui -S
   - [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)
 
 ## Getting started
-Install `hf-element-ui` and import `base.css`
 ``` javascript
 import Vue from 'vue'
 
