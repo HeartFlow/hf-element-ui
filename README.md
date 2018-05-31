@@ -138,10 +138,30 @@ components: {
 - Run `npm run kit`
 - Connect to `http://localhost:8080` to access the UI Kit
 
-### Add / Modify Element UI components style
-- If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding <component_name>.scss file(s) in `theme/src` folder picked from `ElementUI/theme-chalk` with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too. 
+### Maintaining CSS
+CSS styles are located in `lib` folder.
+
+- If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding `<component_name>.scss` file(s) in `theme/src` folder picked from [ElementUI/theme-chalk](https://github.com/ElementUI/theme-chalk) with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too. 
 - `npm run build` runs [the forked theme generator](https://github.com/syn-zeta/element-theme). It will compile CSS files under `theme` using `element-variables.css` and output them to `lib` that will be consumed your application. It will include that particular component's CSS.
 - For generating different themes, SCSS variables and mixins defined in `theme/themes.scss` are used in style definitions.
+
+### Updating ElementUI:
+
+New versions of ElementUI include additions/fixes made to its default theme: `theme-chalk`.
+Since that default theme has been forked and modified extensively in this project, updating ElementUI
+requires careful consideration of changes made to `theme-chalk` before being merged in the copy in this project.
+
+The changes made to `theme-chalk` every release can be tracked by the commit history at
+[ElementUI/theme-chalk](https://github.com/ElementUI/theme-chalk/commits/master), and individual hunks can be
+copy-pasted manually after ensuring that those changes (possibly new features/bug-fixes) are indeed desirable.
+
+Any updates to files that are not found in this repo are for components that are not used. Those updates can be safely
+ignored until the corresponding components are included, at which point the .scss file can be copied into this repo from
+theme-chalk for the same version of ElementUI that is found in package.json. For example, if the Pagination component
+needed to be used, and the current Element version in package.json was 2.3.3, then pagination.scss will be copied into
+theme-in/src/ from theme-chalk@2.3.3 (https://github.com/ElementUI/theme-chalk/tree/v2.3.3). After that, pagination.scss
+will have to be maintained and kept up-to-date whenever ElementUI's version is updated in package.json.
+
 
 ### Watch mode with UI Kit
 
