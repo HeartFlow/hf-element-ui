@@ -79,7 +79,9 @@
     cursor: pointer;
     transition: background-color .3s;
     vertical-align: middle;
-    background-color: rgba(255, 255, 255, .3);
+    @include themify {
+      background-color: themed('color_primary_30');
+    }
 
     & .el-switch__button {
       position: absolute;
@@ -95,7 +97,9 @@
 
   @include when(checked) {
     .el-switch__core {
-      background-color: rgba(255, 255, 255, .7);
+      @include themify {
+        background-color: themed('color_hero_60')
+      }
     }
 
     & .el-switch__button {

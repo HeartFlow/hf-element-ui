@@ -64,12 +64,12 @@ $themes: (
     color_primary_60: rgba(0, 146, 176, .6),
     color_primary_80: rgba(0, 146, 176, .8),
     color_hero: rgb(255, 255, 255),             // #FFFFFF
-    color_hero_10: rgba(255, 255, 255, .1),
-    color_hero_20: rgba(255, 255, 255, .2),
+    color_hero_10: rgba(4, 105, 150, .1),
+    color_hero_20: rgba(4, 105, 150, .2),
     color_hero_30: rgba(4, 105, 150, .3),
-    color_hero_60: rgba(255, 255, 255, .6),
+    color_hero_60: rgba(4, 105, 150, .6),
     color_upper: rgb(255, 255, 255),
-    color_upper_40: rgba(255, 255, 255, .4)
+    color_upper_40: rgba(4, 105, 150, .4)
   )
 );
 
@@ -104,9 +104,11 @@ $themes: (
   @each $theme, $map in $themes {
     $hero: map-get($map, 'color_hero');
     $upper: map-get($map, 'color_upper');
-    body.#{$theme} {
+    $color_primary: map-get($map, 'color_primary');
+    .#{$theme} {
       background-color: $hero;
       background-image: linear-gradient(165deg, $upper, $hero);
+      color: $color_primary;
     }
   }
 }
