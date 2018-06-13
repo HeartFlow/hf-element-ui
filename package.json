@@ -1,7 +1,8 @@
 {
   "name": "hf-element-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Heartflow Element UI",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf lib",
@@ -15,7 +16,6 @@
     "url": "git+https://github.com/MrLyfing/hf-element-ui.git"
   },
   "author": "Philippe Eng <peng@heartflow.com>",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/MrLyfing/hf-element-ui/issues"
   },
