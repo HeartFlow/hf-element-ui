@@ -61,3 +61,7 @@ svg {
     stroke: themed('color_primary');
   }
 }
+
+.header-shadow {
+  z-index: 1;
+}

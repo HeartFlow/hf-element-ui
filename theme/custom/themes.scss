@@ -106,9 +106,18 @@ $themes: (
     $upper: map-get($map, 'color_upper');
     $color_primary: map-get($map, 'color_primary');
     .#{$theme} {
-      background-color: $hero;
-      background-image: linear-gradient(165deg, $upper, $hero);
+      @if $theme == 'theme-white' {
+        background-color: $upper;
+      } @else {
+        background-color: $hero;
+        background-image: linear-gradient(165deg, $upper, $hero);
+      }
+
       color: $color_primary;
+    }
+
+    .#{$theme} .header-shadow {
+      box-shadow: 0 15px 20px $upper;
     }
   }
 }
