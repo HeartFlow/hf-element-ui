@@ -93,8 +93,13 @@ $themes: (
   }
 }
 
-@function themed($key) {
-  @return map-get($theme-map, $key);
+@function themed($key, $opts: ()) {
+  @each $theme, $optkey in $opts {
+    @if $theme == $theme-map {
+      @return map-get($theme-map, $optkey);
+    }
+  }
+  @return map-get($theme-map, $theme-map);
 }
 
 /* Generate themes background.
@@ -112,12 +117,7 @@ $themes: (
         background-color: $hero;
         background-image: linear-gradient(165deg, $upper, $hero);
       }
-
       color: $color_primary;
-    }
-
-    .#{$theme} .header-shadow {
-      box-shadow: 0 15px 20px $upper;
     }
   }
 }
