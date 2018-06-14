@@ -66,6 +66,6 @@ svg {
   z-index: 1;
 
   @include themify {
-    box-shadow: 0 15px 20px themed('color_upper', ('white-theme': 'red'));
+    box-shadow: 0 15px 20px themed('color_upper');
   }
 }
