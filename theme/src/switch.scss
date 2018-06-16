@@ -97,7 +97,9 @@
 
   @include when(checked) {
     .el-switch__core {
-      background-color: rgba(255, 255, 255, .7);
+      @include themify {
+        background-color: themed('color_primary_70', ('theme-white': 'color_hero_70'));
+      }
     }
 
     & .el-switch__button {

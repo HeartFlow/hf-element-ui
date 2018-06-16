@@ -1,6 +1,6 @@
 {
   "name": "hf-element-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Heartflow Element UI",
   "private": true,
   "main": "index.js",

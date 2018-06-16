@@ -1,14 +1,18 @@
+$whiteOpacityColors: (
+  color_primary: rgb(255, 255, 255),          // #FFFFFF
+  color_primary_10: rgba(255, 255, 255, .1),
+  color_primary_20: rgba(255, 255, 255, .2),
+  color_primary_25: rgba(255, 255, 255, .25),
+  color_primary_30: rgba(255, 255, 255, .3),
+  color_primary_40: rgba(255, 255, 255, .4),
+  color_primary_50: rgba(255, 255, 255, .5),
+  color_primary_60: rgba(255, 255, 255, .6),
+  color_primary_70: rgba(255, 255, 255, .7),
+  color_primary_80: rgba(255, 255, 255, .8)
+);
+
 $themes: (
-  theme-default: (
-    color_primary: rgb(255, 255, 255),          // #FFFFFF
-    color_primary_10: rgba(255, 255, 255, .1),
-    color_primary_20: rgba(255, 255, 255, .2),
-    color_primary_25: rgba(255, 255, 255, .25),
-    color_primary_30: rgba(255, 255, 255, .3),
-    color_primary_40: rgba(255, 255, 255, .4),
-    color_primary_50: rgba(255, 255, 255, .5),
-    color_primary_60: rgba(255, 255, 255, .6),
-    color_primary_80: rgba(255, 255, 255, .8),
+  theme-default: map-merge($whiteOpacityColors, (
     color_hero: rgb(4, 105, 150),               // #046996
     color_hero_10: rgba(4, 105, 150, .1),
     color_hero_20: rgba(4, 105, 150, .2),
@@ -16,17 +20,8 @@ $themes: (
     color_hero_60: rgba(4, 105, 150, .6),
     color_upper: rgb(0, 146, 176),              // #0092B0
     color_upper_40: rgba(0, 146, 176, .4)
-  ),
-  theme-black: (
-    color_primary: rgb(255, 255, 255),          // #FFFFFF
-    color_primary_10: rgba(255, 255, 255, .1),
-    color_primary_20: rgba(255, 255, 255, .2),
-    color_primary_25: rgba(255, 255, 255, .25),
-    color_primary_30: rgba(255, 255, 255, .3),
-    color_primary_40: rgba(255, 255, 255, .4),
-    color_primary_50: rgba(255, 255, 255, .5),
-    color_primary_60: rgba(255, 255, 255, .6),
-    color_primary_80: rgba(255, 255, 255, .8),
+  )),
+  theme-black: map-merge($whiteOpacityColors, (
     color_hero: rgb(39, 43, 47),              // #272B2F
     color_hero_10: rgba(85, 102, 118, .1),
     color_hero_20: rgba(85, 102, 118, .2),
@@ -34,17 +29,8 @@ $themes: (
     color_hero_60: rgba(85, 102, 118, .6),
     color_upper: rgb(39, 43, 47),            // #272B2F
     color_upper_40: rgba(104, 124, 143, .4)
-  ),
-  theme-gray: (
-    color_primary: rgb(255, 255, 255),          // #FFFFFF
-    color_primary_10: rgba(255, 255, 255, .1),
-    color_primary_20: rgba(255, 255, 255, .2),
-    color_primary_25: rgba(255, 255, 255, .25),
-    color_primary_30: rgba(255, 255, 255, .3),
-    color_primary_40: rgba(255, 255, 255, .4),
-    color_primary_50: rgba(255, 255, 255, .5),
-    color_primary_60: rgba(255, 255, 255, .6),
-    color_primary_80: rgba(255, 255, 255, .8),
+  )),
+  theme-gray: map-merge($whiteOpacityColors, (
     color_hero: rgb(85, 102, 118),              // #556676
     color_hero_10: rgba(85, 102, 118, .1),
     color_hero_20: rgba(85, 102, 118, .2),
@@ -52,7 +38,7 @@ $themes: (
     color_hero_60: rgba(85, 102, 118, .6),
     color_upper: rgb(104, 124, 143),            // #687C8F
     color_upper_40: rgba(104, 124, 143, .4)
-  ),
+  )),
   theme-white: (
     color_primary: rgb(0, 146, 176),            // #0092B0
     color_primary_10: rgba(0, 146, 176, .1),
@@ -68,6 +54,7 @@ $themes: (
     color_hero_20: rgba(4, 105, 150, .2),
     color_hero_30: rgba(4, 105, 150, .3),
     color_hero_60: rgba(4, 105, 150, .6),
+    color_hero_70: rgba(4, 105, 150, .7),
     color_upper: rgb(255, 255, 255),
     color_upper_40: rgba(4, 105, 150, .4)
   )
@@ -79,7 +66,7 @@ $themes: (
 
 @mixin themify() {
   @each $theme, $map in $themes {
-
+    $currentTheme: $theme !global;
     .#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
@@ -93,7 +80,22 @@ $themes: (
   }
 }
 
-@function themed($key) {
+/**
+ * Returns the value in a theme associated with the given key.
+ *
+ * @example
+ * themed('color_primary') => Returns color_primary for all themes.
+ * themed('color_primary', ('theme-white': 'color_upper')) => Returns color_upper value for theme-white, for all themes color_primary.
+ * @param $key [Sass::Script::Value::Base]
+ * @param $opts [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Base] The theme value by $key.
+ */
+@function themed($key, $opts: ()) {
+  @each $theme, $optkey in $opts {
+    @if $currentTheme == $theme {
+      @return map-get($theme-map, $optkey);
+    }
+  }
   @return map-get($theme-map, $key);
 }
 
@@ -106,8 +108,12 @@ $themes: (
     $upper: map-get($map, 'color_upper');
     $color_primary: map-get($map, 'color_primary');
     .#{$theme} {
-      background-color: $hero;
-      background-image: linear-gradient(165deg, $upper, $hero);
+      @if $theme == 'theme-white' {
+        background-color: $upper;
+      } @else {
+        background-color: $hero;
+        background-image: linear-gradient(165deg, $upper, $hero);
+      }
       color: $color_primary;
     }
   }
