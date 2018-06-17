@@ -3,24 +3,24 @@
  */
 $themesConfig: (
   default: (
-    primary: rgb(255, 255, 255),
-    hero: rgb(4, 105, 150),
-    upper: rgb(0, 146, 176)
+    primary: rgb(255, 255, 255), // #ffffff
+    hero: rgb(4, 105, 150), // #046996
+    upper: rgb(0, 146, 176) // #0092b0
   ),
   black: (
-    primary: rgb(255, 255, 255),
-    hero: rgb(39, 43, 47),
-    upper: rgb(39, 43, 47)
+    primary: rgb(255, 255, 255), // #ffffff
+    hero: rgb(39, 43, 47), // #272b2f
+    upper: rgb(39, 43, 47) // #272b2f
   ),
   gray: (
-    primary: rgb(255, 255, 255),
-    hero: rgb(85, 102, 118),
-    upper: rgb(104, 124, 143)
+    primary: rgb(255, 255, 255), // #ffffff
+    hero: rgb(85, 102, 118), // #556676
+    upper: rgb(104, 124, 143) // #687c8f
   ),
   white: (
-    primary: rgb(0, 146, 176),
-    hero: rgb(4, 105, 150),
-    upper: rgb(255, 255, 255)
+    primary: rgb(0, 146, 176), // #0092b0
+    hero: rgb(4, 105, 150), // #046996
+    upper: rgb(255, 255, 255) // #ffffff
   )
 );
 
@@ -48,11 +48,11 @@ $themes: (
  * Generates color opacity map.
  * @return [Sass::Script::Value::Map] Color opacity map.
  */
-@function getColorOpacityMap($color, $prefix) {
-  $opacityList: map-get($colorOpacities, $prefix);
-  $colorMap: (color_#{$prefix}: $color);
+@function getColorOpacityMap($colorKey, $colorVal) {
+  $opacityList: map-get($colorOpacities, $colorKey);
+  $colorMap: (color_#{$colorKey}: $colorVal);
   @each $opacity in $opacityList {
-    $colorMap: map-merge($colorMap, (color_#{$prefix}_#{$opacity}: rgba($color, $opacity / 100)));
+    $colorMap: map-merge($colorMap, (color_#{$colorKey}_#{$opacity}: rgba($colorVal, $opacity / 100)));
   }
   @return $colorMap;
 }
@@ -60,16 +60,16 @@ $themes: (
 /**
  * Generates themes based on $themesConfig
  */
-@each $key, $config in $themesConfig {
+@each $themeName, $themeConfig in $themesConfig {
   $themeMap: ();
-  @each $colorKey, $colorVal in $config {
-    $themeMap: map-merge($themeMap, getColorOpacityMap($colorVal, $colorKey));
+  @each $colorKey, $colorVal in $themeConfig {
+    $themeMap: map-merge($themeMap, getColorOpacityMap($colorKey, $colorVal));
   }
-  // Merges custom colors defined in $themes.
-  @if map-has-key($themes, theme-#{$key}) {
-    $themeMap: map-merge($themeMap, map-get($themes, theme-#{$key}))
+  // Merges custom colors defined in $themes to override.
+  @if map-has-key($themes, theme-#{$themeName}) {
+    $themeMap: map-merge($themeMap, map-get($themes, theme-#{$themeName}))
   }
-  $themes: map-merge($themes, (theme-#{$key}: $themeMap));
+  $themes: map-merge($themes, (theme-#{$themeName}: $themeMap));
 }
 
 /* Mixin
@@ -120,7 +120,7 @@ $themes: (
     $color_primary: map-get($map, 'color_primary');
     .#{$theme} {
       @if $theme == 'theme-white' {
-        background-color: rgb(255, 255, 255);
+        background-color: $upper;
       } @else {
         background-color: $hero;
         background-image: linear-gradient(165deg, $upper, $hero);
