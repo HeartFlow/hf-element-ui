@@ -1,65 +1,76 @@
-$whiteOpacityColors: (
-  color_primary: rgb(255, 255, 255),          // #FFFFFF
-  color_primary_10: rgba(255, 255, 255, .1),
-  color_primary_20: rgba(255, 255, 255, .2),
-  color_primary_25: rgba(255, 255, 255, .25),
-  color_primary_30: rgba(255, 255, 255, .3),
-  color_primary_40: rgba(255, 255, 255, .4),
-  color_primary_50: rgba(255, 255, 255, .5),
-  color_primary_60: rgba(255, 255, 255, .6),
-  color_primary_70: rgba(255, 255, 255, .7),
-  color_primary_80: rgba(255, 255, 255, .8)
-);
-
-$themes: (
-  theme-default: map-merge($whiteOpacityColors, (
-    color_hero: rgb(4, 105, 150),               // #046996
-    color_hero_10: rgba(4, 105, 150, .1),
-    color_hero_20: rgba(4, 105, 150, .2),
-    color_hero_30: rgba(4, 105, 150, .3),
-    color_hero_60: rgba(4, 105, 150, .6),
-    color_upper: rgb(0, 146, 176),              // #0092B0
-    color_upper_40: rgba(0, 146, 176, .4)
-  )),
-  theme-black: map-merge($whiteOpacityColors, (
-    color_hero: rgb(39, 43, 47),              // #272B2F
-    color_hero_10: rgba(85, 102, 118, .1),
-    color_hero_20: rgba(85, 102, 118, .2),
-    color_hero_30: rgba(4, 105, 150, .3),
-    color_hero_60: rgba(85, 102, 118, .6),
-    color_upper: rgb(39, 43, 47),            // #272B2F
-    color_upper_40: rgba(104, 124, 143, .4)
-  )),
-  theme-gray: map-merge($whiteOpacityColors, (
-    color_hero: rgb(85, 102, 118),              // #556676
-    color_hero_10: rgba(85, 102, 118, .1),
-    color_hero_20: rgba(85, 102, 118, .2),
-    color_hero_30: rgba(4, 105, 150, .3),
-    color_hero_60: rgba(85, 102, 118, .6),
-    color_upper: rgb(104, 124, 143),            // #687C8F
-    color_upper_40: rgba(104, 124, 143, .4)
-  )),
-  theme-white: (
-    color_primary: rgb(0, 146, 176),            // #0092B0
-    color_primary_10: rgba(0, 146, 176, .1),
-    color_primary_20: rgba(0, 146, 176, .2),
-    color_primary_25: rgba(0, 146, 176, .25),
-    color_primary_30: rgba(0, 146, 176, .3),
-    color_primary_40: rgba(0, 146, 176, .4),
-    color_primary_50: rgba(0, 146, 176, .5),
-    color_primary_60: rgba(0, 146, 176, .6),
-    color_primary_80: rgba(0, 146, 176, .8),
-    color_hero: rgb(4, 105, 150),             // #046996
-    color_hero_10: rgba(4, 105, 150, .1),
-    color_hero_20: rgba(4, 105, 150, .2),
-    color_hero_30: rgba(4, 105, 150, .3),
-    color_hero_60: rgba(4, 105, 150, .6),
-    color_hero_70: rgba(4, 105, 150, .7),
-    color_upper: rgb(255, 255, 255),
-    color_upper_40: rgba(4, 105, 150, .4)
+/**
+ * Generic themes are generated based on three colors(primary, hero, upper) config.
+ */
+$themesConfig: (
+  default: (
+    primary: rgb(255, 255, 255),
+    hero: rgb(4, 105, 150),
+    upper: rgb(0, 146, 176)
+  ),
+  black: (
+    primary: rgb(255, 255, 255),
+    hero: rgb(39, 43, 47),
+    upper: rgb(39, 43, 47)
+  ),
+  gray: (
+    primary: rgb(255, 255, 255),
+    hero: rgb(85, 102, 118),
+    upper: rgb(104, 124, 143)
+  ),
+  white: (
+    primary: rgb(0, 146, 176),
+    hero: rgb(4, 105, 150),
+    upper: rgb(255, 255, 255)
   )
 );
 
+/**
+ * Color opacities in percentage.
+ */
+$colorOpacities:(
+  primary: 10 20 25 30 40 50 60 70 80,
+  hero: 10 20 30 60,
+  upper: 40
+);
+
+/**
+ * Custom theme colors.
+ * Additional color keys can be defined or generic can be overridden.
+ */
+$themes: (
+  theme-white: (
+    color_upper_40: rgba(4, 105, 150, .4),
+    color_hero_70: rgba(4, 105, 150, .7),
+  )
+);
+
+/**
+ * Generates color opacity map.
+ * @return [Sass::Script::Value::Map] Color opacity map.
+ */
+@function getColorOpacityMap($color, $prefix) {
+  $opacityList: map-get($colorOpacities, $prefix);
+  $colorMap: (color_#{$prefix}: $color);
+  @each $opacity in $opacityList {
+    $colorMap: map-merge($colorMap, (color_#{$prefix}_#{$opacity}: rgba($color, $opacity / 100)));
+  }
+  @return $colorMap;
+}
+
+/**
+ * Generates themes based on $themesConfig
+ */
+@each $key, $config in $themesConfig {
+  $themeMap: ();
+  @each $colorKey, $colorVal in $config {
+    $themeMap: map-merge($themeMap, getColorOpacityMap($colorVal, $colorKey));
+  }
+  // Merges custom colors defined in $themes.
+  @if map-has-key($themes, theme-#{$key}) {
+    $themeMap: map-merge($themeMap, map-get($themes, theme-#{$key}))
+  }
+  $themes: map-merge($themes, (theme-#{$key}: $themeMap));
+}
 
 /* Mixin
 -------------------------- */
@@ -109,7 +120,7 @@ $themes: (
     $color_primary: map-get($map, 'color_primary');
     .#{$theme} {
       @if $theme == 'theme-white' {
-        background-color: $upper;
+        background-color: rgb(255, 255, 255);
       } @else {
         background-color: $hero;
         background-image: linear-gradient(165deg, $upper, $hero);
