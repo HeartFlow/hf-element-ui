@@ -210,7 +210,7 @@ h5 {
   padding-left: 60px;
 }
 
-.table-actions .el-input {
+.table-actions > .el-input {
   display: block;
   overflow: hidden;
   width: initial;
@@ -218,12 +218,12 @@ h5 {
   top: 8px;
 }
 
-.table-actions .el-input__icon {
+.table-actions > .el-input__icon {
   font-size: 23px;
   width: 23px;
 }
 
-.table-actions .el-input__icon::before {
+.table-actions > .el-input__icon::before {
   vertical-align: middle;
 }
 
