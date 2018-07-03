@@ -3,7 +3,7 @@
     <div class="content">
       <slot></slot>
     </div>
-    <div class="actions">
+    <div>
       <hf-action-button type="secondary" @click="retryHandler" ref="btn">Retry</hf-action-button>
       <el-button type="text-secondary" class="close-btn" @click="close">Cancel</el-button>
     </div>

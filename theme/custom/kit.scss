@@ -201,12 +201,12 @@ h5 {
   margin-bottom: 20px;
 }
 
-.table-actions .actions {
+.table-actions > .actions {
   float: left;
   margin-right: 1em;
 }
 
-.table-actions .actions.selectable {
+.table-actions > .actions.selectable {
   padding-left: 60px;
 }
 
@@ -218,12 +218,12 @@ h5 {
   top: 8px;
 }
 
-.table-actions > .el-input__icon {
+.table-actions > .el-input .el-input__icon {
   font-size: 23px;
   width: 23px;
 }
 
-.table-actions > .el-input__icon::before {
+.table-actions > .el-input .el-input__icon::before {
   vertical-align: middle;
 }
 
