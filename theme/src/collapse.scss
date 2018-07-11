@@ -12,7 +12,6 @@
     height: $--collapse-header-height;
     line-height: $--collapse-header-height;
     cursor: pointer;
-    font-size: $--collapse-header-size;
     font-weight: 500;
     outline: none;
     @include themify {
@@ -44,7 +43,6 @@
 
   @include e(content) {
     padding-bottom: 25px;
-    font-size: $--collapse-content-size;
     line-height: 1.769230769230769;
   }
 
