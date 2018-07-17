@@ -103,7 +103,7 @@
             <el-row>
             <el-col :span="12">
               <el-form-item :label="formData.switchEnabled">
-                <el-switch v-model="formData.switchEnabled" inactive-value="All Enabled" active-value="My Enabled"></el-switch>
+                <el-switch class="processing" v-model="formData.switchEnabled" inactive-value="All Enabled" active-value="My Enabled"></el-switch>
                 <el-switch v-model="formData.switchEnabled" inactive-value="My Enabled" active-value="All Enabled"></el-switch>
               </el-form-item>
               <el-form-item :label="formData.switchDisabled">
@@ -113,7 +113,7 @@
               <el-form-item label="Radio buttons">
                 <el-radio-group v-model="formData.transport">
                   <el-radio label="car">Car</el-radio>
-                  <el-radio label="bicycle">Bicycle</el-radio>
+                  <el-radio class="processing" label="bicycle">Bicycle</el-radio>
                 </el-radio-group>
               </el-form-item>
               <el-form-item label="Radio disabled">
