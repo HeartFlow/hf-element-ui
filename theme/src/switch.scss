@@ -16,6 +16,10 @@
     }
   }
 
+  &.processing .el-switch__core {
+    cursor: progress;
+  }
+
   @include e(label) {
     cursor: pointer;
     opacity: .6;
