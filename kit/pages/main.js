@@ -115,7 +115,6 @@ export default {
         'settings', 'share', 'site', 'stenosis', 'tag', 'uprev', 'warning',
         'work_instructions', 'more', 'uploading', 'public', 'comment',
         'customer_support', 'high_priority_connect', 'numeric_stepper', 'completed',
-        'billing_hap'
       ],
       iconsHFLarge: [
         'pdf_analysis', 'add_member', 'bypass_fill', 'bypass_stroke', 'cancel',
