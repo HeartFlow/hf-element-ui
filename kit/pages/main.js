@@ -103,7 +103,7 @@ export default {
         'settings', 'uprev', 'low_priority', 'deviation', 'add', 'calendar',
         'ctqa', 'delete', 'filter_idle', 'groups_internal_production_manager',
         'edit', 'ncr', 'numeric_stepper', 'pinning', 'qc', 'visibility_off',
-        'visibility_on', 'workstation', 'locked', 'chevron',
+        'visibility_on', 'workstation', 'locked', 'chevron', 'billing_hap'
       ],
       iconsHFStandard: [
         'disclosure_left', 'disclosure_right', 'info', 'add', 'add_member',
@@ -115,6 +115,7 @@ export default {
         'settings', 'share', 'site', 'stenosis', 'tag', 'uprev', 'warning',
         'work_instructions', 'more', 'uploading', 'public', 'comment',
         'customer_support', 'high_priority_connect', 'numeric_stepper', 'completed',
+        'billing_hap'
       ],
       iconsHFLarge: [
         'pdf_analysis', 'add_member', 'bypass_fill', 'bypass_stroke', 'cancel',
