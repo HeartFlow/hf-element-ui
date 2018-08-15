@@ -157,12 +157,14 @@ i.el-input__validateIcon.el-icon-circle-close::before {
   font-size: 15px;
 }
 
-// these classess don't exist in the font, they are created based on icon-standard-neutralized_quarantine class.
+// these classes don't exist in the font, they are created based on icon-standard-neutralized_quarantine class.
 .icon-small-soft_quarantine:before { content: '\e825'; background-color: #F5D323; border-radius: 50%; } /* '' */
 .icon-small-hard_quarantine:before { content: '\e825'; background-color: #F54423; border-radius: 50%; } /* '' */
 .icon-standard-soft_quarantine:before { content: '\e825'; background-color: #F5D323; border-radius: 50%; } /* '' */
 .icon-standard-hard_quarantine:before { content: '\e825'; background-color: #F54423; border-radius: 50%; } /* '' */
 
+// global font-sizes selector(small, standard..) for resizing icon can't be applied on a svg element
+.icon-small-billing_hap:before { content: url('./svg/hap-icon.svg'); }
 
 .icon-small-disclosure_left:before { content: '\e881'; } /* '' */
 .icon-small-disclosure_right:before { content: '\e882'; } /* '' */

@@ -103,7 +103,7 @@ export default {
         'settings', 'uprev', 'low_priority', 'deviation', 'add', 'calendar',
         'ctqa', 'delete', 'filter_idle', 'groups_internal_production_manager',
         'edit', 'ncr', 'numeric_stepper', 'pinning', 'qc', 'visibility_off',
-        'visibility_on', 'workstation', 'locked', 'chevron',
+        'visibility_on', 'workstation', 'locked', 'chevron', 'billing_hap'
       ],
       iconsHFStandard: [
         'disclosure_left', 'disclosure_right', 'info', 'add', 'add_member',
