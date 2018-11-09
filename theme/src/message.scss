@@ -30,13 +30,13 @@
   }
 
   a {
+    @include themify {
+      color: themed('color_hero_60');
+    }
     &:hover {
       @include themify {
-        color: themed('color_hero_60');
+        color: themed('color_hero');
       }
-    }
-    @include themify {
-      color: themed('color_hero');
     }
   }
 
