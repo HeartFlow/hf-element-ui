@@ -2,7 +2,7 @@
 
 ## Install
 ```shell
-npm install [TBD]:hf-element-ui -S
+npm i -S github:HeartFlow/hf-element-ui
 ```
 
 ## Prerequisites
@@ -42,7 +42,7 @@ Edit .babelrc (`babel-plugin-component` must be installed)
 }
 ```
 ## Available Element UI components
-Refer to [Element UI components documentation](http://element.eleme.io/#/en-US/component/installation) for more information
+Refer to [Element UI components documentation](http://element.eleme.io/2.3/#/en-US/component/installation) for more information
 
 - autocomplete
 - breadcrumb
@@ -87,8 +87,8 @@ Notes: Prefix by `<el-[component-name]>` to use the component in the HTML templa
 Usage
 ```html
 <template>
-  <hf-action-button 
-    icon="icon-standard-refresh" 
+  <hf-action-button
+    icon="icon-standard-refresh"
     @click="onRefreshButtonClick"
     ref="refreshButton">
   </hf-action-button>
@@ -141,7 +141,7 @@ components: {
 ### Maintaining CSS
 CSS styles are located in `lib` folder.
 
-- If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding `<component_name>.scss` file(s) in `theme/src` folder picked from [ElementUI/theme-chalk](https://github.com/ElementUI/theme-chalk) with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too. 
+- If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding `<component_name>.scss` file(s) in `theme/src` folder picked from [ElementUI/theme-chalk](https://github.com/ElementUI/theme-chalk) with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too.
 - `npm run build` runs [the forked theme generator](https://github.com/syn-zeta/element-theme). It will compile CSS files under `theme` using `element-variables.css` and output them to `lib` that will be consumed your application. It will include that particular component's CSS.
 - For generating different themes, SCSS variables and mixins defined in `theme/themes.scss` are used in style definitions.
 
@@ -165,4 +165,4 @@ will have to be maintained and kept up-to-date whenever ElementUI's version is u
 
 ### Watch mode with UI Kit
 
-`npm run watch` will allow to run the UI kit while watching the `*.scss` files under `theme` folder. Any update to those files will trigger a new build and new changes will be reflected to the UI kit. Make sure that `lib` containing the output generated css exists (created by `npm run build`) 
+`npm run watch` will allow to run the UI kit while watching the `*.scss` files under `theme` folder. Any update to those files will trigger a new build and new changes will be reflected to the UI kit. Make sure that `lib` containing the output generated css exists (created by `npm run build`)
