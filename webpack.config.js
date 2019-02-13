@@ -1,7 +1,7 @@
 const path = require('path')
-const webpack = require('webpack')
-const chalk = require('chalk')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const webpack = require('webpack')
 
 function resolve(dir) {
   return path.resolve(__dirname, dir)
@@ -9,6 +9,7 @@ function resolve(dir) {
 
 module.exports = {
   context: resolve('./kit'),
+  mode: 'production',
   entry: {
     kit: './kit.js'
   },
@@ -59,11 +60,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.NormalModuleReplacementPlugin(/element-ui[\/\\]lib[\/\\]locale[\/\\]lang[\/\\]zh-CN/, 'element-ui/lib/locale/lang/en'),
     new webpack.HotModuleReplacementPlugin(),
-    new ProgressBarPlugin({
-      format: 'build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)\n',
-      clear: false
-    }),
+    new ProgressBarPlugin(),
+    new VueLoaderPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
