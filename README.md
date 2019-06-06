@@ -6,7 +6,7 @@ npm i -S github:HeartFlow/hf-element-ui
 ```
 
 ## Prerequisites
-- Webpack (Please refer to this [configuration](https://github.com/MrLyfing/hf-element-ui/blob/master/webpack.config.js))
+  - Webpack (Please refer to this [configuration](webpack.config.js))
   - babel-loader
   - css-loader
   - file-loader (configured for loading fonts)
@@ -14,7 +14,7 @@ npm i -S github:HeartFlow/hf-element-ui
   - [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)
 
 ## Getting started
-``` javascript
+```javascript
 import Vue from 'vue'
 
 import { registerElementUIComponents } from 'hf-element-ui'
