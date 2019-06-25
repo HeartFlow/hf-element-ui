@@ -1,0 +1,119 @@
+/* Loading */
+.el-loading-mask {
+  background: rgba(255, 255, 255, .05);
+}
+
+.el-loading-spinner .path {
+  stroke: white;
+}
+
+/* InputNumber */
+.el-input-number__increase,
+.el-input-number__decrease {
+  font-size: 7px;
+}
+
+.el-input-number__increase {
+  transform: scaleY(-1);  /* flip since same icon is used as decrease */
+}
+
+/* Dropdown, Select */
+.el-select-dropdown .popper__arrow,
+.el-dropdown-menu .popper__arrow,
+.el-picker-panel .popper__arrow {
+  display: none;
+}
+
+.el-select-dropdown__item,
+.el-dropdown-menu__item {
+  padding: 0 15px;
+}
+
+/* Button */
+.el-button i {
+  line-height: 12px;  /* button's height gets affected without this */
+}
+
+
+/*
+ * Element UI default icons
+**/
+i.el-icon-search::before {
+  font-family: "heartflow_iconography";
+  content: "\e87c";
+}
+
+i.el-icon-warning::before {
+  font-family: "heartflow_iconography";
+  content: "\e83d";
+}
+
+i.el-icon-time::before, i.el-icon-date::before {
+  font-family: "heartflow_iconography";
+  content: '\e8ac';
+}
+
+i.el-icon-arrow-up::before {
+  font-family: "heartflow_iconography";
+  content: '\e804'; /* chevron */
+  font-size: 8px;
+}
+
+.el-icon-caret-bottom::before {
+  font-family: "heartflow_iconography";
+  content: '\e804'; /* chevron */
+  font-size: 8px;
+}
+
+.el-icon-caret-right::before {
+  font-family: "heartflow_iconography";
+  content: '\e860'; /* chevron_right */
+  font-size: 8px;
+}
+
+.el-input-number__increase i.el-icon-arrow-up::before {
+  font-family: "heartflow_iconography";
+  content: '\e804'; /* chevron */
+}
+
+.el-input-number__decrease i.el-icon-arrow-down::before {
+  font-family: "heartflow_iconography";
+  content: '\e804'; /* chevron */
+}
+
+i.el-input__validateIcon.el-icon-circle-close::before {
+  font-family: "heartflow_iconography";
+  content: '\e868';
+}
+
+.el-message__closeBtn.el-icon-close::before,
+.el-notification__closeBtn.el-icon-close::before {
+  font-family: "heartflow_iconography";
+  content: '\e8a7';
+}
+
+/*
+ * Custom icon classes
+**/
+
+// Global font-sizes for custom icons
+[class^="icon-large-"],
+[class*=" icon-large-"] {
+  font-size: 50px;
+}
+
+[class^="icon-standard-"],
+[class*=" icon-standard-"] {
+  font-size: 22px;
+}
+
+[class^="icon-small-"],
+[class*=" icon-small-"] {
+  font-size: 15px;
+}
+
+// these classes are based on icon-standard-neutralized_quarantine class
+.icon-small-soft_quarantine:before { content: '\e825'; background-color: #F5D323; border-radius: 50%; }
+.icon-small-hard_quarantine:before { content: '\e825'; background-color: #F54423; border-radius: 50%; }
+.icon-standard-soft_quarantine:before { content: '\e825'; background-color: #F5D323; border-radius: 50%; }
+.icon-standard-hard_quarantine:before { content: '\e825'; background-color: #F54423; border-radius: 50%; }
