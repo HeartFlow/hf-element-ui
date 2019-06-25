@@ -92,37 +92,46 @@ export default {
         'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
       ],
       selectedState: '',
-      iconsElementUI: ['close', 'more', 'delete', 'edit', 'share', 'arrow-left', 'arrow-right'],
+      // overridden icons
+      iconsElementUI: [
+        'search', 'warning', 'time', 'arrow-up', 'arrow-down', 'caret-bottom', 'caret-right',
+        'cicle-close', 'close'
+      ],
       iconsHFSmall: [
-        'disclosure_left', 'disclosure_right', 'close', 'profile', 'search',
-        'help', 'warning', 'mobile_close', 'filter_applied', 'billing',
-        'high_priority', 'high_priority_connect', 'completed', 'public',
-        'returned', 'admin', 'cath', 'credit_card', 'uploading', 'processing',
-        'download', 'email', 'flag', 'groups_internal_production',
-        'groups_internal_cs', 'groups_internal_admin', 'groups_internal_pqe',
-        'settings', 'uprev', 'low_priority', 'deviation', 'add', 'calendar',
-        'ctqa', 'delete', 'filter_idle', 'groups_internal_production_manager',
-        'edit', 'ncr', 'numeric_stepper', 'pinning', 'qc', 'visibility_off',
-        'visibility_on', 'workstation', 'locked', 'chevron'
+        'add', 'admin', 'billing', 'calendar', 'care_team', 'care_team_unpopulated',
+        'cath', 'chevron', 'chevron_left', 'chevron_right', 'clinician', 'close',
+        'completed', 'connect', 'credit_card', 'ctqa', 'delete', 'deviation',
+        'disabled', 'download', 'edit', 'email', 'filter_applied', 'filter_idle',
+        'flag', 'groups_billing', 'groups_cath', 'groups_internal_admin',
+        'groups_internal_cs', 'groups_internal_pqe', 'groups_internal_production',
+        'groups_internal_production_manager', 'hamburger', 'hap', 'help',
+        'high_priority', 'high_priority_connect', 'limited_member', 'locked',
+        'low_priority', 'member', 'mobile_close', 'ncr', 'pending', 'pinning',
+        'processing', 'profile', 'public', 'qc', 'quarantine', 'returned', 'search',
+        'settings', 'uploading', 'uprev', 'visibility_off', 'visibility_on',
+        'warning', 'workstation'
       ],
       iconsHFStandard: [
-        'disclosure_left', 'disclosure_right', 'info', 'add', 'add_member',
-        'filter_applied', 'calendar', 'cancelled', 'close', 'collapse',
-        'delete', 'deviation', 'download', 'edit', 'email', 'expand', 'flag',
-        'global', 'help', 'high_priority', 'member', 'locked', 'medication',
-        'filter_idle', 'neutralized_quarantine', 'occlusion', 'pdf_analysis',
-        'phone', 'processing', 'profile', 'refresh', 'returned', 'search',
-        'settings', 'share', 'site', 'stenosis', 'tag', 'uprev', 'warning',
-        'work_instructions', 'more', 'uploading', 'public', 'comment',
-        'customer_support', 'high_priority_connect', 'numeric_stepper', 'completed'
+        'add', 'add_member', 'all', 'billing_hap', 'calendar', 'cancel', 'care_team',
+        'care_team_unpopulated', 'chevron', 'chevron_left', 'chevron_right', 'close',
+        'collapse', 'comment', 'completed', 'connect', 'copy', 'cs_note',
+        'customer_support', 'delete', 'deviation', 'disabled', 'download', 'edit',
+        'email', 'expand', 'export', 'filter_applied', 'filter_idle', 'flag',
+        'global', 'help', 'high_priority', 'high_priority_connect', 'info',
+        'limited_member', 'location', 'locked', 'medication', 'member', 'more',
+        'nav_window', 'neutralized_quarantine', 'occlusion', 'open', 'pdf_analysis',
+        'pending', 'phone', 'preloader_failure', 'processing', 'profile', 'public',
+        'quarantine', 'refresh', 'resubmit', 'returned', 'save', 'search', 'settings',
+        'share', 'site', 'stenosis', 'tag', 'timer', 'undo', 'uploading', 'uprev',
+        'warning', 'work_instructions'
       ],
       iconsHFLarge: [
-        'pdf_analysis', 'add_member', 'bypass_fill', 'bypass_stroke', 'cancel',
-        'close', 'ct_scanner', 'deviation', 'duplicate', 'email', 'heart',
-        'modify_ncr', 'patient', 'phone', 'profile', 'reprocess', 'revert',
-        'settings', 'suspect_ncr', 'unlocked', 'workstation', 'pinning', 'ctqa',
-        'customer_support', 'location', 'comment', 'files', 'qc', 'ncr', 'warning',
-        'workstation_read_only'
+        'add_member', 'bypass_fill', 'bypass_stroke', 'cancel', 'chevron_left', 'chevron_right',
+        'close', 'comment', 'completed', 'ct_scanner', 'ctqa', 'customer_support', 'deviation',
+        'duplicate', 'email', 'file_download', 'files', 'global', 'heart', 'location', 'member',
+        'modify_ncr', 'ncr', 'patient', 'pdf_analysis', 'phone', 'pinning', 'processing',
+        'profile', 'qc', 'quick_duplicate', 'reprocess', 'returned', 'revert', 'settings',
+        'suspect_ncr', 'unlocked', 'warning', 'workstation', 'workstation_read_only'
       ],
       multipleSelection: [],
       privileges: ['Analyst', 'Analyst Manager', 'PQE'],
