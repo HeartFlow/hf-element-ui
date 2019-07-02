@@ -5,8 +5,7 @@
         popper-class="column-daterange-filter" v-if="type === 'datetimerange'" type="datetimerange"
         format="yyyy-MM-dd HH:mm" :editable="false" :clearable="false" @click.native="setDefaultRange"
         :picker-options="options.pickerOptions" v-model="filterVal" ref="dtr" class="daterange-input" @change="filterDateChange"
-        @blur="onDatePickerBlur" @focus="onDatePickerFocus"
-    >
+        @blur="onDatePickerBlur" @focus="onDatePickerFocus">
     </el-date-picker>
     <template v-else-if="type === 'select'">
       <el-popover popper-class="filter-select-parent-popper" ref="dropdown" placement="bottom" trigger="click"
@@ -33,19 +32,19 @@ export default {
         type: Array,
         default: () => []
       },
-      pickerOptions: Object,
+      pickerOptions: Object
     },
     selectedVal: {
       type: Array,
       default: () => []
-    },
+    }
   },
 
   data() {
     return {
       filterVal: this.type === 'datetimerange' ? this.selectedVal : this.selectedVal.map(val => {
         return this.options.selectOptions.find(option => option.value === val)
-      }),
+      })
     }
   },
 
@@ -101,10 +100,10 @@ export default {
           this.$refs.filterSelect.$refs.searchInput.focus()
         })
       }
-    },
+    }
   },
   components: {
-    'hf-filter-select': FilterSelect,
+    'hf-filter-select': FilterSelect
   }
 }
 </script>

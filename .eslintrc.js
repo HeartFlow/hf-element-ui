@@ -1,44 +1,57 @@
 module.exports = {
   root: true,
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-  env: {
-    browser: true
-  },
-  extends: [
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard',
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
+  'extends': [
+    'plugin:vue/essential',
+    '@vue/standard'
   ],
-  // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
-  // add your custom rules here
-  'rules': {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
     // allow comma-dangle
-    'comma-dangle': [1, "only-multiline", {
-        "arrays": "always",
-        "objects": "always",
-        "imports": "always",
-        "exports": "always",
-        "functions": "never",
+    'comma-dangle': [1, 'only-multiline', {
+      'arrays': 'always',
+      'objects': 'always',
+      'imports': 'always',
+      'exports': 'always',
+      'functions': 'never',
     }],
-    // allow async-await
+
     'generator-star-spacing': 0,
+
     // allow end-of-line comments to have multiple spaces before them
-    'no-multi-spaces': ["error", { ignoreEOLComments: true }],
+    'no-multi-spaces': ['error', { ignoreEOLComments: true }],
+
     'space-before-function-paren': ['error', {
       'anonymous': 'never',
       'named': 'never',
       'asyncArrow': 'ignore'
     }],
-    // allow new syntax
-    'no-new': 0,
+
+    /* Vue */
+    'vue/array-bracket-spacing': 'error',
+    'vue/arrow-spacing': 'error',
+    'vue/block-spacing': 'error',
+
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+
+    'vue/html-closing-bracket-newline': ['error', {
+      'singleline': 'never',
+      'multiline': 'never'
+    }],
+
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 5,
+      'multiline': {
+        'max': 5,
+        'allowFirstLine': true
+      }
+    }],
+
+    // allow elements to contain content on a single line
+    'vue/singleline-html-element-content-newline': 0,
   },
-};
+  parserOptions: {
+    parser: 'babel-eslint'
+  }
+}

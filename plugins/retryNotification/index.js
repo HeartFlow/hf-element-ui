@@ -5,7 +5,7 @@ const RetryNotificationPlugin = {
     var retryNotification_
     var config_
 
-    function init_(self, {retryData, retryAction}, defaultSlot) {
+    function init_(self, { retryData, retryAction }, defaultSlot) {
       retryNotification_ = self.$notify({
         title: 'Oops!',
         duration: 0,
@@ -23,11 +23,11 @@ const RetryNotificationPlugin = {
           },
           scopedSlots: {
             default: () => defaultSlot()
-          },
+          }
         }),
         onClose: () => {
           retryNotification_ = null
-        },
+        }
       })
     }
 
