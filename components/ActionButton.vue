@@ -45,7 +45,7 @@ export default {
       type: String,
       default: ''
     },
-    disabled: Boolean,
+    disabled: Boolean
   },
 
   data() {
@@ -54,7 +54,7 @@ export default {
       spinning: false,
       success: false,
       failure: false,
-      throbbing: false,
+      throbbing: false
     }
   },
 

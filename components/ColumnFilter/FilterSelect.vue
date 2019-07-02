@@ -1,19 +1,19 @@
 <template>
   <div class="filter-select no-select">
     <div class="input-group">
-      <el-input size="mini" class="input" ref="searchInput" prefix-icon="icon-small-search" @input="onInput"></el-input>
+      <el-input size="mini" class="input" ref="searchInput" prefix-icon="icon-small-search" @input="onInput" />
       <div class="all-none">
         <span class="link" @click="selectVisibleOptions">All</span><!--
      --><span>|</span><span class="link" @click="deselectVisibleOptions">None</span>
       </div>
     </div>
     <div class="select" v-if="visibleOptions.length">
-      <div class="option" :class="{'option-selected': isSelected(option)}" v-for="(option, i) in options" :key="i"
-           v-if="shouldDisplay(option.label)" @click="optionClick(option)">
+      <div class="option" :class="{'option-selected': isSelected(option)}" v-for="(option, i) in visibleOptions" :key="i"
+           @click="optionClick(option)">
         <div class="label-wrapper">
-          <span class="nowrap">{{option.label}}</span>
+          <span class="nowrap">{{ option.label }}</span>
         </div>
-        <i v-visible="isSelected(option)" :class="icon + ' option-icon'"></i>
+        <i v-visible="isSelected(option)" :class="icon + ' option-icon'" />
       </div>
     </div>
     <div v-else class="no-options">
@@ -25,33 +25,32 @@
 
 <script>
 import debounce from 'lodash.debounce'
-import VueVisible from 'vue-visible'
 
 export default {
   props: {
     value: {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     options: {
       type: Array,
-      default: () => [],
+      default: () => []
     },
     icon: {
       type: String,
-      default: 'icon-small-completed',
-    },
+      default: 'icon-small-completed'
+    }
   },
   data() {
     return {
       filter: '', /* always set in lowercase */
-      selected: [],
+      selected: []
     }
   },
   computed: {
     visibleOptions() {
       return this.options.filter(option => (option.label.toLowerCase().includes(this.filter)))
-    },
+    }
   },
   methods: {
     onChange: debounce(function(option) {
@@ -87,18 +86,12 @@ export default {
     onInput(filter) {
       this.filter = filter.toLowerCase()
     },
-    shouldDisplay(label) {
-      return this.filter ? label.toLowerCase().indexOf(this.filter) !== -1 : true
-    },
     findSelectedOptionIndex(option) {
       return this.value.findIndex(item => (item.value === option.value))
     },
     isSelected(option) {
       return this.value.some(item => (item.value === option.value))
-    },
-  },
-  directives: {
-    'visible': VueVisible
+    }
   }
 }
 </script>

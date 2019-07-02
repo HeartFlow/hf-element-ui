@@ -31,14 +31,14 @@ export default {
       theme: {
         selected: themes.length && themes[0],
         options: themes
-      },
+      }
     }
   },
   methods: {
     handleCommand(command) {
       this.theme.selected = command
       document.body.className = command
-    },
-  },
+    }
+  }
 }
 </script>

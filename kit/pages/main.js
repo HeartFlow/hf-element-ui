@@ -21,15 +21,15 @@ export default {
         multipleOption: [],
         switchEnabled: 'All Enabled',
         switchDisabled: 'All Disabled',
-        numberField: 88,
+        numberField: 88
       },
       certifications: [
         'Start', 'CTQA', 'Aorta', 'Landmarks', 'Circularization', 'Myocardium',
-        'Centerlines', 'Labeling', 'Lumen', 'Finalize', 'Pinning', 'QC', 'NCR',
+        'Centerlines', 'Labeling', 'Lumen', 'Finalize', 'Pinning', 'QC', 'NCR'
       ].map((label, key) => ({
         key,
         label,
-        disabled: label === 'Centerlines',
+        disabled: label === 'Centerlines'
       })),
       selectedCertifications: [0, 3],
       renderTransferContent: (h, option) => {
@@ -114,7 +114,7 @@ export default {
         'phone', 'processing', 'profile', 'refresh', 'returned', 'search',
         'settings', 'share', 'site', 'stenosis', 'tag', 'uprev', 'warning',
         'work_instructions', 'more', 'uploading', 'public', 'comment',
-        'customer_support', 'high_priority_connect', 'numeric_stepper', 'completed',
+        'customer_support', 'high_priority_connect', 'numeric_stepper', 'completed'
       ],
       iconsHFLarge: [
         'pdf_analysis', 'add_member', 'bypass_fill', 'bypass_stroke', 'cancel',
@@ -122,7 +122,7 @@ export default {
         'modify_ncr', 'patient', 'phone', 'profile', 'reprocess', 'revert',
         'settings', 'suspect_ncr', 'unlocked', 'workstation', 'pinning', 'ctqa',
         'customer_support', 'location', 'comment', 'files', 'qc', 'ncr', 'warning',
-        'workstation_read_only',
+        'workstation_read_only'
       ],
       multipleSelection: [],
       privileges: ['Analyst', 'Analyst Manager', 'PQE'],
@@ -187,14 +187,14 @@ export default {
       },
       assignOptions: [{
         label: 'Signed In',
-        options: [{user: {first_name: 'John', user_id: 1, 'last_name': 'Doe'}},
-          {user: {first_name: 'Tom', user_id: 2, 'last_name': 'Sawyer'}},
-          {user: {first_name: 'Micky', user_id: 3, 'last_name': 'Mouse'}},
-          {user: {first_name: 'Rodger', user_id: 4, 'last_name': 'Federer'}}]
+        options: [{ user: { first_name: 'John', user_id: 1, 'last_name': 'Doe' } },
+          { user: { first_name: 'Tom', user_id: 2, 'last_name': 'Sawyer' } },
+          { user: { first_name: 'Micky', user_id: 3, 'last_name': 'Mouse' } },
+          { user: { first_name: 'Rodger', user_id: 4, 'last_name': 'Federer' } }]
       }, {
         label: 'Signed Out',
-        options: [{user: {first_name: 'Johny', user_id: 5, 'last_name': 'Johnson'}},
-          {user: {first_name: 'Sven', user_id: 6, 'last_name': 'Svenson'}}]
+        options: [{ user: { first_name: 'Johny', user_id: 5, 'last_name': 'Johnson' } },
+          { user: { first_name: 'Sven', user_id: 6, 'last_name': 'Svenson' } }]
       }]
     }
   },
@@ -243,7 +243,7 @@ export default {
               selectOptions: [
                 'Start', 'Centerlines', 'Lumen', 'Finalize', 'Pinning', 'QC', 'Completed'
               ].map((el, i) => ({ label: el, value: i + 1 }))
-            },
+            }
           }
           break
         case 8:
@@ -271,7 +271,7 @@ export default {
 
     notify() {
       this.retryNotify.show()
-    },
+    }
   },
 
   mounted() {
@@ -290,13 +290,13 @@ export default {
   },
 
   components: {
-    'hf-action-button': ActionButton,
-    'hf-collapsible': Collapsible,
-    'hf-vertical-list': VerticalList
+    ActionButton,
+    Collapsible,
+    VerticalList
   },
 
   directives: {
     'visible': VueVisible,
-    'hf-blur': BlurDirective
+    BlurDirective
   }
 }

@@ -1,17 +1,13 @@
-# Heartflow Element UI
+# Heartflow Element UI theme
+
+[Demo of the UI kit here](https://heartflow.github.io/hf-element-ui)
 
 ## Install
 ```shell
 npm i -S github:HeartFlow/hf-element-ui
 ```
 
-## Prerequisites
-  - Webpack (Please refer to this [configuration](webpack.config.js))
-  - babel-loader
-  - css-loader
-  - file-loader (configured for loading fonts)
-  - vue-loader
-  - [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)
+You can view a project example in `/kit` folder.
 
 ## Getting started
 ```javascript
@@ -115,7 +111,6 @@ methods: {
 components: {
   'hf-action-button': ActionButton
 }
-
 </script>
 ```
 

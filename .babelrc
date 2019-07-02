@@ -1,15 +1,13 @@
 {
   "presets": [
-    ["es2015", { "modules": false }]
+    ["@vue/app"]
   ],
   "plugins": [
     [
-      "component", [{
+      "component", {
         "libraryName": "element-ui",
         "styleLibraryName": "~lib"
-      }]
-    ],
-    ["transform-object-rest-spread"],
-    ["transform-runtime"]
+      }
+    ]
   ]
 }

@@ -257,9 +257,9 @@
           <h3>Data Table</h3>
           <div class="table-actions el-row">
             <div class="actions">
-              <hf-action-button icon="icon-standard-refresh" @click="onRefreshButtonClick"
-                                ref="refreshButton"></hf-action-button>
-              <el-button v-hf-blur>Reset filters</el-button>
+              <action-button icon="icon-standard-refresh" @click="onRefreshButtonClick"
+                                ref="refreshButton"></action-button>
+              <el-button v-blur>Reset filters</el-button>
             </div>
             <el-input prefix-icon="el-icon-search"></el-input>
           </div>
@@ -301,7 +301,7 @@
           <h3>Expandable Rows Table</h3>
           <el-table :data="tableData" @selection-change="handleSelectionChange">
             <el-table-column type="expand">
-              <template slot-scope="scope">
+              <template>
                 Tons of great content!
               </template>
             </el-table-column>
@@ -313,7 +313,7 @@
               </template>
             </el-table-column>
             <el-table-column width="75">
-              <template slot-scope="scope">
+              <template>
                 <i class="icon-small-delete table-row-hover-show table-row-expanded-show"
                    @click="secondaryDialogVisible = !secondaryDialogVisible"></i>
               </template>
@@ -332,11 +332,11 @@
       <el-col :span="12">
         <div class="panel">
           <h3>Collapsible (with content)</h3>
-          <hf-collapsible>
+          <collapsible>
             <span style="font-size: 20px; margin-bottom: 10px; display: inline-block" slot="header">User Interface</span>
             <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
             <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
-          </hf-collapsible>
+          </collapsible>
         </div>
       </el-col>
       <el-col :span="12">
@@ -347,18 +347,18 @@
           </el-button>
           <el-row>
             <el-col :span="12">
-              <hf-vertical-list style="height: 150px; display: inline-block" :loading="verticalListLoading">
+              <vertical-list style="height: 150px; display: inline-block" :loading="verticalListLoading">
                 <h5 slot="title">Food Groups</h5>
                 <li slot="items" v-for="(foodGroup, i) in foodGroups" :key="i">{{foodGroup}}</li>
-              </hf-vertical-list>
+              </vertical-list>
             </el-col>
             <el-col :span="12">
-              <hf-vertical-list style="height: 150px; display: inline-block" :loading="verticalListLoading">
+              <vertical-list style="height: 150px; display: inline-block" :loading="verticalListLoading">
                 <h5 slot="title">Privileges</h5>
                 <li slot="items" v-for="(privilege, i) in privileges" :key="i">
                   <a :href="`#/${privilege}`">{{privilege}}</a>
                 </li>
-              </hf-vertical-list>
+              </vertical-list>
             </el-col>
           </el-row>
         </div>

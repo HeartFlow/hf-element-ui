@@ -31,7 +31,7 @@ import {
   Table,
   TableColumn,
   Tooltip,
-  Transfer,
+  Transfer
 } from 'element-ui'
 
 import ActionButton from './components/ActionButton'
