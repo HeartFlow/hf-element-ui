@@ -4,8 +4,8 @@
       <slot></slot>
     </div>
     <div>
-      <hf-action-button type="secondary" @click="retryHandler" ref="btn">Retry</hf-action-button>
-      <el-button type="text-secondary" class="close-btn" @click="close">Cancel</el-button>
+      <hf-action-button type="alt" @click="retryHandler" ref="btn">Retry</hf-action-button>
+      <el-button type="alt-secondary" class="close-btn" @click="close">Cancel</el-button>
     </div>
   </div>
 </template>

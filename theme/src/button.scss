@@ -19,8 +19,8 @@
   border: none;
 
   @include themify {
-    background: themed('color_primary_10');
-    color: themed('color_primary');
+    background: themed('color_tertiary');
+    color: themed('color_quaternary');
   }
 
   @include utils-user-select(none);
@@ -34,7 +34,8 @@
   &:focus,
   &:active {
     @include themify {
-      background: themed('color_primary_20');
+      background: themed('color_tertiary_20');
+      color: themed('color_tertiary');
     }
     outline: none;
   }
@@ -75,28 +76,28 @@
     &:hover,
     &:focus {
       @include themify {
-        color: themed('color_primary_40');
-        background-color: themed('color_primary_10');
+        color: themed('color_tertiary_30');
+        background-color: themed('color_tertiary_20');
       }
       cursor: not-allowed;
     }
 
-    &.el-button--text {
-      @include themify {
-        color: themed('color_primary_30');
-      }
-    }
-
     &.el-button--secondary {
       @include themify {
-        color: themed('color_upper_40');
-        background-color: themed('color_hero_10');
+        color: themed('color_tertiary_30');
       }
     }
 
-    &.el-button--text-secondary {
+    &.el-button--alt {
       @include themify {
-        color: themed('color_hero_30');
+        color: themed('color_upper_40');
+        background-color: themed('color_quaternary_10');
+      }
+    }
+
+    &.el-button--alt-secondary {
+      @include themify {
+        color: themed('color_quaternary_30');
       }
     }
 
@@ -117,9 +118,9 @@
       background: themed('color_primary_20');
     }
 
-    &.el-button--secondary {
+    &.el-button--alt {
       @include themify {
-        background-color: themed('color_hero_20');
+        background-color: themed('color_quaternary_20');
       }
     }
   }
@@ -158,63 +159,64 @@
   }
   */
 
-  @include m(text) {
-    @include themify {
-      color: themed('color_primary_60');
-    }
-    border: none;
-    background: transparent !important;
-    padding-left: 0;
-    padding-right: 0;
-
-    &:hover,
-    &:focus,
-    &:active {
-      @include themify {
-        color: themed('color_primary');
-      }
-    }
-  }
-
-  @include m(text-secondary) {
-    @include themify {
-      color: themed('color_hero_60');
-    }
-    border: none;
-    background: transparent !important;
-    padding-left: 0;
-    padding-right: 0;
-
-    &:hover,
-    &:focus,
-    &:active {
-      @include themify {
-        color: themed('color_hero');
-      }
-    }
-  }
-
   @include m(secondary) {
     @include themify {
-      background: themed('color_hero_10');
+      color: themed('color_tertiary');
+    }
+    border: none;
+    background: transparent !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include themify {
+        color: themed('color_tertiary_60');
+      }
+    }
+  }
+
+  @include m(alt-secondary) {
+    @include themify {
+      color: themed('color_quaternary_60');
+    }
+    border: none;
+    background: transparent !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include themify {
+        color: themed('color_quaternary');
+      }
+    }
+  }
+
+  @include m(alt) {
+    @include themify {
+      background: themed('color_quaternary_10');
       color: themed('color_upper');
     }
 
     &:hover,
     &:focus {
       @include themify {
-        background: themed('color_hero_20');
+        background: themed('color_quaternary_20');
       }
     }
   }
 
-  /* Used to sticky brief info on the page */
-  @include m(light) {
-    pointer-events: none;
-
+  @include m(critical) {
     @include themify {
-      background: themed('color_primary');
-      color: themed('color_hero');
+      background: themed('color_senary');
+      color: themed('color_septenary');
+    }
+
+    &:hover,
+    &:focus {
+      @include themify {
+        background: themed('color_senary_20');
+        color: themed('color_senary');
+      }
     }
   }
 }

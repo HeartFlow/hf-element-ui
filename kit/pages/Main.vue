@@ -31,10 +31,18 @@
         <div class="panel">
           <h3>Link &amp; Buttons</h3>
           <a href="#">Link</a>
+          <br><br>
           <el-button>Default Button</el-button>
           <el-button disabled>Disabled Button</el-button>
-          <el-button type="text">Text Button</el-button>
-          <el-button type="text" disabled>Text Button</el-button>
+          <br>
+          <el-button type="secondary">Secondary Button</el-button>
+          <el-button type="secondary" disabled>Secondary Disabled</el-button>
+          <br>
+          <el-button type="critical">Critical Button</el-button>
+          <el-button type="critical" disabled>Critical Disabled</el-button>
+          <br>
+          <el-button type="secondary">Secondary Button</el-button>
+          <el-button type="secondary" disabled>Secondary Disabled</el-button>
         </div>
       </el-col>
       <el-col :span="24">
@@ -59,20 +67,20 @@
           <el-dialog class="secondary" center :visible.sync="secondaryDialogVisible" title="I am the title of a modal" modal-append-to-body>
             <span>There should be some text here relating to an action that triggered this modal. It had better be important.</span>
             <span slot="footer" class="dialog-footer">
-              <el-button type="secondary" @click="secondaryDialogVisible = false">Secondary</el-button>
-              <el-button type="secondary" disabled>Disabled button secondary</el-button>
-              <el-button type="text-secondary" @click="secondaryDialogVisible = false">Text Secondary</el-button>
-              <el-button type="text-secondary" disabled>Disabled text secondary</el-button>
+              <el-button type="alt" @click="secondaryDialogVisible = false">Alt Button</el-button>
+              <el-button type="alt" disabled>Disabled Alt Button</el-button>
+              <el-button type="alt-secondary" @click="secondaryDialogVisible = false">Alt Secondary</el-button>
+              <el-button type="alt-secondary" disabled>Disabled Alt Secondary</el-button>
             </span>
           </el-dialog>
           Click to open dialogs:
-          <el-button type="text" @click="dialogVisible = true">Primary</el-button>
-          <el-button type="text" @click="secondaryDialogVisible = true">Secondary</el-button>
+          <el-button type="secondary" @click="dialogVisible = true">Primary</el-button>
+          <el-button type="secondary" @click="secondaryDialogVisible = true">Secondary</el-button>
           <el-dialog center :visible.sync="dialogVisible" title="I am the title of a modal" modal-append-to-body>
             <span>There should be some text here relating to an action that triggered this modal. It had better be important.</span>
             <span slot="footer" class="dialog-footer">
               <el-button @click="dialogVisible = false">Primary</el-button>
-              <el-button type="text" @click="dialogVisible = false">Secondary</el-button>
+              <el-button type="secondary" @click="dialogVisible = false">Secondary</el-button>
             </span>
           </el-dialog>
           <p style="color:red; font-size:12px">* Primary works in Safari or Chrome with enabled Experimental Web Platform flag (chrome://flags/).</p>
@@ -168,7 +176,7 @@
             </el-form-item>
             <el-form-item class="actions">
               <el-button>Save</el-button>
-              <el-button type="text">Cancel</el-button>
+              <el-button type="secondary">Cancel</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -196,12 +204,12 @@
           <el-button v-popover:popoverright>Right</el-button>
           <el-button v-popover:popoverbottom>Bottom</el-button>
           <el-button v-popover:popoverleft>Left</el-button>
-          <el-button type="text">Warning <i v-popover:popoverwarn class="el-icon-warning"></i></el-button>
+          <el-button type="secondary">Warning <i v-popover:popoverwarn class="el-icon-warning"></i></el-button>
         </div>
 
         <div class="panel">
           <h3>Notifications</h3>
-          <el-button type="text" @click="showMessage">Info message</el-button>
+          <el-button type="secondary" @click="showMessage">Info message</el-button>
           <el-button @click="notify">Warning notification</el-button>
         </div>
 
