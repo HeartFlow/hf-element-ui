@@ -137,13 +137,14 @@ export default {
 }
 
 .hf-cell >>> .el-icon-time:before {
-  font-family: "heartflow-iconography";
-  content: '\e916';
+  font-family: "heartflow_iconography";
+  content: '\e85c';
   opacity: .6;
   cursor: pointer;
+  margin-left: 3px;
 }
 
-.hf-cell.filtered >>> .el-icon-time:before { content: '\e889'; }
+.hf-cell.filtered >>> .el-icon-time:before { content: '\e86f'; }
 
 .hf-cell >>> .el-icon-time:hover:before,
 .hf-cell.filtered >>> .el-icon-time:before,

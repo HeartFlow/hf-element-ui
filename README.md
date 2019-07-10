@@ -161,3 +161,7 @@ will have to be maintained and kept up-to-date whenever ElementUI's version is u
 ### Watch mode with UI Kit
 
 `npm run watch` will allow to run the UI kit while watching the `*.scss` files under `theme` folder. Any update to those files will trigger a new build and new changes will be reflected to the UI kit. Make sure that `lib` containing the output generated css exists (created by `npm run build`)
+
+
+### Caveats
+- If Heartflow icons font files gets re-generated, unicode values for those may possibly been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overidding were applied.

@@ -56,13 +56,13 @@ i.el-icon-time::before, i.el-icon-date::before {
 i.el-icon-arrow-up::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
-  font-size: 8px;
+  font-size: 15px;
 }
 
 .el-icon-caret-bottom::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
-  font-size: 8px;
+  font-size: 15px;
 }
 
 .el-icon-caret-right::before {
@@ -74,11 +74,13 @@ i.el-icon-arrow-up::before {
 .el-input-number__increase i.el-icon-arrow-up::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
+  font-size: 15px;
 }
 
 .el-input-number__decrease i.el-icon-arrow-down::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
+  font-size: 15px;
 }
 
 i.el-input__validateIcon.el-icon-circle-close::before {
