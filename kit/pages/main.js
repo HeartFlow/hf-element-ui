@@ -95,7 +95,7 @@ export default {
       // overridden icons
       iconsElementUI: [
         'search', 'warning', 'time', 'arrow-up', 'arrow-down', 'caret-bottom', 'caret-right',
-        'cicle-close', 'close'
+        'circle-close', 'close'
       ],
       iconsHFSmall: [
         'add', 'admin', 'billing', 'calendar', 'care_team', 'care_team_unpopulated',
