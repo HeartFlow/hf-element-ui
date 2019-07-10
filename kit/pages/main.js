@@ -107,8 +107,8 @@ export default {
         'groups_internal_production_manager', 'hamburger', 'hap', 'help',
         'high_priority', 'high_priority_connect', 'limited_member', 'locked',
         'low_priority', 'member', 'mobile_close', 'ncr', 'pending', 'pinning',
-        'processing', 'profile', 'public', 'qc', 'quarantine', 'returned', 'search',
-        'settings', 'uploading', 'uprev', 'visibility_off', 'visibility_on',
+        'processing', 'profile', 'public', 'qc', 'quarantine', 'soft_quarantine', 'hard_quarantine',
+        'returned', 'search', 'settings', 'uploading', 'uprev', 'visibility_off', 'visibility_on',
         'warning', 'workstation'
       ],
       iconsHFStandard: [
@@ -121,7 +121,8 @@ export default {
         'limited_member', 'location', 'locked', 'medication', 'member', 'more',
         'nav_window', 'neutralized_quarantine', 'occlusion', 'open', 'pdf_analysis',
         'pending', 'phone', 'preloader_failure', 'processing', 'profile', 'public',
-        'quarantine', 'refresh', 'resubmit', 'returned', 'save', 'search', 'settings',
+        'quarantine', 'soft_quarantine', 'hard_quarantine',
+        'refresh', 'resubmit', 'returned', 'save', 'search', 'settings',
         'share', 'site', 'stenosis', 'tag', 'timer', 'undo', 'uploading', 'uprev',
         'warning', 'work_instructions'
       ],
