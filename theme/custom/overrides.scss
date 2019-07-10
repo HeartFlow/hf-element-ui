@@ -8,11 +8,6 @@
 }
 
 /* InputNumber */
-.el-input-number__increase,
-.el-input-number__decrease {
-  font-size: 12px;
-}
-
 .el-input-number__increase {
   transform: scaleY(-1);  /* flip since same icon is used as decrease */
 }
@@ -74,11 +69,13 @@ i.el-icon-arrow-up::before {
 .el-input-number__increase i.el-icon-arrow-up::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
+  font-size: 12px;
 }
 
 .el-input-number__decrease i.el-icon-arrow-down::before {
   font-family: "heartflow_iconography";
   content: '\e804'; /* chevron */
+  font-size: 12px;
 }
 
 i.el-input__validateIcon.el-icon-circle-close::before {
