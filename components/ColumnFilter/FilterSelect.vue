@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import VueVisible from 'vue-visible'
 import debounce from 'lodash.debounce'
 
 export default {
@@ -92,6 +93,9 @@ export default {
     isSelected(option) {
       return this.value.some(item => (item.value === option.value))
     }
+  },
+  directives: {
+    'visible': VueVisible,
   }
 }
 </script>

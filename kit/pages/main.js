@@ -306,6 +306,6 @@ export default {
 
   directives: {
     'visible': VueVisible,
-    BlurDirective
+    'blur': BlurDirective
   }
 }
