@@ -104,8 +104,22 @@ i.el-input__validateIcon.el-icon-circle-close::before {
   font-size: 15px;
 }
 
-// these classes are based on icon-standard-neutralized_quarantine class
-.icon-small-soft_quarantine:before { content: '\e808'; background-color: #F5D323;  }
-.icon-small-hard_quarantine:before { content: '\e808'; background-color: #F54423; border-radius: 50%; }
-.icon-standard-soft_quarantine:before { content: '\e808'; background-color: #F5D323; border-radius: 50%; }
-.icon-standard-hard_quarantine:before { content: '\e808'; background-color: #F54423; border-radius: 50%; }
+// Workaround for generating quarantine icons..
+@mixin quanrantine-icon($soft, $small) {
+  display: inline-block;
+  height: if($small, 13px, 20px);
+  width: if($small, 13px, 20px);
+  background: if($soft, #F5D323, #F54423);
+  border-radius: 50%;
+  &:before {
+    content: '\e808'; // based on icon-standard-neutralized_quarantine 
+    position: relative;
+    right: if($small, 5px, 7px);
+    bottom: 1px;
+  }
+}
+
+.icon-small-soft_quarantine { @include quanrantine-icon(true, true) }
+.icon-small-hard_quarantine { @include quanrantine-icon(false, true) }
+.icon-standard-soft_quarantine { @include quanrantine-icon(true, false) }
+.icon-standard-hard_quarantine { @include quanrantine-icon(false, false) }
