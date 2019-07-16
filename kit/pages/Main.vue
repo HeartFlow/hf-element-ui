@@ -51,6 +51,7 @@
           <span class="caption">Caption regular 12px</span>
           <span>Body 16pt</span>
           <p>{{ longText }}</p>
+          <span class="not-provided">Not provided</span>
         </div>
       </el-col>
       <el-col :span="12">

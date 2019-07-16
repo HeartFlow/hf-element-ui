@@ -286,3 +286,11 @@ h5 {
    */
   pointer-events: none;
 }
+
+/* Not provided */
+.not-provided {
+  font-style: italic;
+  font-weight: inherit;
+  opacity: 0.6;
+  white-space: nowrap;
+}
