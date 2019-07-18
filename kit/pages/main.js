@@ -97,7 +97,10 @@ export default {
         'search', 'warning', 'time', 'arrow-up', 'arrow-down', 'caret-bottom', 'caret-right',
         'circle-close', 'close'
       ],
-      iconsCustom: [
+      iconsSmallCustom: [
+        'soft_quarantine', 'hard_quarantine'
+      ],
+      iconsStandardCustom: [
         'soft_quarantine', 'hard_quarantine'
       ],
       iconsHFSmall: [

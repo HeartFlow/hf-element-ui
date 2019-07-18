@@ -114,7 +114,7 @@ i.el-input__validateIcon.el-icon-circle-close::before {
   &:before {
     content: '\e808'; // based on icon-standard-neutralized_quarantine 
     position: relative;
-    right: if($small, 6px, 8px);
+    right: if($small, 6px, 9px);
     bottom: if($small, 2px, 0px);
   }
 }
