@@ -373,6 +373,12 @@
               <i :class="getIconClass(icon)"></i><div class="ellipsis" :title="icon">{{ icon }}</div>
             </div>
           </div>
+          <h4>Custom icons. <span class="subheading">Assign the class name to icon-small-iconName</span></h4>
+          <div class="icons">
+            <div v-for="(icon, i) in iconsCustom" :key="i">
+              <i :class="getIconClass(icon, 'small')"></i><div class="ellipsis" :title="icon">{{ icon }}</div>
+            </div>
+          </div>
           <h4>HF Small icons. <span class="subheading">Assign the class name to icon-small-iconName</span></h4>
           <div class="icons small-icons">
             <div v-for="(icon, i) in iconsHFSmall" :key="i">
