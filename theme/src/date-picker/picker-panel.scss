@@ -54,7 +54,7 @@
     border: 0;
     background-color: transparent;
     line-height: 28px;
-    font-size: 14px;
+    font-size: $--font-size-base;
     padding-left: 12px;
     text-align: left;
     outline: none;
@@ -153,14 +153,6 @@
   z-index: 1;
 }
 
-.el-picker-panel__sidebar::before {
-  content: 'Shortcuts';
-  padding-left: 12px;
-  @include themify {
-    color: themed('color_hero');
-  }
-}
-
 .el-date-picker .el-picker-panel__footer {
   button:first-child {
     display: none;
@@ -180,7 +172,7 @@
 
     span:after {
       content: 'Accept changes';
-      font-size: 14px;
+      font-size: $--font-size-base;
       @include themify {
         color: themed('color_hero_60');
       }

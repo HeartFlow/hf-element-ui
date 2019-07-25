@@ -394,7 +394,7 @@ $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 /* Button
 -------------------------- */
 $--button-font-size: $--font-size-base !default;
-$--button-font-weight: $--font-weight-primary !default;
+$--button-font-weight: bold !default;
 $--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 15px !default;
 $--button-padding-horizontal: 20px !default;

@@ -1,25 +1,65 @@
 /**
  * Generic themes are generated based on three colors(primary, hero, upper) config.
  */
+/*
+primary -> body text
+secondary -> modal body and tooltips
+tertiary -> buttons
+quaternary ->
+quinary -> links
+senary -> critical buttons (on black and white)
+*/
 $themesConfig: (
   default: (
+    hero: rgb(33, 113, 171), // #2171AB
     primary: rgb(255, 255, 255), // #ffffff
-    hero: rgb(4, 105, 150), // #046996
-    upper: rgb(0, 146, 176) // #0092b0
+    secondary: rgb(85, 102, 118), // #556676
+    tertiary: rgb(255, 255, 255), // #ffffff
+
+    quaternary: rgb(33, 113, 171), // #2171AB
+    quinary: rgb(255, 255, 255), // #ffffff
+    senary: rgb(255, 255, 255), // #ffffff
+    septenary: rgb(33, 113, 171), // #2171AB
+
+    upper: rgb(16, 183, 218), // #10B7DA
   ),
   black: (
-    primary: rgb(255, 255, 255), // #ffffff
     hero: rgb(39, 43, 47), // #272b2f
+    primary: rgb(255, 255, 255), // #ffffff
+    secondary: rgb(85, 102, 118), // #556676
+    tertiary: rgb(255, 255, 255), // #ffffff
+
+    quaternary: rgb(85, 102, 118), // #556676
+    quinary: rgb(16, 183, 218), // #10b7da
+    senary: rgb(240, 65, 65), // #f04141
+    septenary: rgb(255, 255, 255), // #ffffff
+
     upper: rgb(39, 43, 47) // #272b2f
   ),
   gray: (
-    primary: rgb(255, 255, 255), // #ffffff
     hero: rgb(85, 102, 118), // #556676
+    primary: rgb(255, 255, 255), // #ffffff
+    secondary: rgb(85, 102, 118), // #556676
+    tertiary: rgb(255, 255, 255), // #ffffff
+
+    quaternary: rgb(85, 102, 118), // #556676
+    quinary: rgb(255, 255, 255), // #ffffff
+    senary: rgb(255, 255, 255), // #ffffff
+    septenary: rgb(85, 102, 118), // #556676
+
     upper: rgb(104, 124, 143) // #687c8f
   ),
   white: (
-    primary: rgb(0, 146, 176), // #0092b0
-    hero: rgb(4, 105, 150), // #046996
+    hero: rgb(255, 255, 255), // #ffffff
+    primary: rgb(85, 102, 118), // #556676
+    secondary: rgb(255, 255, 255), // #ffffff
+    tertiary: rgb(85, 102, 118), // #556676
+
+    quaternary: rgb(255, 255, 255), // #ffffff
+    quinary: rgb(33, 113, 171), // #2171AB
+    senary: rgb(240, 65, 65), // #f04141
+    septenary: rgb(255, 255, 255), // #ffffff
+
     upper: rgb(255, 255, 255) // #ffffff
   )
 );
@@ -28,8 +68,14 @@ $themesConfig: (
  * Color opacities in percentage.
  */
 $colorOpacities:(
-  primary: 10 20 25 30 40 50 60 70 80,
   hero: 10 20 30 60,
+  primary: 10 20 25 30 40 50 60 70 80,
+  secondary: 10 20 30 60,
+  tertiary: 10 20 30 60,
+  quaternary: 10 20 30 60,
+  quinary: 50,
+  senary: 20,
+  septenary: 10,
   upper: 40
 );
 
