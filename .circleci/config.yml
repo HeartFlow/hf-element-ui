@@ -1,15 +1,17 @@
 version: 2
 jobs:
-  build:
+  deploy:
     docker:
       - image: circleci/node:latest
-
-  branches:
-    only: master
-
-  steps:
+    steps:
       - checkout
-
       - run: npm install
-
       - run: npm run deploy
+workflows:
+  version: 2
+  deploy_workflow:
+    jobs:
+      - deploy:
+          filters:
+              branches:
+                only: master
