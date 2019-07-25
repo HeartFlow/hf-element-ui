@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+
+  filters:
+    branches:
+      only: master
+
+  steps:
+      - checkout
+
+      - run: npm install
+
+      - run: npm run deploy
