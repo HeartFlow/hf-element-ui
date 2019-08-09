@@ -7,11 +7,6 @@
   stroke: white;
 }
 
-/* InputNumber */
-.el-input-number__increase {
-  transform: scaleY(-1);  /* flip since same icon is used as decrease */
-}
-
 /* Dropdown, Select */
 .el-select-dropdown .popper__arrow,
 .el-dropdown-menu .popper__arrow,
@@ -24,15 +19,50 @@
   padding: 0 15px;
 }
 
+i.el-select__caret.el-icon-arrow-up:before {
+  font-family: "heartflow_iconography";
+  content: '\e803'; /* small chevron */
+}
+
 /* Button */
 .el-button i {
   line-height: 12px;  /* button's height gets affected without this */
 }
 
+/* Input number */
 
-/*
- * Element UI default icons
-**/
+.el-input-number__increase {
+  transform: rotate(180deg);
+  font-size: 6px;
+  i.el-icon-arrow-up:before {
+    font-family: "heartflow_iconography";
+    // Use standard chevron as it has a smaller bounding boxes that the small version which prevent the increase/decrease from overlapping
+    content: '\e804'; /* standard chevron */
+  }
+}
+
+.el-input-number__decrease {
+  font-size: 6px;
+  i.el-icon-arrow-down:before {
+    font-family: "heartflow_iconography";
+    content: '\e804'; /* standard chevron */
+  }
+}
+
+/* Input */
+i.el-input__validateIcon.el-icon-circle-close::before {
+  font-family: "heartflow_iconography";
+  content: '\e868';
+}
+
+/* Message, Notification */
+.el-message__closeBtn.el-icon-close::before,
+.el-notification__closeBtn.el-icon-close::before {
+  font-family: "heartflow_iconography";
+  content: '\e8a7';
+}
+
+/* Element UI default icons */
 i.el-icon-search::before {
   font-family: "heartflow_iconography";
   content: "\e87c";
@@ -48,45 +78,10 @@ i.el-icon-time::before, i.el-icon-date::before {
   content: '\e8ac';
 }
 
-i.el-icon-arrow-up::before {
-  font-family: "heartflow_iconography";
-  content: '\e804'; /* chevron */
-}
 
-.el-icon-caret-bottom::before {
-  font-family: "heartflow_iconography";
-  content: '\e804'; /* chevron */
-}
 
-.el-icon-caret-right::before {
-  font-family: "heartflow_iconography";
-  content: '\e860'; /* chevron_right */
-}
 
-.el-input-number__increase i.el-icon-arrow-up::before {
-  font-family: "heartflow_iconography";
-  content: '\e804'; /* chevron */
-}
-
-.el-input-number__decrease i.el-icon-arrow-down::before {
-  font-family: "heartflow_iconography";
-  content: '\e804'; /* chevron */
-}
-
-i.el-input__validateIcon.el-icon-circle-close::before {
-  font-family: "heartflow_iconography";
-  content: '\e868';
-}
-
-.el-message__closeBtn.el-icon-close::before,
-.el-notification__closeBtn.el-icon-close::before {
-  font-family: "heartflow_iconography";
-  content: '\e8a7';
-}
-
-/*
- * Custom icon classes
-**/
+/* Custom icon classes */
 
 // Global font-sizes for custom icons
 [class^="icon-large-"],

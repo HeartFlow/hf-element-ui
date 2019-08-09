@@ -5,7 +5,7 @@
       Heartflow UI Components based on <a target="_blank" href="https://heartflow.invisionapp.com/d/main#/projects">style guidelines</a>
     </h2>
     <el-dropdown trigger="click" @command="handleCommand">
-      <span>{{ theme.selected }}<i class="el-icon-caret-bottom el-icon--right"></i></span>
+      <span>{{ theme.selected }}<i class="icon-small-chevron"></i></span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-for="(item, i) in theme.options" :command="item" :key="i">{{ item }}</el-dropdown-item>
       </el-dropdown-menu>
