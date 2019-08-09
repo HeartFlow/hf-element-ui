@@ -2,14 +2,12 @@
   <div class="collapsible" :class="{open}">
     <div class="no-select">
       <span class="header" @click="toggle">
-        <slot name="header"></slot><i class="header-arrow el-icon-caret-right"></i>
+        <slot name="header" /><i class="header-arrow icon-small-chevron" />
       </span>
     </div>
-    <transition name="fadeHeight">
-      <div v-if="open" class="content">
-        <slot></slot>
-      </div>
-    </transition>
+    <el-collapse-transition>
+      <slot v-if="open" />
+    </el-collapse-transition>
   </div>
 </template>
 
@@ -24,9 +22,7 @@ export default {
   },
   watch: {
     open: debounce(function(val) {
-      if (!val) {
-        this.$emit('collapse')
-      }
+      if (!val) this.$emit('collapse')
     }, 300)
   },
   methods: {
@@ -41,11 +37,17 @@ export default {
   .header {
     cursor: pointer;
   }
+
   .header-arrow {
-    transition: transform .3s;
-    margin-left: 10px;
+    margin-left: 2px;
   }
-  .collapsible.open .header-arrow {
+
+  .header-arrow:before {
+    transition: transform .3s;
+    transform: rotate(-90deg);
+  }
+
+  .collapsible.open .header-arrow:before {
     transform: rotate(0deg);
   }
 </style>

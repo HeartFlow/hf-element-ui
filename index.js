@@ -35,7 +35,7 @@ import {
 } from 'element-ui'
 
 import ActionButton from './components/ActionButton'
-import Collapsible from './components/Collapsible'
+import CollapsibleHeader from './components/CollapsibleHeader'
 import VerticalList from './components/VerticalList'
 
 import ColumnFilter from './components/ColumnFilter'
@@ -44,6 +44,7 @@ import TransferOption from './components/TransferOption'
 import BlurDirective from './directives/blur'
 
 import RetryNotificationPlugin from './plugins/retryNotification'
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
 function registerElementUIComponents(Vue) {
   Vue.use(Autocomplete)
@@ -77,6 +78,8 @@ function registerElementUIComponents(Vue) {
   Vue.use(TableColumn)
   Vue.use(Tooltip)
   Vue.use(Transfer)
+  Vue.component(CollapseTransition.name, CollapseTransition)
+
   Vue.prototype.$message = Message
   Vue.prototype.$notify = Notification
 }
@@ -87,7 +90,7 @@ export {
 
   /* Customized Heartflow components */
   ActionButton,
-  Collapsible,
+  CollapsibleHeader,
   VerticalList,
 
   ColumnFilter,

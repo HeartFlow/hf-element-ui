@@ -5,7 +5,7 @@
         <div class="panel">
           <h3>Dropdown</h3>
           <el-dropdown trigger="click">
-            <span>Randy Wong<i class="el-icon-caret-bottom el-icon--right"></i></span>
+            <span>Randy Wong<i class="icon-small-chevron"></i></span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>My Profile</el-dropdown-item>
               <el-dropdown-item>Connects</el-dropdown-item>
@@ -14,7 +14,7 @@
             </el-dropdown-menu>
           </el-dropdown>
           <el-dropdown trigger="click">
-            <span>All<i class="el-icon-caret-bottom el-icon--right"></i></span>
+            <span>All<i class="icon-small-chevron"></i></span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item><a>My Profile</a></el-dropdown-item>
               <el-dropdown-item><a>Connects</a></el-dropdown-item>
@@ -30,7 +30,7 @@
       <el-col :span="12">
         <div class="panel">
           <h3>Link &amp; Buttons</h3>
-          <a href="#">Link</a>
+          <a style="margin-right: 10px;" href="#">Link</a>
           <el-button>Default Button</el-button>
           <el-button disabled>Disabled Button</el-button>
           <el-button type="text">Text Button</el-button>
@@ -333,11 +333,15 @@
       <el-col :span="12">
         <div class="panel">
           <h3>Collapsible (with content)</h3>
-          <collapsible>
-            <span style="font-size: 20px; margin-bottom: 10px; display: inline-block" slot="header">User Interface</span>
-            <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
-            <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
-          </collapsible>
+          <collapsible-header>
+            <template v-slot:header>
+              <span style="font-size: 20px; margin-bottom: 10px; display: inline-block">User Interface</span>
+            </template>
+            <div>
+              <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+              <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+            </div>
+          </collapsible-header>
         </div>
       </el-col>
       <el-col :span="12">
@@ -367,7 +371,7 @@
       <el-col :span="24">
         <div class="panel">
           <h3>Iconography</h3>
-          <h4>Elements icons. <span class="subheading">Assign the class name to el-icon-iconName</span></h4>
+          <h4>Overrided elements icons. <span class="subheading">Assign the class name to el-icon-iconName</span></h4>
           <div class="icons">
             <div v-for="(icon, i) in iconsElementUI" :key="i">
               <i :class="getIconClass(icon)"></i><div class="ellipsis" :title="icon">{{ icon }}</div>

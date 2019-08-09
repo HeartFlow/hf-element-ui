@@ -1,7 +1,7 @@
 import VueVisible from 'vue-visible'
 import {
   ActionButton,
-  Collapsible,
+  CollapsibleHeader,
   VerticalList,
 
   ColumnFilter,
@@ -94,8 +94,7 @@ export default {
       selectedState: '',
       // overridden icons
       iconsElementUI: [
-        'search', 'warning', 'time', 'arrow-up', 'arrow-down', 'caret-bottom', 'caret-right',
-        'circle-close', 'close'
+        'search', 'warning', 'time', 'circle-close', 'close'
       ],
       iconsSmallCustom: [
         'soft_quarantine', 'hard_quarantine'
@@ -306,7 +305,7 @@ export default {
 
   components: {
     ActionButton,
-    Collapsible,
+    CollapsibleHeader,
     VerticalList
   },
 
