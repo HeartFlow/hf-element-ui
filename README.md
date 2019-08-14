@@ -125,7 +125,7 @@ components: {
 
 ## Plugins
 
-## Developement
+## Development
 
 ### Run Heartflow UI Kit
 - Clone the project
@@ -164,4 +164,4 @@ will have to be maintained and kept up-to-date whenever ElementUI's version is u
 
 
 ### Caveats
-- If Heartflow icons font files gets re-generated, unicode values for those may possibly been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overidding were applied.
+- If Heartflow icons font files gets re-generated, unicode values for those may possibly been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overriding were applied.
