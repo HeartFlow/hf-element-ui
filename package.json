@@ -10,7 +10,7 @@
     "lint:kit": "vue-cli-service lint",
     "predeploy": "npm run build:kit",
     "deploy": "gh-pages -d dist",
-    "watch": "concurrently \"npm run serve:kit\" \"et --watch\"",
+    "watch:kit": "concurrently \"npm run serve:kit\" \"et --watch\"",
     "clean": "rm -rf lib",
     "build": "npm run clean && et",
     "postinstall": "npm run build"

@@ -94,7 +94,7 @@ export default {
       selectedState: '',
       // overridden icons
       iconsElementUI: [
-        'search', 'warning', 'time', 'circle-close', 'close'
+        'search', 'warning', 'time'
       ],
       iconsSmallCustom: [
         'soft_quarantine', 'hard_quarantine'

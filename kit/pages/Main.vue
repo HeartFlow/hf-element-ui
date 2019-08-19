@@ -22,9 +22,12 @@
               <el-dropdown-item><a>Sign Out</a></el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <el-select v-model="selectedState" filterable placeholder="Enter a state">
-            <el-option v-for="item in states" :label="item" :value="item" :key="item"></el-option>
-          </el-select>
+          <div style="margin-top: 20px;">
+            <el-select v-model="selectedState" filterable placeholder="Enter a state">
+              <el-option v-for="item in states" :label="item" :value="item" :key="item"></el-option>
+            </el-select>
+            <el-select disabled placeholder="Disabled dropdown" style="margin-left: 20px;"></el-select>
+          </div>
         </div>
       </el-col>
       <el-col :span="12">
@@ -108,7 +111,7 @@
                 <el-switch v-model="formData.switchEnabled" inactive-value="My Enabled" active-value="All Enabled"></el-switch>
               </el-form-item>
               <el-form-item :label="formData.switchDisabled">
-                <el-switch disabled v-model="formData.switchDisabled" inactive-value="All Disabled" active-value="My Disabled"></el-switch>
+                <el-switch class="processing" disabled v-model="formData.switchDisabled" inactive-value="All Disabled" active-value="My Disabled"></el-switch>
                 <el-switch disabled v-model="formData.switchDisabled" inactive-value="My Disabled" active-value="All Disabled"></el-switch>
               </el-form-item>
               <el-form-item label="Radio buttons">

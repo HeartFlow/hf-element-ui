@@ -24,6 +24,11 @@ i.el-select__caret.el-icon-arrow-up:before {
   content: '\e803'; /* small chevron */
 }
 
+/* Switch */
+.el-switch.is-disabled.processing .el-switch__core {
+  pointer-events: auto; // Prevent .is-disabled class from setting pointer-events: none 
+}
+
 /* Button */
 .el-button i {
   line-height: 12px;  /* button's height gets affected without this */
