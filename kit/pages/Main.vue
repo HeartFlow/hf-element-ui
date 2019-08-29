@@ -5,7 +5,7 @@
         <div class="panel">
           <h3>Dropdown</h3>
           <el-dropdown trigger="click">
-            <span>Randy Wong<i class="icon-small-chevron"></i></span>
+            <span>User settings<i class="icon-small-chevron"></i></span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>My Profile</el-dropdown-item>
               <el-dropdown-item>Connects</el-dropdown-item>
@@ -13,20 +13,11 @@
               <el-dropdown-item>Sign Out</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <el-dropdown trigger="click">
-            <span>All<i class="icon-small-chevron"></i></span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item><a>My Profile</a></el-dropdown-item>
-              <el-dropdown-item><a>Connects</a></el-dropdown-item>
-              <el-dropdown-item><a>Members</a></el-dropdown-item>
-              <el-dropdown-item><a>Sign Out</a></el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
           <div style="margin-top: 20px;">
             <el-select v-model="selectedState" filterable placeholder="Enter a state">
               <el-option v-for="item in states" :label="item" :value="item" :key="item"></el-option>
             </el-select>
-            <el-select disabled placeholder="Disabled dropdown" style="margin-left: 20px;"></el-select>
+            <el-select v-model="selectedState" disabled placeholder="Disabled dropdown" style="margin-left: 20px;"></el-select>
           </div>
         </div>
       </el-col>
@@ -34,10 +25,20 @@
         <div class="panel">
           <h3>Link &amp; Buttons</h3>
           <a style="margin-right: 10px;" href="#">Link</a>
-          <el-button>Default Button</el-button>
-          <el-button disabled>Disabled Button</el-button>
-          <el-button type="text">Text Button</el-button>
-          <el-button type="text" disabled>Text Button</el-button>
+          <div style="margin-top: 10px;">
+            <el-button type="text">Text Button</el-button>
+            <el-button type="text" disabled>Disabled Text Button</el-button>
+          </div>
+          <div style="margin-top: 5px;">
+            <el-button>Default Button</el-button>
+            <el-button disabled>Disabled Button</el-button>
+          </div>
+          <div style="margin-top: 15px;">
+            <div style="margin-bottom: 5px; font-size: 14px;">Custom action buttons:</div>
+            <action-button @click="onClickActionBtn('success', 'successBtn')" ref="successBtn">Success button</action-button>
+            <action-button @click="onClickActionBtn('failure', 'failureBtn')" ref="failureBtn">Failure button</action-button>
+            <action-button @click="onClickThrobBtn" ref="throbBtn">Throbbing button</action-button>
+          </div>
         </div>
       </el-col>
       <el-col :span="24">
@@ -60,6 +61,18 @@
       <el-col :span="12">
         <div class="panel">
           <h3>Modal</h3>
+          Click to open dialogs:
+          <el-button @click="dialogVisible = true">Primary</el-button>
+          <el-button @click="secondaryDialogVisible = true">Secondary</el-button>
+          <!-- Primary modal -->
+          <el-dialog center :visible.sync="dialogVisible" title="I am the title of a modal" modal-append-to-body>
+            <span>There should be some text here relating to an action that triggered this modal. It had better be important.</span>
+            <span slot="footer" class="dialog-footer">
+              <el-button @click="dialogVisible = false">Primary</el-button>
+              <el-button type="text" @click="dialogVisible = false">Secondary</el-button>
+            </span>
+          </el-dialog>
+          <!-- Secondary modal -->
           <el-dialog class="secondary" center :visible.sync="secondaryDialogVisible" title="I am the title of a modal" modal-append-to-body>
             <span>There should be some text here relating to an action that triggered this modal. It had better be important.</span>
             <span slot="footer" class="dialog-footer">
@@ -69,17 +82,10 @@
               <el-button type="text-secondary" disabled>Disabled text secondary</el-button>
             </span>
           </el-dialog>
-          Click to open dialogs:
-          <el-button type="text" @click="dialogVisible = true">Primary</el-button>
-          <el-button type="text" @click="secondaryDialogVisible = true">Secondary</el-button>
-          <el-dialog center :visible.sync="dialogVisible" title="I am the title of a modal" modal-append-to-body>
-            <span>There should be some text here relating to an action that triggered this modal. It had better be important.</span>
-            <span slot="footer" class="dialog-footer">
-              <el-button @click="dialogVisible = false">Primary</el-button>
-              <el-button type="text" @click="dialogVisible = false">Secondary</el-button>
-            </span>
-          </el-dialog>
-          <p style="color:red; font-size:12px">* Primary works in Safari or Chrome with enabled Experimental Web Platform flag (chrome://flags/).</p>
+          <p style="font-size: 12px;">
+            * Primary modal use <i>backdrop-filter</i> officially supported with recent browsers version only.
+            More information can be found <a href="https://caniuse.com/#search=backdrop-filter" target="_blank" rel="noopener noreferrer">here</a>.
+          </p>
         </div>
       </el-col>
       <el-col :span="12">
@@ -204,9 +210,19 @@
         </div>
 
         <div class="panel">
-          <h3>Notifications</h3>
-          <el-button type="text" @click="showMessage">Info message</el-button>
-          <el-button @click="notify">Warning notification</el-button>
+          <h3>Message & Notification</h3>
+          <div>
+            Alert type:
+            <el-select v-model="messageType" placeholder="Select type" style="margin-left: 5px; width: 100px;">
+              <el-option label="Success" value="success" />
+              <el-option label="Info" value="info" />
+              <el-option label="Warning" value="warning" />
+              <el-option label="Error" value="error" />
+            </el-select>
+            <el-button @click="showMessage(messageType)" style="margin-left: 20px;">Message</el-button>
+            <el-button @click="showNotification(messageType)">Notification</el-button>
+          </div>
+          <el-button style="margin-top: 20px;" @click="notify">Retry notification (custom)</el-button>
         </div>
 
         <div class="panel">
@@ -261,8 +277,6 @@
           <h3>Data Table</h3>
           <div class="table-actions el-row">
             <div class="actions">
-              <action-button icon="icon-standard-refresh" @click="onRefreshButtonClick"
-                                ref="refreshButton"></action-button>
               <el-button v-blur>Reset filters</el-button>
             </div>
             <el-input prefix-icon="el-icon-search"></el-input>
@@ -275,7 +289,7 @@
             <el-table-column property="delivery" label="DELIVERY" min-width="20" show-overflow-tooltip></el-table-column>
             <el-table-column property="privilege" label="PRIVILEGE" min-width="20">
               <template slot-scope="scope">
-                <el-select v-model="scope.row.privilege">
+                <el-select v-model="scope.row.privilege" placeholder="Select group">
                   <el-option v-for="item in privileges" :key="item" :label="item" :value="item"></el-option>
                 </el-select>
               </template>
@@ -335,10 +349,10 @@
       </el-col>
       <el-col :span="12">
         <div class="panel">
-          <h3>Collapsible (with content)</h3>
+          <h3>Collapsible (custom)</h3>
           <collapsible-header>
             <template v-slot:header>
-              <span style="font-size: 20px; margin-bottom: 10px; display: inline-block">User Interface</span>
+              <span style="font-size: 20px; margin-bottom: 10px; display: inline-block">Header title</span>
             </template>
             <div>
               <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
@@ -349,7 +363,7 @@
       </el-col>
       <el-col :span="12">
         <div class="panel">
-          <h3 style="display: inline-block;">Vertical List</h3>
+          <h3 style="display: inline-block;">Vertical List (custom)</h3>
           <el-button style="float: right" @click="verticalListLoading = !verticalListLoading">
             Toggle Loading
           </el-button>
@@ -386,7 +400,7 @@
               <i :class="getIconClass(icon, 'small')"></i><div class="ellipsis" :title="icon">{{ icon }}</div>
             </div>
           </div>
-           <h4>Custom standard icons. <span class="subheading">Assign the class name to icon-standard-iconName</span></h4>
+          <h4>Custom standard icons. <span class="subheading">Assign the class name to icon-standard-iconName</span></h4>
           <div class="icons">
             <div v-for="(icon, i) in iconsStandardCustom" :key="i">
               <i :class="getIconClass(icon, 'standard')"></i><div class="ellipsis" :title="icon">{{ icon }}</div>
