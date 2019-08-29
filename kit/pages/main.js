@@ -92,6 +92,8 @@ export default {
         'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
       ],
       selectedState: '',
+      messageType: 'success',
+      activeSection: '',
       // overridden icons
       iconsElementUI: [
         'search', 'warning', 'time'
@@ -214,10 +216,16 @@ export default {
   },
 
   methods: {
-    onRefreshButtonClick() {
+    onClickActionBtn(action, refName, cb) {
       setTimeout(() => {
-        this.$refs.refreshButton.$emit('update', Math.random() < 0.5 ? 'success' : 'failure')
-      }, 2000)
+        this.$refs[refName].$emit('update', action, cb)
+      }, 1000)
+    },
+
+    onClickThrobBtn() {
+      this.onClickActionBtn('success', 'throbBtn', () => {
+        this.$refs.throbBtn.$emit('update', 'throb')
+      })
     },
 
     handleSelectionChange(selected) {
@@ -228,12 +236,20 @@ export default {
       return hf ? `icon-${hf}-${icon}` : `el-icon-${icon}`
     },
 
-    showMessage() {
+    showMessage(type) {
       this.$message({
         duration: 4000,
-        type: 'success',
+        type,
         showClose: true,
-        message: 'Invalid email or password. Please try again'
+        message: `This is a ${type} message`
+      })
+    },
+
+    showNotification(type) {
+      this.$notify({
+        title: 'Title',
+        message: `This is ${type} message`,
+        type
       })
     },
 
@@ -289,6 +305,7 @@ export default {
   },
 
   mounted() {
+    this.$refs.throbBtn.$emit('update', 'throb')
     this.retryNotify = this.retryNotification({
       retryData: {},
       retryAction() {}

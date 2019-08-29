@@ -8,10 +8,6 @@ body {
   flex-wrap: wrap;
 }
 
-body > div > h1 {
-  text-align: center;
-}
-
 .ui-kit-header {
   text-align: center;
 }

@@ -37,7 +37,6 @@ import {
 import ActionButton from './components/ActionButton'
 import CollapsibleHeader from './components/CollapsibleHeader'
 import VerticalList from './components/VerticalList'
-
 import ColumnFilter from './components/ColumnFilter'
 import TransferOption from './components/TransferOption'
 
@@ -92,7 +91,6 @@ export {
   ActionButton,
   CollapsibleHeader,
   VerticalList,
-
   ColumnFilter,
   TransferOption,
 
