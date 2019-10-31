@@ -124,3 +124,6 @@ i.el-icon-time::before, i.el-icon-date::before {
 .icon-small-hard_quarantine { @include quarantine-icon(false, true) }
 .icon-standard-soft_quarantine { @include quarantine-icon(true, false) }
 .icon-standard-hard_quarantine { @include quarantine-icon(false, false) }
+
+.icon-standard-rcag:before { content: url('./icon-svg/icon-standard_RCAGrayed.svg'); }
+.icon-large-rcag:before { content: url('./icon-svg/icon-large_RCAGrayed.svg'); }

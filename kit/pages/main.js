@@ -102,7 +102,10 @@ export default {
         'soft_quarantine', 'hard_quarantine'
       ],
       iconsStandardCustom: [
-        'soft_quarantine', 'hard_quarantine'
+        'soft_quarantine', 'hard_quarantine', 'rcag'
+      ],
+      iconsLargeCustom: [
+        'rcag'
       ],
       iconsHFSmall: [
         'add', 'admin', 'billing', 'calendar', 'care_team', 'care_team_unpopulated',
