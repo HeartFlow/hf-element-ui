@@ -4,7 +4,7 @@ export default {
   inserted: function(el) {
     el.addEventListener('mouseup', el.blur)
   },
-  unbind(el) {
+  unbind: function(el) {
     el.removeEventListener('mouseup', el.blur)
   }
 }
