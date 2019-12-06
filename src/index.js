@@ -35,6 +35,7 @@ import {
 } from 'element-ui'
 
 import ActionButton from './components/ActionButton'
+import CollapsiblePanel from './components/CollapsiblePanel'
 import CollapsibleHeader from './components/CollapsibleHeader'
 import VerticalList from './components/VerticalList'
 import ColumnFilter from './components/ColumnFilter'
@@ -44,6 +45,9 @@ import BlurDirective from './directives/blur'
 
 import RetryNotificationPlugin from './plugins/retryNotification'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
+
+// Custom css files containg styles for fonts, themes colors, etc..
+import '../lib/custom/base.css'
 
 function registerElementUIComponents(Vue) {
   Vue.use(Autocomplete)
@@ -89,6 +93,7 @@ export {
 
   /* Customized Heartflow components */
   ActionButton,
+  CollapsiblePanel,
   CollapsibleHeader,
   VerticalList,
   ColumnFilter,

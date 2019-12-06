@@ -8,7 +8,7 @@ import {
   TransferOption,
 
   BlurDirective
-} from '@root'
+} from 'hf-element-ui'
 
 export default {
   data() {

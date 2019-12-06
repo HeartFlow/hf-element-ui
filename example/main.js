@@ -5,9 +5,9 @@ import App from '@/App'
 import Main from '@/pages/Main.vue'
 
 import '@/assets/style.css' // Specific stylesheet for the UI kit
-import '@root/lib/custom/base.css'
 
-import { registerElementUIComponents, RetryNotificationPlugin } from '@root'
+import 'hf-element-ui/index.css'
+import { registerElementUIComponents, RetryNotificationPlugin } from 'hf-element-ui'
 
 registerElementUIComponents(Vue)
 Vue.use(RetryNotificationPlugin)

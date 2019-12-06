@@ -7,14 +7,12 @@
 npm i -S github:HeartFlow/hf-element-ui
 ```
 
-You can view a project example in `/kit` folder.
-
 ## Getting started
 ```javascript
 import Vue from 'vue'
 
 import { registerElementUIComponents } from 'hf-element-ui'
-import 'hf-element-ui/lib/custom/base.css' // Custom css files containing styles for fonts, themes colors, etc..
+import 'hf-element-ui/bin/index.css' // Contains all components styling + custom css
 
 // Helper function allows registering available components from Element UI
 registerElementUIComponents()
@@ -24,19 +22,7 @@ new Vue({
   components: ...
 })
 ```
-Edit .babelrc (`babel-plugin-component` must be installed)
-```javascript
-{
-  "plugins": [
-    [
-      "component", [{
-        "libraryName": "element-ui",
-        "styleLibraryName": "~node_modules/hf-element-ui/lib" // Allows Element-UI to use Heartflow custom theme
-      }]
-    ],
-  ]
-}
-```
+
 ## Available Element UI components
 Refer to [Element UI components documentation](http://element.eleme.io/2.3/#/en-US/component/installation) for more information
 
@@ -127,17 +113,16 @@ components: {
 
 ## Development
 
-### Run Heartflow UI Kit
-- Clone the project
-- From the project root repository, run `npm install`. All NPM dependencies will be added in `node_modules` and it will also generate the Heartflow css theme under `lib` folder using `element-theme` generator.
-- Run `npm run kit`
-- Connect to `http://localhost:8080` to access the UI Kit
+### Run Heartflow UI kit
+- `npm install`
+- `npm run serve:example`
+- Open [http://localhost:8080](http://localhost:8080)
 
 ### Maintaining CSS
 CSS styles are located in `lib` folder.
 
 - If adding a new component from ElementUI, update `element-theme.components` config in `package.json` to list the component's name. Import and init the component in `registerElementUIComponents()` in `./index.js` and add the corresponding `<component_name>.scss` file(s) in `theme/src` folder picked from [ElementUI/theme-chalk](https://github.com/ElementUI/theme-chalk) with the current element-ui version of the project. Component variables in `element-variables.css` might need to be updated too.
-- `npm run build` runs [the forked theme generator](https://github.com/syn-zeta/element-theme). It will compile CSS files under `theme` using `element-variables.css` and output them to `lib` that will be consumed your application. It will include that particular component's CSS.
+- `npm run build` runs [the forked theme generator](https://github.com/HeartFlow/element-theme). It will compile CSS files under `theme` using `element-variables.css` and output them to `lib` that will be consumed your application. It will include that particular component's CSS.
 - For generating different themes, SCSS variables and mixins defined in `theme/themes.scss` are used in style definitions.
 
 ### Updating ElementUI:
