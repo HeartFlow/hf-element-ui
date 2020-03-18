@@ -26,10 +26,9 @@
   "homepage": "https://github.com/HeartFlow/hf-element-ui",
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "element-theme": "github:HeartFlow/element-theme",
     "element-ui": "2.3.6",
     "lodash.debounce": "^4.0.8",
+    "vue": "^2.6.10",
     "vue-click-outside": "github:vue-bulma/click-outside",
     "vue-router": "^3.0.6",
     "vue-visible": "^1.0.2"
@@ -42,6 +41,7 @@
     "babel-eslint": "^10.0.1",
     "babel-plugin-component": "^1.1.0",
     "concurrently": "^4.1.1",
+    "element-theme": "github:HeartFlow/element-theme",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
