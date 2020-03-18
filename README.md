@@ -2,9 +2,11 @@
 
 [Demo of the UI kit here](https://heartflow.github.io/hf-element-ui)
 
+v1.1.0
+
 ## Install
 ```shell
-npm i -S github:HeartFlow/hf-element-ui
+npm i -S github:HeartFlow/hf-element-ui#v1.1.0
 ```
 
 You can view a project example in `/kit` folder.
@@ -79,51 +81,11 @@ Notes: Prefix by `<el-[component-name]>` to use the component in the HTML templa
 
 ## Custom Heartflow components
 
-### Action Button
-Usage
-```html
-<template>
-  <hf-action-button
-    icon="icon-standard-refresh"
-    @click="onRefreshButtonClick"
-    ref="refreshButton">
-  </hf-action-button>
-</template>
-
-<script>
-import { ActionButton } from 'hf-element-ui'
-
-methods: {
-  onRefreshButtonClick() {
-    setTimeout(() => {
-      /*
-        refreshButton.$emit([eventName], [actionType], [callback])
-        @param {String} eventName -> 'update'
-        @param {String} actionType -> 'success' | 'failure' | 'reset' | 'complete'
-        @param {Function} callback Function called when spinning animation is finished
-      */
-      this.$refs.refreshButton.$emit('update', 'success', () => {
-        // Do something
-      })
-    }, 200)
-  }
-},
-components: {
-  'hf-action-button': ActionButton
-}
-</script>
-```
-
-
-### Collapsible
-
-### VerticalList
-
-### ColumnFilter
-
-### TransferOption
-
-## Plugins
+- action-button
+- collapsible-header
+- vertical-list
+- column-filter
+- transfer-options
 
 ## Development
 
@@ -165,3 +127,11 @@ will have to be maintained and kept up-to-date whenever ElementUI's version is u
 
 ### Caveats
 - If Heartflow icons font files gets re-generated, unicode values for those may possibly been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overriding were applied.
+
+
+### Release
+- `npm run build` which will output the `lib` folder
+- Commit the new changes including the generated folder
+- Create a tag with the release version (e.g `v1.2.0`)
+- Push the tag and the commit
+- Update `README.md` release version references

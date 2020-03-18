@@ -1,0 +1,208 @@
+/* BEM support Func
+ -------------------------- */
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Colors
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Background
+-------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* Message Box
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Break-point
+--------------------------*/
+/**
+ * Generic themes are generated based on three colors(primary, hero, upper) config.
+ */
+/**
+ * Color opacities in percentage.
+ */
+/**
+ * Custom theme colors.
+ * Additional color keys can be defined or generic can be overridden.
+ */
+/**
+ * Generates color opacity map.
+ * @return [Sass::Script::Value::Map] Color opacity map.
+ */
+/**
+ * Generates themes based on $themesConfig
+ */
+/* Mixin
+-------------------------- */
+/**
+ * Returns the value in a theme associated with the given key.
+ *
+ * @example
+ * themed('color_primary') => Returns color_primary for all themes.
+ * themed('color_primary', ('theme-white': 'color_upper')) => Returns color_upper value for theme-white, for all themes color_primary.
+ * @param $key [Sass::Script::Value::Base]
+ * @param $opts [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Base] The theme value by $key.
+ */
+/* Generate themes background.
+-------------------------- */
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+.el-time-spinner {
+  width: 100%;
+  white-space: nowrap; }
+
+.el-spinner {
+  display: inline-block;
+  vertical-align: middle; }
+
+.el-spinner-inner {
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  width: 50px;
+  height: 50px; }
+  .el-spinner-inner .path {
+    stroke-linecap: round;
+    -webkit-animation: dash 1.5s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite; }
+    .theme-white .el-spinner-inner .path {
+      stroke: #0092b0; }
+    .theme-default .el-spinner-inner .path {
+      stroke: white; }
+    .theme-black .el-spinner-inner .path {
+      stroke: white; }
+    .theme-gray .el-spinner-inner .path {
+      stroke: white; }
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35; }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124; } }
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35; }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124; } }

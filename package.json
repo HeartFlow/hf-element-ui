@@ -12,8 +12,7 @@
     "deploy": "gh-pages -d dist",
     "watch:kit": "concurrently \"npm run serve:kit\" \"et --watch\"",
     "clean": "rm -rf lib",
-    "build": "npm run clean && et",
-    "postinstall": "npm run build"
+    "build": "npm run clean && et"
   },
   "repository": {
     "type": "git",

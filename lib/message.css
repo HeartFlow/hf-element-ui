@@ -1,0 +1,399 @@
+/* BEM support Func
+ -------------------------- */
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Colors
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Background
+-------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* Message Box
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Break-point
+--------------------------*/
+/**
+ * Generic themes are generated based on three colors(primary, hero, upper) config.
+ */
+/**
+ * Color opacities in percentage.
+ */
+/**
+ * Custom theme colors.
+ * Additional color keys can be defined or generic can be overridden.
+ */
+/**
+ * Generates color opacity map.
+ * @return [Sass::Script::Value::Map] Color opacity map.
+ */
+/**
+ * Generates themes based on $themesConfig
+ */
+/* Mixin
+-------------------------- */
+/**
+ * Returns the value in a theme associated with the given key.
+ *
+ * @example
+ * themed('color_primary') => Returns color_primary for all themes.
+ * themed('color_primary', ('theme-white': 'color_upper')) => Returns color_upper value for theme-white, for all themes color_primary.
+ * @param $key [Sass::Script::Value::Base]
+ * @param $opts [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Base] The theme value by $key.
+ */
+/* Generate themes background.
+-------------------------- */
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Colors
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Background
+-------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* Message Box
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Break-point
+--------------------------*/
+.el-message {
+  min-width: 500px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 3px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: opacity 0.3s, -webkit-transform .4s;
+  transition: opacity 0.3s, -webkit-transform .4s;
+  transition: opacity 0.3s, transform .4s;
+  transition: opacity 0.3s, transform .4s, -webkit-transform .4s;
+  overflow: hidden;
+  padding: 30px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 16px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*
+  @include when(center) {
+    justify-content: center;
+  }
+  */
+  /*
+  @include m(info) {
+    .el-message__content {
+      color: $--message-info-color;
+    }
+  }
+
+  @include m(success) {
+    background-color: $--color-success-lighter;
+    border-color: $--color-success-light;
+
+    .el-message__content {
+      color: $--message-success-color;
+    }
+  }
+
+  @include m(warning) {
+    background-color: $--color-warning-lighter;
+    border-color: $--color-warning-light;
+
+    .el-message__content {
+      color: $--message-warning-color;
+    }
+  }
+
+  @include m(error) {
+    background-color: $--color-danger-lighter;
+    border-color: $--color-danger-light;
+
+    .el-message__content {
+      color: $--message-danger-color;
+    }
+  }
+  */
+  /*
+  & .el-icon-success {
+    color: $--message-success-color;
+  }
+
+  & .el-icon-error {
+    color: $--message-danger-color;
+  }
+
+  & .el-icon-info {
+    color: $--message-info-color;
+  }
+
+  & .el-icon-warning {
+    color: $--message-warning-color;
+  }
+  */ }
+  .theme-white .el-message {
+    background-color: #0092b0;
+    color: #046996; }
+  .theme-default .el-message {
+    background-color: white;
+    color: #046996; }
+  .theme-black .el-message {
+    background-color: white;
+    color: #272b2f; }
+  .theme-gray .el-message {
+    background-color: white;
+    color: #556676; }
+  .theme-white .el-message a {
+    color: rgba(4, 105, 150, 0.6); }
+  .theme-default .el-message a {
+    color: rgba(4, 105, 150, 0.6); }
+  .theme-black .el-message a {
+    color: rgba(39, 43, 47, 0.6); }
+  .theme-gray .el-message a {
+    color: rgba(85, 102, 118, 0.6); }
+  .theme-white .el-message a:hover {
+    color: #046996; }
+  .theme-default .el-message a:hover {
+    color: #046996; }
+  .theme-black .el-message a:hover {
+    color: #272b2f; }
+  .theme-gray .el-message a:hover {
+    color: #556676; }
+  .el-message.is-closable .el-message__content {
+    padding-right: 16px; }
+  .el-message p {
+    margin: 0; }
+  .el-message__icon {
+    margin-right: 10px; }
+  .el-message__content {
+    padding: 0;
+    line-height: 1; }
+    .el-message__content:focus {
+      outline-width: 0; }
+  .el-message__closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: .6; }
+    .el-message__closeBtn:focus {
+      outline-width: 0; }
+    .el-message__closeBtn:hover {
+      opacity: 1; }
+
+.el-message-fade-enter,
+.el-message-fade-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%); }
