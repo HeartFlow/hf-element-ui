@@ -1,4 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require('path')
 
 module.exports = {
   module: {
@@ -20,6 +22,10 @@ module.exports = {
     extensions: ['.js', '.vue'],
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: path.resolve(__dirname, '../report.html')
+    })
   ]
 }

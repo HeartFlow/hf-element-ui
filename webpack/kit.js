@@ -16,15 +16,8 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [[
-              'component', { libraryName: 'element-ui', styleLibraryName: '~lib' }
-            ]]
-          }
-        }
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -33,11 +26,10 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'index.css'
-    })
+    new MiniCssExtractPlugin({ filename: 'index.css' })
   ],
   externals: {
-    vue: 'vue' // User should have Vue pre-installed
+    vue: 'vue',
+    'element-ui': 'element-ui'
   }
 })

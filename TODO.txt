@@ -1,3 +1,3 @@
-- missing collapse css ?
 - add custom collapse panel in the kit
-- Why bundle size different on analyzer versus npm run build
+- add linting with standard
+- update documentation

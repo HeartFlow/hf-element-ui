@@ -15,8 +15,8 @@
   "main": "bin/index.js",
   "scripts": {
     "build": "npm run clean && et && npm run build:kit",
+    "build:example": "webpack --config webpack/example.js --mode production",
     "build:kit": "webpack --config webpack/kit.js --mode production",
-    "analyze:kit": "webpack --config webpack/kit.js --mode production --profile --json > stats.json",
     "clean": "rm -rf lib bin",
     "predeploy": "rm-rf example/dist && npm run build:example",
     "deploy": "gh-pages -d example/dist",
@@ -25,35 +25,35 @@
     "watch:kit": "webpack --config webpack/kit.js --mode development --watch"
   },
   "dependencies": {
+    "element-ui": "2.3.6",
+    "lodash.debounce": "^4.0.8",
+    "vue": "^2.6.11",
+    "vue-click-outside": "github:vue-bulma/click-outside",
+    "vue-router": "^3.2.0",
+    "vue-visible": "^1.0.2"
+  },
+  "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-component": "^1.1.1",
+    "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
     "element-theme": "github:HeartFlow/element-theme",
-    "element-ui": "2.3.6",
+    "eslint": "^6.0.0",
+    "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
-    "lodash.debounce": "^4.0.8",
+    "gh-pages": "^2.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "style-loader": "^1.2.1",
-    "vue": "^2.6.11",
-    "vue-click-outside": "github:vue-bulma/click-outside",
     "vue-loader": "^15.9.2",
-    "vue-router": "^3.2.0",
     "vue-template-compiler": "^2.6.11",
-    "vue-visible": "^1.0.2",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
-  },
-  "devDependencies": {
-    "concurrently": "^5.2.0",
-    "eslint": "^7.0.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "gh-pages": "^2.2.0",
-    "webpack-bundle-analyzer": "^3.8.0"
   },
   "element-theme": {
     "config": "./element-variables.css",

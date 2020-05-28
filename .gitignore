@@ -16,11 +16,12 @@ npm-debug.log*
 # Theme output
 /lib
 
-# Build files
+# Kit build files
 /bin
 
-# Webpack stats file
-stats.json
+# Webpack report file
+report.html
+
 
 # Example build files
 example/dist
