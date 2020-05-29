@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const common = require('./common.js')
 
-module.exports = merge(common, {
+module.exports = (_, argv) => merge(common(argv.mode), {
   entry: './src/index.js',
   output: {
     path: path.resolve('./bin'),

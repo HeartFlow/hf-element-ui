@@ -36,7 +36,6 @@ import {
   Tooltip,
   Transfer,
 } from 'element-ui'
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
 function init() {
   Vue.use(Autocomplete)
@@ -71,7 +70,6 @@ function init() {
   Vue.use(Tooltip)
   Vue.use(Transfer)
   Vue.use(VueVisible)
-  Vue.component(CollapseTransition.name, CollapseTransition)
 
   Vue.prototype.$message = Message
   Vue.prototype.$notify = Notification

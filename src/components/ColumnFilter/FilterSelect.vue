@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { Input } from 'element-ui'
 import VueVisible from 'vue-visible'
 import debounce from 'lodash.debounce'
 
@@ -96,6 +97,9 @@ export default {
   },
   directives: {
     'visible': VueVisible,
+  },
+  components: {
+    [Input.name]: Input
   }
 }
 </script>

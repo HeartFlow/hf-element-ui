@@ -46,5 +46,5 @@ module.exports = (_, argv) => {
     }
   }
 
-  return merge(common, config)
+  return merge(common(argv.mode), config)
 }
