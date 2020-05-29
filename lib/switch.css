@@ -1,0 +1,385 @@
+/* BEM support Func
+ -------------------------- */
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Colors
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Background
+-------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* Message Box
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Break-point
+--------------------------*/
+/**
+ * Generic themes are generated based on three colors(primary, hero, upper) config.
+ */
+/**
+ * Color opacities in percentage.
+ */
+/**
+ * Custom theme colors.
+ * Additional color keys can be defined or generic can be overridden.
+ */
+/**
+ * Generates color opacity map.
+ * @return [Sass::Script::Value::Map] Color opacity map.
+ */
+/**
+ * Generates themes based on $themesConfig
+ */
+/* Mixin
+-------------------------- */
+/**
+ * Returns the value in a theme associated with the given key.
+ *
+ * @example
+ * themed('color_primary') => Returns color_primary for all themes.
+ * themed('color_primary', ('theme-white': 'color_upper')) => Returns color_upper value for theme-white, for all themes color_primary.
+ * @param $key [Sass::Script::Value::Base]
+ * @param $opts [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Base] The theme value by $key.
+ */
+/* Generate themes background.
+-------------------------- */
+/* Break-points
+ -------------------------- */
+/* Scrollbar
+ -------------------------- */
+/* Placeholder
+ -------------------------- */
+/* BEM
+ -------------------------- */
+/* Element Chalk Variables */
+/* Transition
+-------------------------- */
+/* Colors
+-------------------------- */
+/* 53a8ff */
+/* 66b1ff */
+/* 79bbff */
+/* 8cc5ff */
+/* a0cfff */
+/* b3d8ff */
+/* c6e2ff */
+/* d9ecff */
+/* ecf5ff */
+/* Link
+-------------------------- */
+/* Background
+-------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* Size
+-------------------------- */
+/* z-index
+-------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+-------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Alert
+-------------------------- */
+/* Message Box
+-------------------------- */
+/* Message
+-------------------------- */
+/* Notification
+-------------------------- */
+/* Input
+-------------------------- */
+/* Cascader
+-------------------------- */
+/* Group
+-------------------------- */
+/* Tab
+-------------------------- */
+/* Button
+-------------------------- */
+/* cascader
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Popover
+-------------------------- */
+/* Tooltip
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Tree
+-------------------------- */
+/* Dropdown
+-------------------------- */
+/* Badge
+-------------------------- */
+/* Card
+--------------------------*/
+/* Slider
+--------------------------*/
+/* Steps
+--------------------------*/
+/* Menu
+--------------------------*/
+/* Rate
+--------------------------*/
+/* DatePicker
+--------------------------*/
+/* Loading
+--------------------------*/
+/* Scrollbar
+--------------------------*/
+/* Carousel
+--------------------------*/
+/* Collapse
+--------------------------*/
+/* Transfer
+--------------------------*/
+/* Header
+  --------------------------*/
+/* Footer
+--------------------------*/
+/* Main
+--------------------------*/
+/* Break-point
+--------------------------*/
+.el-switch {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  line-height: 20px;
+  height: 20px;
+  vertical-align: middle;
+  /*
+  @include e(label) {
+    transition: .2s;
+    height: $--switch-height;
+    display: inline-block;
+    font-size: $--switch-font-size;
+    font-weight: 500;
+    cursor: pointer;
+    vertical-align: middle;
+    color: $--color-text-primary;
+
+    @include when(active) {
+      color: $--color-primary;
+    }
+
+    @include m(left) {
+      margin-right: 10px;
+    }
+    @include m(right) {
+      margin-left: 10px;
+    }
+    & * {
+      line-height: 1;
+      font-size: $--switch-font-size;
+      display: inline-block;
+    }
+  }
+  */
+  /*
+  @include m(wide) {
+    .el-switch__label {
+      &.el-switch__label--left {
+        span {
+          left: 10px;
+        }
+      }
+      &.el-switch__label--right {
+        span {
+          right: 10px;
+        }
+      }
+    }
+  }
+  */ }
+  .el-switch.is-disabled .el-switch__core,
+  .el-switch.is-disabled .el-switch__label {
+    cursor: not-allowed; }
+  .el-switch.processing .el-switch__core {
+    cursor: progress; }
+  .el-switch__label {
+    cursor: pointer;
+    opacity: .6; }
+    .el-switch__label.is-active {
+      opacity: 1; }
+    .el-switch__label--right {
+      margin-left: 12px; }
+  .el-switch__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0; }
+    .el-switch__input:focus ~ .el-switch__core {
+      outline: 1px solid #409EFF; }
+  .el-switch__core {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    width: 35px !important;
+    height: 20px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    vertical-align: middle; }
+    .theme-white .el-switch__core {
+      background-color: rgba(0, 146, 176, 0.3); }
+    .theme-default .el-switch__core {
+      background-color: rgba(255, 255, 255, 0.3); }
+    .theme-black .el-switch__core {
+      background-color: rgba(255, 255, 255, 0.3); }
+    .theme-gray .el-switch__core {
+      background-color: rgba(255, 255, 255, 0.3); }
+    .el-switch__core .el-switch__button {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      border-radius: 100%;
+      -webkit-transition: left .3s, -webkit-transform .3s;
+      transition: left .3s, -webkit-transform .3s;
+      transition: left .3s, transform .3s;
+      transition: left .3s, transform .3s, -webkit-transform .3s;
+      width: 16px;
+      height: 16px;
+      background: white; }
+  .theme-white .el-switch.is-checked .el-switch__core {
+    background-color: rgba(4, 105, 150, 0.7); }
+  .theme-default .el-switch.is-checked .el-switch__core {
+    background-color: rgba(255, 255, 255, 0.7); }
+  .theme-black .el-switch.is-checked .el-switch__core {
+    background-color: rgba(255, 255, 255, 0.7); }
+  .theme-gray .el-switch.is-checked .el-switch__core {
+    background-color: rgba(255, 255, 255, 0.7); }
+  .el-switch.is-checked .el-switch__button {
+    /* the component's JS translates the button a little to much to the right when checked */
+    left: -3px; }
+  .el-switch.is-disabled {
+    opacity: 0.6; }
+  .el-switch .label-fade-enter,
+  .el-switch .label-fade-leave-active {
+    opacity: 0; }

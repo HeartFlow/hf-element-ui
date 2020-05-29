@@ -13,9 +13,6 @@ npm-debug.log*
 *.sln
 *.sw?
 
-# Theme output
-/lib
-
 # Webpack report file
 report.html
 

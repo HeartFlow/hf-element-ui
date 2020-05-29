@@ -1,0 +1,131 @@
+@import url(heartflow-iconography.css);
+@import url(overrides.css);
+@import url(kit.css);
+/**
+ * Generic themes are generated based on three colors(primary, hero, upper) config.
+ */
+/**
+ * Color opacities in percentage.
+ */
+/**
+ * Custom theme colors.
+ * Additional color keys can be defined or generic can be overridden.
+ */
+/**
+ * Generates color opacity map.
+ * @return [Sass::Script::Value::Map] Color opacity map.
+ */
+/**
+ * Generates themes based on $themesConfig
+ */
+/* Mixin
+-------------------------- */
+/**
+ * Returns the value in a theme associated with the given key.
+ *
+ * @example
+ * themed('color_primary') => Returns color_primary for all themes.
+ * themed('color_primary', ('theme-white': 'color_upper')) => Returns color_upper value for theme-white, for all themes color_primary.
+ * @param $key [Sass::Script::Value::Base]
+ * @param $opts [Sass::Script::Value::Map]
+ * @return [Sass::Script::Value::Base] The theme value by $key.
+ */
+/* Generate themes background.
+-------------------------- */
+/* MIXINS
+**/
+.theme-white {
+  background-color: white;
+  color: #0092b0; }
+
+.theme-default {
+  background-color: #046996;
+  background-image: linear-gradient(165deg, #0092b0, #046996);
+  color: white; }
+
+.theme-black {
+  background-color: #272b2f;
+  background-image: linear-gradient(165deg, #272b2f, #272b2f);
+  color: white; }
+
+.theme-gray {
+  background-color: #556676;
+  background-image: linear-gradient(165deg, #687c8f, #556676);
+  color: white; }
+
+/* SCROLLBAR
+**/
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px; }
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-radius: 30px; }
+
+.theme-white ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 146, 176, 0.4); }
+
+.theme-default ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4); }
+
+.theme-black ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4); }
+
+.theme-gray ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4); }
+
+.theme-white ::-webkit-scrollbar-track {
+  background-color: rgba(0, 146, 176, 0.1); }
+
+.theme-default ::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.theme-black ::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.theme-gray ::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+body::-webkit-scrollbar-track {
+  border-radius: 0; }
+
+/* LINK
+**/
+a {
+  cursor: pointer;
+  text-decoration: none; }
+  .theme-white a {
+    color: rgba(0, 146, 176, 0.8); }
+  .theme-default a {
+    color: rgba(255, 255, 255, 0.8); }
+  .theme-black a {
+    color: rgba(255, 255, 255, 0.8); }
+  .theme-gray a {
+    color: rgba(255, 255, 255, 0.8); }
+
+.theme-white a:hover {
+  color: #0092b0; }
+
+.theme-default a:hover {
+  color: white; }
+
+.theme-black a:hover {
+  color: white; }
+
+.theme-gray a:hover {
+  color: white; }
+
+/* SVGs
+**/
+.theme-white svg {
+  stroke: #0092b0; }
+
+.theme-default svg {
+  stroke: white; }
+
+.theme-black svg {
+  stroke: white; }
+
+.theme-gray svg {
+  stroke: white; }

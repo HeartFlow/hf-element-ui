@@ -1,0 +1,266 @@
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("fonts/AvenirNext-Regular.eot");
+  src: url("fonts/AvenirNext-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/AvenirNext-Regular.woff2") format("woff2"), url("fonts/AvenirNext-Regular.woff") format("woff"), url("fonts/AvenirNext-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("fonts/AvenirNext-Italic.eot");
+  src: url("fonts/AvenirNext-Italic.eot?#iefix") format("embedded-opentype"), url("fonts/AvenirNext-Italic.woff2") format("woff2"), url("fonts/AvenirNext-Italic.woff") format("woff"), url("fonts/AvenirNext-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("fonts/AvenirNext-UltraLight.eot");
+  src: url("fonts/AvenirNext-UltraLight.eot?#iefix") format("embedded-opentype"), url("fonts/AvenirNext-UltraLight.woff2") format("woff2"), url("fonts/AvenirNext-UltraLight.woff") format("woff"), url("fonts/AvenirNext-UltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  font: 16px/18px 'Avenir Next', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body.theme-gray .app-page {
+  background-color: #556676;
+  background-image: linear-gradient(165deg, #687C8F, #556676); }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse; }
+
+input, textarea, select, button {
+  font-family: inherit; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: color 50000s ease-in-out 50000s, background-color 50000s ease-in-out 50000s; }
+
+/*
+ * Text styles
+**/
+b,
+.strong {
+  font-weight: 600; }
+
+h1 {
+  font-size: 90px;
+  font-weight: 200;
+  line-height: 123px; }
+
+h2 {
+  font-size: 55px;
+  font-weight: 200;
+  line-height: 75px; }
+
+.small h2 {
+  font-size: 38px; }
+
+h3 {
+  font-size: 34px;
+  font-weight: normal;
+  line-height: 46px; }
+
+h4 {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: normal; }
+
+h5 {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 22px; }
+
+.headline {
+  font-size: 38px;
+  font-weight: 200;
+  line-height: 52px; }
+
+.title {
+  font-size: 24px;
+  line-height: 33px; }
+
+.subheading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px; }
+
+.caption {
+  font-size: 12px;
+  line-height: 16px; }
+
+.panel {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 1em;
+  padding: 2em 3em 2em; }
+
+.theme-white .panel {
+  background-color: white; }
+
+.panel h3 {
+  margin-top: 0; }
+
+/*
+ * Utility classes
+**/
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.full-height {
+  height: 100%; }
+
+.full-min-height {
+  min-height: 100%; }
+
+.full-width {
+  width: 100%; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.pre-all * {
+  white-space: pre-wrap; }
+
+.nowrap {
+  white-space: nowrap; }
+
+.deemphasized {
+  opacity: .4; }
+
+.deemphasized-60 {
+  opacity: .6; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.no-overflow {
+  overflow: hidden; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.uline {
+  text-decoration: underline; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.object-contain {
+  -o-object-fit: contain;
+  object-fit: contain; }
+
+/*
+ * Transitions
+**/
+.fadeHeight-enter, .fadeHeight-enter-active, .fadeHeight-leave-to, .fadeHeight-leave-active {
+  overflow: hidden; }
+
+.fadeHeight-enter-active, .fadeHeight-leave-active {
+  -webkit-transition: max-height .25s;
+  transition: max-height .25s;
+  max-height: 400px; }
+
+.fadeHeight-enter, .fadeHeight-leave-to {
+  max-height: 0; }
+
+.fadeWidth-enter-active, .fadeWidth-leave-active {
+  -webkit-transition: max-width .25s;
+  transition: max-width .25s;
+  max-width: 400px;
+  z-index: 1; }
+
+.fadeWidth-enter, .fadeWidth-leave-to {
+  max-width: 0;
+  display: none; }
+
+.hf-fade-in-enter-active,
+.hf-fade-in-leave-active {
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+
+.hf-fade-in-enter,
+.hf-fade-in-leave-active {
+  opacity: 0; }
+
+/*
+ * Table
+**/
+.table-actions {
+  margin-bottom: 20px; }
+
+.table-actions > .actions {
+  float: left;
+  margin-right: 1em; }
+
+.table-actions > .actions.selectable {
+  padding-left: 60px; }
+
+.table-actions > .el-input {
+  display: block;
+  overflow: hidden;
+  width: initial;
+  position: relative;
+  top: 8px; }
+
+.table-actions > .el-input .el-input__icon {
+  font-size: 23px;
+  width: 23px; }
+
+.table-actions > .el-input .el-input__icon::before {
+  vertical-align: middle; }
+
+.table-cell-button {
+  margin: -3px 0; }
+
+/* This rule applies to headers in column-filtered tables */
+.cell .hf-cell {
+  margin: 0; }
+
+/*
+ * Disabling
+**/
+/* Prevent not-allowed cursor */
+.disabled,
+.disabled *,
+.is-disabled,
+.is-disabled * {
+  /* use pointer-events instead of cursor property
+   * to prevent the not-allowed cursor even on pseudoelements (radio/checkbox fill)
+   * and also to prevent hover state styles (input's border, for instance)
+   */
+  pointer-events: none; }
+
+/* Not provided */
+.not-provided {
+  font-style: italic;
+  font-weight: inherit;
+  opacity: 0.6;
+  white-space: nowrap; }
