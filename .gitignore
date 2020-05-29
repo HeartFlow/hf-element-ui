@@ -16,9 +16,6 @@ npm-debug.log*
 # Theme output
 /lib
 
-# Kit build files
-/bin
-
 # Webpack report file
 report.html
 
