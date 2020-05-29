@@ -1,6 +1,7 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 const common = require('./common.js')
 
@@ -28,8 +29,5 @@ module.exports = (_, argv) => merge(common(argv.mode), {
   plugins: [
     new MiniCssExtractPlugin({ filename: 'index.css' })
   ],
-  externals: {
-    vue: 'vue',
-    'element-ui': 'element-ui'
-  }
+  externals: [nodeExternals()] // ignore every modules
 })

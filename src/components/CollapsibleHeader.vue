@@ -29,10 +29,10 @@ export default {
   methods: {
     toggle() {
       this.open = !this.open
-    },
-    components: {
-      [CollapseTransition.name]: CollapseTransition
     }
+  },
+  components: {
+    [CollapseTransition.name]: CollapseTransition
   }
 }
 </script>

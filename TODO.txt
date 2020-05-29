@@ -1,3 +1,1 @@
-- add custom collapse panel in the kit
-- add linting with standard
 - update documentation

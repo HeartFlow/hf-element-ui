@@ -20,9 +20,10 @@
     "clean": "rm -rf lib bin",
     "predeploy": "rm-rf example/dist && npm run build:example",
     "deploy": "gh-pages -d example/dist",
-    "dev": "concurrently \"npm run serve:example\" \"npm run watch:kit\" \"et --watch\"",
+    "dev": "concurrently \"npm run serve:example\" \"et --watch\"",
     "serve:example": "webpack-dev-server --config webpack/example.js --mode development",
-    "watch:kit": "webpack --config webpack/kit.js --mode development --watch"
+    "watch:kit": "webpack --config webpack/kit.js --mode development --watch",
+    "lint": "eslint . --ext .js,.vue"
   },
   "dependencies": {
     "element-ui": "2.3.6",
@@ -41,7 +42,13 @@
     "concurrently": "^5.2.0",
     "css-loader": "^3.5.3",
     "element-theme": "github:HeartFlow/element-theme",
-    "eslint": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
     "gh-pages": "^2.2.0",
@@ -53,7 +60,8 @@
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "element-theme": {
     "config": "./element-variables.css",

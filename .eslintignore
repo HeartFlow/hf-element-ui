@@ -1,0 +1,8 @@
+# ignore all
+**/*.js
+
+# Include src webpack and example folders
+!src/**
+!webpack/**
+!example/**
+example/dist

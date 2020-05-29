@@ -96,7 +96,7 @@ export default {
     }
   },
   directives: {
-    'visible': VueVisible,
+    visible: VueVisible,
   },
   components: {
     [Input.name]: Input

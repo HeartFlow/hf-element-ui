@@ -32,14 +32,14 @@ module.exports = (_, argv) => {
     resolve: {
       alias: {
         '@': path.resolve('./example'),
-        'hf-element-ui': path.resolve('./bin')
+        '@root': path.resolve('./')
       }
     }
   }
 
   if (argv.mode === 'development') {
     // Webpack dev server (bundle analyzer not working with this config)
-    config.devtool = 'eval-source-map',
+    config.devtool = 'eval-source-map'
     config.devServer = {
       contentBase: './example',
       overlay: true

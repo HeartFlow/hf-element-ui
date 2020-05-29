@@ -5,10 +5,10 @@ import App from '@/App'
 import Main from '@/pages/Main.vue'
 
 import '@/assets/style.css' // Specific stylesheet for the Example
-import 'hf-element-ui/index.css' // Import styling for custom hf-element-ui components (Action button, CollapsibleHeader..)
+import '@root/lib/custom/base.css' // Import styling for custom hf-element-ui components (Action button, CollapsibleHeader..)
 
 import registerElementUIComponents from './elementUI'
-import { RetryNotificationPlugin } from 'hf-element-ui'
+import { RetryNotificationPlugin } from '@root/src'
 
 registerElementUIComponents(Vue)
 Vue.use(RetryNotificationPlugin)
