@@ -1,6 +1,9 @@
-# Heartflow Element UI theme
+# Heartflow Element UI
 
 [Demo of the UI kit here](https://heartflow.github.io/hf-element-ui)
+
+This project contains the custom Element UI theme which follows Heartflow styles guidelines.
+It also provides a small set of Vue components on top of the existing Element UI ones.
 
 ## Install
 ```shell
@@ -11,16 +14,33 @@ npm i -S github:HeartFlow/hf-element-ui
 ```javascript
 import Vue from 'vue'
 
-import { registerElementUIComponents } from 'hf-element-ui'
-import 'hf-element-ui/bin/index.css' // Contains all components styling + custom css
+// Import styling for custom hf-element-ui components (Action button, CollapsibleHeader..) + theming
+import 'hf-element-ui/bin/index.css'
 
-// Helper function allows registering available components from Element UI
-registerElementUIComponents()
+// Import element ui components (see the list of available components below)
+import { Button, Select } from 'element-ui'
+
+Vue.use(Button)
+Vue.use(Select)
 
 new Vue({
   el: '#app',
   components: ...
 })
+```
+
+In order to enable [Element UI on-demand](https://element.eleme.io/#/en-US/component/quickstart#on-demand) import components, you need to install `babel-plugin-components` and edit your `.babelrc`.
+```javascript
+{
+  "plugins": [
+    [
+      "component", [{
+        "libraryName": "element-ui",
+        "styleLibraryName": "~node_modules/hf-element-ui/lib" // Use custom heartflow element ui theme
+      }]
+    ],
+  ]
+}
 ```
 
 ## Available Element UI components
@@ -61,12 +81,14 @@ Refer to [Element UI components documentation](http://element.eleme.io/2.3/#/en-
 - tooltip
 - transfer
 
-Notes: Prefix by `<el-[component-name]>` to use the component in the HTML template
+Prefix by `<el-[component-name]>` to use the component in the Vue template
 
-## Custom Heartflow components
+## Custom
+You can also use the custom components and plugins by importing directly from `hf-element-ui`
 
-### Action Button
-Usage
+### Components
+
+- **Action Button**
 ```html
 <template>
   <hf-action-button
@@ -89,7 +111,7 @@ methods: {
         @param {Function} callback Function called when spinning animation is finished
       */
       this.$refs.refreshButton.$emit('update', 'success', () => {
-        // Do something
+        // Do something after animation
       })
     }, 200)
   }
@@ -99,21 +121,19 @@ components: {
 }
 </script>
 ```
+- **Collapsible**
+- **VerticalList**
+- **ColumnFilter**
+- **TransferOption**
+- **Retry**
 
+### Plugins
+- Retry
 
-### Collapsible
-
-### VerticalList
-
-### ColumnFilter
-
-### TransferOption
-
-## Plugins
 
 ## Development
 
-### Run Heartflow UI kit
+### Run Heartflow UI kit example
 - `npm install`
 - `npm run serve:example`
 - Open [http://localhost:8080](http://localhost:8080)
@@ -143,10 +163,17 @@ theme-in/src/ from theme-chalk@2.3.3 (https://github.com/ElementUI/theme-chalk/t
 will have to be maintained and kept up-to-date whenever ElementUI's version is updated in package.json.
 
 
-### Watch mode with UI Kit
+### Watch mode with UI kit example
 
-`npm run watch` will allow to run the UI kit while watching the `*.scss` files under `theme` folder. Any update to those files will trigger a new build and new changes will be reflected to the UI kit. Make sure that `lib` containing the output generated css exists (created by `npm run build`)
+`npm run dev` will serve the `example` project with `webpack-dev-server` while watching the `*.scss` files under `theme` folder.
+Any update to those files will trigger a new build and new changes will be reflected to the UI kit.
 
 
 ### Caveats
-- If Heartflow icons font files gets re-generated, unicode values for those may possibly been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overriding were applied.
+- If Heartflow icons font files gets re-generated, unicode values for those may possibly've been updated too. In that case, css rules replacing existing icons (for example `content: '\e8a4'`) must be changed in the themes as well as in apps if any overriding were applied.
+
+### Release
+- `npm run build` will produce in the `bin` folder the bundles `index.js` and `index.css`
+- Commit the new changes including the `bin` folder
+- Create a tag with the release version (e.g `v1.2.0`)
+- Push the tag and new commit
