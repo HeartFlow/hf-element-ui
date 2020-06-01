@@ -2,8 +2,8 @@
 
 [Demo of the UI kit here](https://heartflow.github.io/hf-element-ui)
 
-This project contains the custom Element UI theme which follows Heartflow styles guidelines.
-It also provides a small set of Vue components on top of the existing Element UI ones.
+Custom Element UI theme which follows Heartflow styles guidelines.
+It also provides a small set of custom components on top of the existing Element UI ones.
 
 ## Install
 ```shell
@@ -121,11 +121,14 @@ components: {
 }
 </script>
 ```
-- **Collapsible**
+- **CollapsiblePanel**
+
+Wrapper of `<collapsible>` component to use along with `<collapsible-item>` children.
+
+Don't forget to `import 'Collapse' from 'element-ui'` in your code so `babel-plugin-component` can retrieve the appropriate `collapse.css` stylesheet file.
 - **VerticalList**
 - **ColumnFilter**
 - **TransferOption**
-- **Retry**
 
 ### Plugins
 - Retry

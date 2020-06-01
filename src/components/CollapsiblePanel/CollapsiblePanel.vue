@@ -1,31 +1,31 @@
 <template>
   <div class="el-collapse collapsible-panel full-height" role="tablist" aria-multiselectable="true"
        :class="{collapsed: !isPanelVisible}">
-    <slot ></slot>
+    <slot></slot>
   </div>
 </template>
 
 <script>
-/* Custom element-ui collapse component to use along with <collapse-item> children */
+// Custom element-ui collapse components compatible with <collapsible-item> children
+import Collapse from './collapse'
 import debounce from 'lodash.debounce'
 
+// Remove watchers from extended Element-UI Collapse to avoid conflicts
+// with new declared watchers in this component
+const extendedCollapse = Object.assign({}, Collapse, { watch: {} })
+
 const TIMEOUT_COLLAPSIBLE_PANEL = 300
-const CLICK_DEBOUNCE_TIMEOUT = TIMEOUT_COLLAPSIBLE_PANEL * 2 // Animation time: Expand/Collapse section + Reveal/Hide panel
+
+// Animation time: Expand/Collapse section + Reveal/Hide panel
+const CLICK_DEBOUNCE_TIMEOUT = TIMEOUT_COLLAPSIBLE_PANEL * 2
 
 export default {
+  extends: extendedCollapse,
   props: {
     value: {
       type: String,
       default: ''
     }
-  },
-  provide() {
-    return {
-      collapse: this
-    }
-  },
-  created() {
-    this.$on('item-click', this.handleItemClick)
   },
   data() {
     return {
@@ -85,7 +85,6 @@ export default {
 <style scoped>
 .collapsible-panel {
   overflow: hidden;
-  white-space: nowrap;
   width: 400px;
   transition: width 300ms;
 }
