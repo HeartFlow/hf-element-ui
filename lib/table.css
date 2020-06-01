@@ -673,13 +673,13 @@
       .el-checkbox__input.is-focus .el-checkbox__inner {
         outline: 1px solid #409EFF; }
     .theme-white .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-      background-color: red; }
+      background-color: rgba(0, 146, 176, 0.8); }
     .theme-default .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-      background-color: red; }
+      background-color: rgba(255, 255, 255, 0.8); }
     .theme-black .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-      background-color: red; }
+      background-color: rgba(255, 255, 255, 0.8); }
     .theme-gray .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-      background-color: red; }
+      background-color: rgba(255, 255, 255, 0.8); }
     .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
       content: '';
       position: absolute;
