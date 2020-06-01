@@ -23,7 +23,9 @@
     "dev": "concurrently \"npm run serve:example\" \"et --watch\"",
     "serve:example": "webpack-dev-server --config webpack/example.js --mode development",
     "watch:kit": "webpack --config webpack/kit.js --mode development --watch",
-    "lint": "eslint . --ext .js,.vue"
+    "lint": "eslint . --ext .js,.vue",
+    "analyze:example": "webpack --config webpack/example.js --env.analyze",
+    "analyze:kit": "webpack --config webpack/kit.js --env.analyze"
   },
   "dependencies": {
     "element-ui": "2.3.6",

@@ -2,7 +2,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const path = require('path')
 
-module.exports = mode => {
+module.exports = (env, _) => {
   var config = {
     module: {
       rules: [
@@ -30,7 +30,7 @@ module.exports = mode => {
     },
     plugins: [new VueLoaderPlugin()]
   }
-  if (mode === 'production') {
+  if (env.analyze) {
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',

@@ -2,7 +2,7 @@ const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./common.js')
 
-module.exports = (_, argv) => {
+module.exports = (env, argv) => {
   var config = {
     entry: './example/index.js',
     output: {
@@ -37,8 +37,8 @@ module.exports = (_, argv) => {
     }
   }
 
-  if (argv.mode === 'development') {
-    // Webpack dev server (bundle analyzer not working with this config)
+  if (!env.analyze) {
+    // wp bundle analyzer not working well with dev server, should be disabled
     config.devtool = 'eval-source-map'
     config.devServer = {
       contentBase: './example',
@@ -46,5 +46,5 @@ module.exports = (_, argv) => {
     }
   }
 
-  return merge(common(argv.mode), config)
+  return merge(common(env, argv), config)
 }

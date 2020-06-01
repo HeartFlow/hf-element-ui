@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals')
 
 const common = require('./common.js')
 
-module.exports = (_, argv) => merge(common(argv.mode), {
+module.exports = (env, argv) => merge(common(env, argv.mode), {
   entry: './src/index.js',
   output: {
     path: path.resolve('./bin'),
