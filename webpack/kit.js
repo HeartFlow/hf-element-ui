@@ -18,6 +18,14 @@ module.exports = (env, argv) => merge(common(env, argv.mode), {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        options: {
+          presets: [['@babel/preset-env', {
+            modules: false,
+            targets: { ie: '11' },
+            useBuiltIns: 'usage',
+            corejs: 3
+          }]]
+        },
         exclude: /node_modules/
       },
       {
