@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { DatePicker, Popover } from 'element-ui'
 import debounce from 'lodash.debounce'
 import FilterSelect from './FilterSelect'
 
@@ -104,9 +103,7 @@ export default {
     }
   },
   components: {
-    'hf-filter-select': FilterSelect,
-    [DatePicker.name]: DatePicker,
-    [Popover.name]: Popover
+    'hf-filter-select': FilterSelect
   }
 }
 </script>

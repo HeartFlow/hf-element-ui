@@ -5,7 +5,6 @@ import VerticalList from './components/VerticalList'
 import ColumnFilter from './components/ColumnFilter'
 import TransferOption from './components/TransferOption'
 
-import BlurDirective from './directives/blur'
 import RetryNotificationPlugin from './plugins/retryNotification'
 
 // Custom css files containg styles for fonts, themes colors, etc..
@@ -19,9 +18,6 @@ export {
   VerticalList,
   ColumnFilter,
   TransferOption,
-
-  /* Directives */
-  BlurDirective,
 
   /* Plugins */
   RetryNotificationPlugin

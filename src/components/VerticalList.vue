@@ -11,16 +11,12 @@
 </template>
 
 <script>
-import { Spinner } from 'element-ui'
 export default {
   props: {
     loading: {
       type: Boolean,
       default: false
     }
-  },
-  components: {
-    [Spinner.name]: Spinner
   }
 }
 </script>

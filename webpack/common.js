@@ -30,7 +30,7 @@ module.exports = (env, _) => {
     },
     plugins: [new VueLoaderPlugin()]
   }
-  if (env.analyze) {
+  if (env && env.analyze) {
     config.plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',

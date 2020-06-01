@@ -13,7 +13,6 @@
 
 <script>
 import debounce from 'lodash.debounce'
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
 export default {
   data() {
@@ -30,9 +29,6 @@ export default {
     toggle() {
       this.open = !this.open
     }
-  },
-  components: {
-    [CollapseTransition.name]: CollapseTransition
   }
 }
 </script>

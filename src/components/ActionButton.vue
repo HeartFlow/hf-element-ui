@@ -31,7 +31,6 @@
 
 <script>
 import blur from '../directives/blur'
-import { Button, Spinner } from 'element-ui'
 
 const ACTION_BUTTON_TIMEOUT = 1000
 
@@ -117,9 +116,7 @@ export default {
   },
 
   directives: {
-    'hf-blur': blur,
-    [Button.name]: Button,
-    [Spinner.name]: Spinner
+    'hf-blur': blur
   }
 }
 </script>

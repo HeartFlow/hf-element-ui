@@ -6,8 +6,6 @@ import {
 
   ColumnFilter,
   TransferOption,
-
-  BlurDirective
 } from '@root/src'
 
 export default {
@@ -327,7 +325,6 @@ export default {
   },
 
   directives: {
-    visible: VueVisible,
-    blur: BlurDirective
+    visible: VueVisible
   }
 }

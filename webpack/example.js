@@ -34,16 +34,17 @@ module.exports = (env, argv) => {
         '@': path.resolve('./example'),
         '@root': path.resolve('./')
       }
-    }
-  }
-
-  if (!env.analyze) {
-    // wp bundle analyzer not working well with dev server, should be disabled
-    config.devtool = 'eval-source-map'
-    config.devServer = {
+    },
+    devtool: 'eval-source-map',
+    devServer: {
       contentBase: './example',
       overlay: true
     }
+  }
+
+  if (env && env.analyze) {
+    delete config.devtool
+    delete config.devServer
   }
 
   return merge(common(env, argv), config)

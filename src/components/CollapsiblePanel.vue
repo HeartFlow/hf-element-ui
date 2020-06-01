@@ -6,25 +6,26 @@
 </template>
 
 <script>
-import { Collapse } from 'element-ui' // will require('collapse.css')
+/* Custom element-ui collapse component to use along with <collapse-item> children */
 import debounce from 'lodash.debounce'
 
-// Remove watchers from extended Element-UI Collapse to avoid conflicts
-// with new declared watchers in this component
-const extendedCollapse = Object.assign({}, Collapse, { watch: {} })
-
 const TIMEOUT_COLLAPSIBLE_PANEL = 300
-
-// Animation time: Expand/Collapse section + Reveal/Hide panel
-const CLICK_DEBOUNCE_TIMEOUT = TIMEOUT_COLLAPSIBLE_PANEL * 2
+const CLICK_DEBOUNCE_TIMEOUT = TIMEOUT_COLLAPSIBLE_PANEL * 2 // Animation time: Expand/Collapse section + Reveal/Hide panel
 
 export default {
-  extends: extendedCollapse,
   props: {
     value: {
       type: String,
       default: ''
     }
+  },
+  provide() {
+    return {
+      collapse: this
+    }
+  },
+  created() {
+    this.$on('item-click', this.handleItemClick)
   },
   data() {
     return {
