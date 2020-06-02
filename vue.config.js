@@ -1,16 +1,16 @@
 const path = require('path')
 
-const GITHUB_REPOSITORY_NAME = 'hf-element-ui'
-const isProd = process.env.NODE_ENV === 'production'
+// const GITHUB_REPOSITORY_NAME = 'hf-element-ui'
+// const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  publicPath: isProd ? GITHUB_REPOSITORY_NAME : '/',
+  publicPath: '/',
   configureWebpack: {
-    entry: path.resolve('./kit/kit.js'),
+    entry: path.resolve('./src/index.js'),
     resolve: {
       alias: {
-        '@': path.resolve('./kit'),
-        '@root': path.resolve('./')
+        '@': path.resolve('./src'),
+        '@shared': path.resolve('./shared')
       }
     }
   }

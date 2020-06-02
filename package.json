@@ -1,18 +1,17 @@
 {
   "name": "hf-element-ui",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Heartflow Element UI",
   "private": true,
-  "main": "index.js",
   "scripts": {
-    "serve:kit": "vue-cli-service serve",
-    "build:kit": "vue-cli-service build",
-    "lint:kit": "vue-cli-service lint",
-    "predeploy": "npm run build:kit",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build:theme && npm run build",
     "deploy": "gh-pages -d dist",
-    "watch:kit": "concurrently \"npm run serve:kit\" \"et --watch\"",
-    "clean": "rm -rf lib",
-    "build": "npm run clean && et"
+    "dev": "concurrently \"npm run serve\" \"et --watch\"",
+    "clean:theme": "rm -rf shared/lib",
+    "build:theme": "npm run clean:theme && et"
   },
   "repository": {
     "type": "git",
@@ -24,11 +23,9 @@
   },
   "homepage": "https://github.com/HeartFlow/hf-element-ui",
   "dependencies": {
-    "core-js": "^2.6.5",
     "element-ui": "2.3.6",
     "lodash.debounce": "^4.0.8",
     "vue": "^2.6.10",
-    "vue-click-outside": "github:vue-bulma/click-outside",
     "vue-router": "^3.0.6",
     "vue-visible": "^1.0.2"
   },
@@ -49,7 +46,7 @@
   "element-theme": {
     "config": "./element-variables.css",
     "theme": "../theme",
-    "out": "./lib",
+    "out": "./shared/lib",
     "watchGlobs": [
       "./element-variables.css",
       "./theme/**/*.scss"

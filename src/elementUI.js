@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import {
   Autocomplete,
   Breadcrumb,
@@ -33,19 +34,17 @@ import {
   Tooltip,
   Transfer
 } from 'element-ui'
-
-import ActionButton from './components/ActionButton'
-import CollapsibleHeader from './components/CollapsibleHeader'
-import VerticalList from './components/VerticalList'
-import ColumnFilter from './components/ColumnFilter'
-import TransferOption from './components/TransferOption'
-
-import BlurDirective from './directives/blur'
-
-import RetryNotificationPlugin from './plugins/retryNotification'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
-function registerElementUIComponents(Vue) {
+// Import stylesheet for custom element-ui components (Action button, CollapsibleHeader..) + theming colors, etc
+import '@shared/lib/custom/base.css'
+
+import ActionButton from '@shared/components/ActionButton'
+import CollapsibleHeader from '@shared/components/CollapsibleHeader'
+import VerticalList from '@shared/components/VerticalList'
+import RetryNotificationPlugin from '@shared/plugins/retryNotification'
+
+function init() {
   Vue.use(Autocomplete)
   Vue.use(Breadcrumb)
   Vue.use(BreadcrumbItem)
@@ -81,22 +80,12 @@ function registerElementUIComponents(Vue) {
 
   Vue.prototype.$message = Message
   Vue.prototype.$notify = Notification
+
+  // Custom hf-element-ui components/plugin
+  Vue.use(RetryNotificationPlugin)
+  Vue.component('action-button', ActionButton)
+  Vue.component('collapsible-header', CollapsibleHeader)
+  Vue.component('vertical-list', VerticalList)
 }
 
-export {
-  /* Register available components from Element UI */
-  registerElementUIComponents,
-
-  /* Customized Heartflow components */
-  ActionButton,
-  CollapsibleHeader,
-  VerticalList,
-  ColumnFilter,
-  TransferOption,
-
-  /* Directives */
-  BlurDirective,
-
-  /* Plugins */
-  RetryNotificationPlugin
-}
+export default init
