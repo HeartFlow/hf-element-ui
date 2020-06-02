@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import blur from '../directives/blur'
-
 const ACTION_BUTTON_TIMEOUT = 1000
 
 export default {
@@ -116,7 +114,14 @@ export default {
   },
 
   directives: {
-    'hf-blur': blur
+    'hf-blur': {
+      inserted: function(el) {
+        el.addEventListener('mouseup', el.blur)
+      },
+      unbind(el) {
+        el.removeEventListener('mouseup', el.blur)
+      }
+    }
   }
 }
 </script>

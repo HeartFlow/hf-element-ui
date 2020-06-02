@@ -277,7 +277,7 @@
           <h3>Data Table</h3>
           <div class="table-actions el-row">
             <div class="actions">
-              <el-button v-blur>Reset filters</el-button>
+              <el-button>Reset filters</el-button>
             </div>
             <el-input prefix-icon="el-icon-search"></el-input>
           </div>

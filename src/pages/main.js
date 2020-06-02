@@ -1,14 +1,6 @@
-import VueVisible from 'vue-visible'
-import {
-  ActionButton,
-  CollapsibleHeader,
-  VerticalList,
 
-  ColumnFilter,
-  TransferOption,
-
-  BlurDirective
-} from '@root'
+import ColumnFilter from '@shared/components/ColumnFilter'
+import TransferOption from '@shared/components/TransferOption'
 
 export default {
   data() {
@@ -206,14 +198,14 @@ export default {
       },
       assignOptions: [{
         label: 'Signed In',
-        options: [{ user: { first_name: 'John', user_id: 1, 'last_name': 'Doe' } },
-          { user: { first_name: 'Tom', user_id: 2, 'last_name': 'Sawyer' } },
-          { user: { first_name: 'Micky', user_id: 3, 'last_name': 'Mouse' } },
-          { user: { first_name: 'Rodger', user_id: 4, 'last_name': 'Federer' } }]
+        options: [{ user: { first_name: 'John', user_id: 1, last_name: 'Doe' } },
+          { user: { first_name: 'Tom', user_id: 2, last_name: 'Sawyer' } },
+          { user: { first_name: 'Micky', user_id: 3, last_name: 'Mouse' } },
+          { user: { first_name: 'Rodger', user_id: 4, last_name: 'Federer' } }]
       }, {
         label: 'Signed Out',
-        options: [{ user: { first_name: 'Johny', user_id: 5, 'last_name': 'Johnson' } },
-          { user: { first_name: 'Sven', user_id: 6, 'last_name': 'Svenson' } }]
+        options: [{ user: { first_name: 'Johny', user_id: 5, last_name: 'Johnson' } },
+          { user: { first_name: 'Sven', user_id: 6, last_name: 'Svenson' } }]
       }]
     }
   },
@@ -321,16 +313,5 @@ export default {
         '. Try again?'
       ])
     })
-  },
-
-  components: {
-    ActionButton,
-    CollapsibleHeader,
-    VerticalList
-  },
-
-  directives: {
-    'visible': VueVisible,
-    'blur': BlurDirective
   }
 }
