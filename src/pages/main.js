@@ -1,4 +1,4 @@
-
+import LoginOkta from '@/components/LoginOkta'
 import ColumnFilter from '@shared/components/ColumnFilter'
 import TransferOption from '@shared/components/TransferOption'
 
@@ -313,5 +313,6 @@ export default {
         '. Try again?'
       ])
     })
-  }
+  },
+  components: { LoginOkta }
 }
