@@ -433,6 +433,12 @@
           </div>
         </div>
       </el-col>
+      <el-col :span="24">
+        <div class="panel">
+          <h3>Okta widget (custom)</h3>
+          <login-okta />
+        </div>
+      </el-col>
     </div>
   </div>
 </template>

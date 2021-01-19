@@ -30,6 +30,7 @@
     "vue-visible": "^1.0.2"
   },
   "devDependencies": {
+    "@okta/okta-signin-widget": "^5.2.2",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
@@ -41,6 +42,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "gh-pages": "^2.0.1",
+    "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.10"
   },
   "element-theme": {

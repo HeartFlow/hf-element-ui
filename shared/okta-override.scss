@@ -1,0 +1,148 @@
+
+/*
+  Custom okta theme overriding the default okta theme
+  Compatible with default and gray hf-element-ui theme
+
+  See documentation for more info
+*/
+
+$theme-default-primary-color: #08436D;
+$theme-gray-primary-color: #556676;
+
+#okta-widget {
+  #okta-sign-in.auth-container.main-container {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Avenir Next';
+    outline: none;
+  }
+
+  #okta-sign-in .auth-org-logo { max-height: 50px; }
+
+  #okta-sign-in .auth-header {
+    border: 0;
+  }
+
+  // Form
+  #okta-sign-in .o-form-theme { padding: 0; }
+
+  #okta-sign-in .okta-form-title {
+    display: none; // Hide title text
+  }
+
+  #okta-sign-in .o-form-label {
+    padding: 0;
+
+    label {
+      padding: 0;
+      line-height: 18px;
+      opacity: 0.6;
+      color: white;
+      font-size: 12px;
+      font-family: inherit;
+    }
+  }
+
+  #okta-sign-in .o-form-fieldset {
+    margin-bottom: 20px;
+  }
+
+  #okta-sign-in .o-form .input-fix {
+    border-radius: 0;
+  }
+
+  #okta-sign-in.auth-container .okta-form-input-field {
+    background: transparent;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid rgba(white, 0.6);
+    transition: border-color 0.5s ease;
+
+    &.focused-input {
+      border-bottom: 2px solid white;
+    }
+
+    input {
+      height: 26px;
+      padding: 0;
+      font-family: inherit;
+      font-size: 16px;
+      color: white;
+    }
+    input[disabled] { background: transparent; -webkit-text-fill-color: white; }
+  }
+
+  #okta-sign-in .o-form .custom-checkbox { // Checkbox - Remember me
+    label {
+      color: white;
+      font-family: inherit;
+      font-size: 13px;
+
+      // Hide okta checkmark background image and override with custom checkbox
+      background-image: none;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        height: 14px;
+        width: 14px;
+        border-radius: 2px;
+        background-color: white;
+      }
+      &.checked:before {
+        content: '\E867'; // Completed checkmark icon from hf-element-ui
+        font-family: 'heartflow_iconography';
+        font-weight: bold;
+        @at-root .theme-default & { color: $theme-default-primary-color }
+        @at-root .theme-gray & { color: $theme-gray-primary-color }
+        font-size: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  #okta-sign-in .beacon-loading:after {
+    @at-root .theme-default & { border-top-color: $theme-default-primary-color }
+    @at-root .theme-gray & { border-top-color: $theme-gray-primary-color }
+  }
+
+  // Submit button
+  #okta-sign-in.auth-container .button-primary {
+    background: white;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    .theme-default & { color: $theme-default-primary-color }
+    .theme-gray & { color:$theme-gray-primary-color }
+  }
+
+  #okta-sign-in .o-form-button-bar.focused-input { padding-bottom: 25px; }
+
+  // Form errors
+  #okta-sign-in .o-form-explain.o-form-input-error {
+    font-family: inherit;
+    color: white;
+  }
+  #okta-sign-in .error-16-small:before {
+    color: white;
+    font-size: 15px;
+    padding-top: 2px;
+    padding-right: 3px;
+  }
+
+  // Footer
+  #okta-sign-in .auth-footer { display: none; } // Hide "Needs Help"
+
+  // Override Helper
+  #okta-sign-in .focused-input {
+    box-shadow: none;
+    margin: 0;
+  }
+}

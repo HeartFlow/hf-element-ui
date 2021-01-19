@@ -2,19 +2,20 @@
 
 [Demo of the UI Kit](https://heartflow.github.io/hf-element-ui)
 
-**v1.2.0**
+**v1.3.0**
 
 This project is a Vue application that showcases the Element UI components using the HearFlow theme.
 
 It also provides:
 - A custom Element UI theme which follows the HearFlow styles guidelines in `/shared/lib/`.
 - A set of Vue components/plugins on top of the existing Element UI ones in `/shared/components` and `/shared/plugins`.
+- A custom okta theme following hf-element-ui styles
 
 The HearFlow theme and its custom components can be used in your project.
 
 ## Install
 ```shell
-npm i -S github:HearFlow/hf-element-ui#v1.2.0
+npm i -S github:HearFlow/hf-element-ui#v1.3.0
 ```
 
 ## How to import the HearFlow theme and components in your project
@@ -138,6 +139,15 @@ Don't forget to `import { Collapse } from 'element-ui'` in your code so `babel-p
 ### Plugins
 - Retry Notification
 
+### Custom theme for okta widget
+Widget version used for custom theming: `5.2.2`
+
+```javascript
+import OktaSignIn from '@okta/okta-signin-widget'
+import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css'
+import '@/assets/css/okta-override.scss' // Custom theme file overriding default theme
+```
+
 ## Development
 
 ### Run HearFlow UI Kit App
@@ -180,8 +190,8 @@ After that, `pagination.scss` will have to be maintained and kept up-to-date whe
 
 
 ### Release new version
-- `npm run build:theme` which will generate the `/shared/lib` folder containing the `.css` files for the Element UI components
-- Commit and reate a tag with the release version (e.g `v1.2.0`)
+- `npm run build:theme` to generate the `/shared/lib` folder containing the `.css` files for the Element UI components (only run if css theme files were updated)
+- Commit and create a tag with the release version (e.g `v1.3.0`)
 - Update `README.md`, `package.json` and `package-lock.json` release version references
 - Push the commit and new tag
 
