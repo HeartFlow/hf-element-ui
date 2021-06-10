@@ -163,6 +163,10 @@
               <el-input type="textarea" placeholder="Optional message..." resize="none"
                         :autosize="{ minRows: 4, maxRows: 10 }"></el-input>
             </el-form-item>
+            <el-form-item label="Disabled textarea field" prop="message">
+              <el-input type="textarea" placeholder="Optional message..." resize="none"
+                        :autosize="{ minRows: 4, maxRows: 10 }" :disabled="true"></el-input>
+            </el-form-item>
             <el-form-item label="Numeric Stepper">
               <el-input-number v-model="formData.numberField" controls-position="right" :min="0"></el-input-number>
             </el-form-item>
