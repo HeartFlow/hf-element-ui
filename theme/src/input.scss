@@ -44,14 +44,17 @@
 
   @include when(disabled) {
     .el-textarea__inner {
-      background-color: $--input-disabled-fill;
-      border-color: $--input-disabled-border;
-      color: $--input-disabled-color;
       cursor: not-allowed;
+      opacity: .4;
+      font-style: italic;
+      // background-color: $--input-disabled-fill;
+      // border-color: $--input-disabled-border;
+      // color: $--input-disabled-color;
+      // cursor: not-allowed;
 
-      &::placeholder {
-        color: $--input-disabled-placeholder-color;
-      }
+      // &::placeholder {
+      //   color: $--input-disabled-placeholder-color;
+      // }
     }
   }
 }
