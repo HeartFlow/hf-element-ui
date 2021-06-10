@@ -25,7 +25,7 @@
   */
 
   @include themify {
-    background-color: themed('color_primary');
+    background-color: themed('color_secondary');
     color: themed('color_hero');
   }
 

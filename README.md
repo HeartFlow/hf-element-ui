@@ -2,7 +2,7 @@
 
 [Demo of the UI Kit](https://heartflow.github.io/hf-element-ui)
 
-**v1.3.1**
+**v1.3.2**
 
 This project is a Vue application that showcases the Element UI components using the HearFlow theme.
 
