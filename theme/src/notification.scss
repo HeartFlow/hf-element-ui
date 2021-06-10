@@ -12,7 +12,7 @@
   transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
   overflow: hidden;
   @include themify {
-    background-color: themed('color_primary');
+    background-color: themed('color_secondary');
     color: themed('color_hero');
   }
 

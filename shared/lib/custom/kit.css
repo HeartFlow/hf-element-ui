@@ -101,7 +101,7 @@ h5 {
   padding: 2em 3em 2em; }
 
 .theme-white .panel {
-  background-color: white; }
+  background-color: rgba(0, 146, 176, 0.1); }
 
 .panel h3 {
   margin-top: 0; }
